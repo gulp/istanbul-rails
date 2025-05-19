@@ -1,0 +1,27 @@
+Okay, if you want the branch from "Sanayi Mahallesi" to "Seyrantepe" to appear as a single straight line spur, rather than the double curved "loop," here are the primary ways to achieve this within your current Cytoscape.js setup, focusing on leveraging the `preset` layout and data adjustments:
+
+**Method 1: Adjusting Figma Coordinates (Most Control for `preset` layout)**
+
+This is the most direct way to control the final look when using `layout: { name: 'preset' }`.
+
+**Your JavaScript code for Cytoscape:**
+    *   No significant changes are needed to the Cytoscape initialization itself if you use this method. The `preset` layout will use the coordinates you provide.
+    *   The `curve-style: 'bezier'` for edges will naturally draw a straight line between two nodes if there are no other forces or multiple edges causing it to curve. With only two nodes in the branch (`sanayi_mahallesi`, `seyrantepe`) and preset positions, the edge should be straight.
+
+**Example of `figma_coordinates.json` entries:**
+
+```json
+{
+  // ... other stations ...
+  "sanayi_mahallesi": { "x": 1495, "y": 702, "figmaFill": "#somecolor" }, // Example original top-left
+  // To make Seyrantepe a spur to the right:
+  "seyrantepe": { "x": 1545, "y": 702, "figmaFill": "#somecolor" }
+  // ... other stations ...
+}
+```
+Your script would then calculate the center positions for Cytoscape:
+*   `sanayi_mahallesi`: `x = 1495 + 4 = 1499`, `y = 702 + 4 = 706`
+*   `seyrantepe`: `x = 1545 + 4 = 1549`, `y = 702 + 4 = 706`
+This would result in a horizontal line between them.
+
+

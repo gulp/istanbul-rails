@@ -658,13 +658,12 @@
       "name": "Yenimahalle",
       "district": "İETT Bus:92, 92B, 92K, 92Ş, 97G, 98D, 98K, HT13",
       "lines": [
-        "M3",
-        "M7"
+        "M3"
       ],
       "transfers": [],
       "notes": "Gaziosmanpaşa Training & Research Hospital",
       "type": null,
-      "isInterchange": true
+      "isInterchange": false
     },
     {
       "id": "mahmutbey",
@@ -1970,6 +1969,18 @@
       "notes": "Arnavutköy State Hospital・Arnavutköy City Park・Arnavutköy İETT Platforms",
       "type": null,
       "isInterchange": false
+    },
+    {
+      "id": "yenimahalle_gaziosmanpasa",
+      "name": "Yenimahalle, Gaziosmanpaşa",
+      "district": "",
+      "lines": [
+        "M7"
+      ],
+      "transfers": [],
+      "notes": "Gaziosmanpaşa Training & Research Hospital",
+      "type": null,
+      "isInterchange": false
     }
   ],
   "lines": [
@@ -2165,7 +2176,7 @@
         "veysel_karaniaksemsettin",
         "yesilpinar",
         "kazim_karabekir",
-        "yenimahalle",
+        "yenimahalle_gaziosmanpasa",
         "karadeniz_mahallesi",
         "giyimkenttekstilkent",
         "oruc_reis_yuzyil",

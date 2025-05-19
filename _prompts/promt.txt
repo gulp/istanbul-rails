@@ -1,0 +1,290 @@
+You're in a common situation: you have a base layout for many stations, but new or uncoordinated stations are probably clumping together at `(0,0)` or being placed randomly by a layout algorithm if `preset` isn't strictly enforced for them. You want to "explode" or spread out these unpositioned stations so you can visually assess them and their connections.
+
+Here's how you can modify your Cytoscape.js setup to achieve this "explosion" for stations without Figma coordinates, while keeping the ones with coordinates in their `preset` positions:
+
+**Strategy:**
+
+1.  **Identify Unpositioned Nodes:** Keep track of which nodes have Figma coordinates and which don't.
+2.  **Initial `preset` Layout:** Run the `preset` layout as you are. This will place all nodes with coordinates correctly. Nodes without coordinates will default to `(0,0)`.
+3.  **Select Unpositioned Nodes:** After the preset layout, select only the nodes that *didn't* have coordinates.
+4.  **Run a Secondary Layout on Selected Nodes:** Apply a force-directed layout (like `fcose` or `cose`) or a `circle` layout *only* to these selected, unpositioned nodes. This will spread them out from each other.
+5.  **Consider Locking Positioned Nodes:** During this secondary layout, you might want to ensure that the already positioned (Figma) nodes don't move.
+
+Here's the modified code:
+
+```javascript
+// No need to register fcose if only using preset, but doesn't hurt
+// You WILL need it if you want to use it for the unpositioned nodes.
+// So, if you uncomment fcose usage below, uncomment this too:
+// cytoscape.use(cytoscapeFcose);
+
+// STEP 1: Load Rich Station Data and Figma Coordinates
+let richData = {};
+let figmaCoordinates = {};
+
+const RECT_WIDTH = 8;
+const RECT_HEIGHT = 8;
+
+Promise.all([
+  fetch('../data/stations_lines.json').then(response => response.json()),
+  fetch('../data/figma_coordinates.json').then(response => response.json())
+])
+.then(([stationsLinesData, figmaCoordsData]) => {
+  richData = stationsLinesData;
+  figmaCoordinates = figmaCoordsData;
+
+  const nodesWithFigmaCoords = new Set(); // Keep track of nodes that have Figma coords
+
+  // STEP 2: Merge Figma Coordinates into Rich Data
+  richData.stations.forEach(station => {
+    if (figmaCoordinates[station.id]) {
+      station.x = figmaCoordinates[station.id].x + RECT_WIDTH / 2;
+      station.y = figmaCoordinates[station.id].y + RECT_HEIGHT / 2;
+      station.figmaColor = figmaCoordinates[station.id].figmaFill;
+      nodesWithFigmaCoords.add(station.id); // Mark this node as having Figma coordinates
+    } else {
+      console.warn(`Coordinates not found in figmaCoordinates for station ID: ${station.id}.`);
+      // station.x and station.y will remain undefined for these
+    }
+  });
+
+  // STEP 3: Create Cytoscape Elements
+  const elements = [];
+  const stationNodeIds = new Set();
+
+  richData.stations.forEach(station => {
+    if (!stationNodeIds.has(station.id)) {
+      elements.push({
+        group: 'nodes',
+        data: {
+          id: station.id,
+          name: station.name,
+          isInterchange: (station.transfers && station.transfers.length > 0) || (station.lines && station.lines.length > 1),
+          figmaColor: station.figmaColor,
+          hasFigmaCoord: nodesWithFigmaCoords.has(station.id) // Add a flag
+        },
+        position: (typeof station.x !== 'undefined' && typeof station.y !== 'undefined') ?
+                  { x: station.x, y: station.y } :
+                  undefined,
+        // Lock nodes that have Figma coordinates if you want them absolutely fixed
+        // during the secondary layout.
+        // locked: nodesWithFigmaCoords.has(station.id) 
+      });
+      stationNodeIds.add(station.id);
+    }
+  });
+
+  // Add real line edges (same as your existing code)
+  richData.lines.forEach(line => {
+    function addEdgesForStationList(stations, branchName = null) {
+      for (let i = 0; i < stations.length - 1; i++) {
+        const source = stations[i];
+        const target = stations[i+1];
+        if (stationNodeIds.has(source) && stationNodeIds.has(target)) {
+          elements.push({
+            group: 'edges',
+            data: {
+              id: `${line.id}-${branchName ? branchName + '-' : ''}${source}-${target}`,
+              source: source, target: target, lineColor: line.color || '#ccc', lineId: line.id
+            }
+          });
+        } else {
+            console.warn(`Edge creation skipped for line ${line.id}: ${source} or ${target} not in stationNodeIds`);
+        }
+      }
+    }
+    if (line.stations && line.stations.length > 0) {
+        addEdgesForStationList(line.stations);
+    }
+    if (line.branches) {
+      for (const branch in line.branches) {
+        if (line.branches[branch] && line.branches[branch].length > 0) {
+            addEdgesForStationList(line.branches[branch], branch);
+        }
+      }
+    }
+  });
+
+  // STEP 4: Initialize Cytoscape
+  var cy = cytoscape({
+    container: document.getElementById('cy'),
+    elements: elements,
+    style: [ // Your existing styles
+      { selector: 'node', style: {
+          'background-color': '#888', 
+          'label': 'data(name)',
+          'font-size': '10px', 'text-valign': 'bottom', 'text-halign': 'center',
+          'text-margin-y': '3px', 'width': '8px', 'height': '8px',
+          'border-width': 1, 'border-color': '#555'
+      }},
+      { selector: 'node[isInterchange="true"]', style: {
+          'background-color': '#fff', 'border-color': '#000', 'border-width': 1.5,
+          'width': '12px', 'height': '12px', 'shape': 'ellipse'
+      }},
+      { selector: 'node[?figmaColor]', style: { 
+            'background-color': 'data(figmaColor)'
+      }},
+      { selector: 'edge', style: {
+          'width': 3, 'line-color': 'data(lineColor)',
+          'curve-style': 'bezier', 
+          'target-arrow-shape': 'none', 'opacity': 0.7
+      }}
+    ],
+    // Initial layout is preset to place the known coordinates
+    layout: {
+      name: 'preset',
+      fit: false, // Don't fit initially, we'll fit after exploding
+      padding: 50
+    }
+  });
+
+  // STEP 5: "Explode" Unpositioned Nodes
+  // Select nodes that do NOT have figma coordinates
+  const unpositionedNodes = cy.nodes('[!hasFigmaCoord]'); 
+  const positionedNodes = cy.nodes('[hasFigmaCoord]');
+
+  if (unpositionedNodes.length > 0) {
+    console.log(`Found ${unpositionedNodes.length} unpositioned nodes to explode.`);
+
+    // Option 1: Use a force-directed layout like fcose for unpositioned nodes
+    // Make sure to include fcose library if you use this:
+    // <script src="https://unpkg.com/cytoscape-fcose@2.2.0/cytoscape-fcose.js"></script>
+    // And uncomment: cytoscape.use(cytoscapeFcose); at the top.
+    
+    // To prevent positioned nodes from moving during this layout, you can lock them
+    // OR ensure the layout only runs on the `unpositionedNodes` collection and
+    // respects the positions of other nodes (some layouts do this better than others).
+    // `cose` and `fcose` have options to constrain nodes.
+
+    // A simple approach: run layout on unpositioned nodes, then fit everything.
+    // The `boundingBox` option can help constrain where these nodes are placed.
+    // You might need to experiment with the bounding box.
+    // For example, place them in a circle around the existing map.
+
+    // First, let's try a simple 'circle' layout for the unpositioned ones,
+    // and try to place this circle somewhat away from the main cluster if possible,
+    // or just let it arrange them and then we zoom out.
+
+    let layoutOptions;
+
+    // Attempt to find a bounding box for the positioned nodes
+    let bb;
+    if (positionedNodes.length > 0) {
+        bb = positionedNodes.boundingBox();
+    } else { // If NO nodes have figma coords, just use a default bounding box
+        bb = { x1: 0, y1: 0, w: cy.width() / 2, h: cy.height() / 2 }; // Default placement area
+    }
+
+    // Place the circle of unpositioned nodes to the side or below
+    // For example, to the right of the existing bounding box:
+    const circleCenterX = bb.x1 + bb.w + 200; // 200px to the right
+    const circleCenterY = bb.y1 + bb.h / 2;   // Vertically centered with existing map
+
+    layoutOptions = {
+        name: 'circle',
+        fit: false, // We don't want this small circle to fit the whole viewport
+        padding: 50,
+        radius: Math.max(150, unpositionedNodes.length * 10), // Adjust radius based on node count
+        startAngle: 3 / 2 * Math.PI,
+        counterclockwise: false,
+        // Position the center of the circle:
+        // boundingBox: { x1: circleCenterX - 100, y1: circleCenterY - 100, w: 200, h: 200 } // A guess for bbox
+        // Simpler for circle is often to manually position after layout if needed, or use a more complex concentric
+    };
+    
+    // Or use cose/fcose for better spreading (recommended if many unpositioned)
+    /*
+    layoutOptions = {
+        name: 'fcose', // or 'cose'
+        idealEdgeLength: 70,
+        nodeRepulsion: 10000,
+        fit: false, // Don't fit this sub-layout to the whole screen
+        padding: 50,
+        animate: true,
+        randomize: true,
+        // boundingBox: { x1: someX, y1: someY, w: someWidth, h: someHeight } // Define a region
+    };
+    */
+
+    // Run the layout on the collection of unpositioned nodes
+    let unpositionedLayout = unpositionedNodes.layout(layoutOptions);
+    
+    unpositionedLayout.pon('layoutstop', function() {
+        // After the unpositioned nodes are laid out, fit the whole graph
+        cy.animate({
+            fit: { padding: 50 }
+        }, { duration: 500 });
+    });
+    unpositionedLayout.run();
+
+
+  } else {
+    // If all nodes were positioned, just fit the graph
+    cy.animate({
+        fit: { padding: 50 }
+    }, { duration: 500 });
+  }
+
+  // Tap event (same as your existing code)
+  cy.on('tap', 'node', function(evt){
+    var node = evt.target;
+    const stationInfo = `ID: ${node.id()}<br>Name: ${node.data('name') || node.id()}<br>Has Figma Coord: ${node.data('hasFigmaCoord')}`;
+    document.getElementById('station-info').innerHTML = stationInfo; // Use innerHTML for <br>
+  });
+
+})
+.catch(error => console.error("Error loading data:", error));
+```
+
+**Key Changes and Explanations:**
+
+1.  **`nodesWithFigmaCoords` Set:** A `Set` is created to store the IDs of stations that have coordinates defined in `figma_coordinates.json`.
+2.  **`hasFigmaCoord` Data Attribute:** When creating Cytoscape nodes, a new data attribute `hasFigmaCoord: nodesWithFigmaCoords.has(station.id)` is added to each node. This makes it easy to select them later.
+3.  **Initial `preset` Layout:**
+    *   `fit: false` is set initially because we only want to place the known nodes. We'll fit everything *after* the unpositioned nodes are exploded.
+    *   `padding: 50` (or your preferred value).
+4.  **`unpositionedNodes` Selector:** `cy.nodes('[!hasFigmaCoord]')` selects all nodes where the `hasFigmaCoord` data attribute is `false` or doesn't exist (which means they didn't have Figma coords). `positionedNodes` is the inverse.
+5.  **Conditional Secondary Layout:**
+    *   If `unpositionedNodes.length > 0`, it proceeds to lay them out.
+    *   **`circle` Layout (Example):**
+        *   I've used a `circle` layout as a simple starting point. It will arrange the unpositioned nodes in a circle.
+        *   `fit: false` is important so this small circle doesn't try to take over the screen.
+        *   `radius` is made somewhat dynamic.
+        *   **Positioning the Circle:** The commented-out `boundingBox` or manual adjustment of circle center coordinates (`circleCenterX`, `circleCenterY`) would be ways to try and place this circle of new nodes in a specific area of the canvas (e.g., to the side of your existing map). This might require some trial and error to find good values. A simpler first step is to just let them arrange in a circle and then zoom out.
+    *   **`fcose` or `cose` Layout (Commented Out - Recommended for better spread):**
+        *   This is generally better for spreading nodes out based on their connections, even if it's just amongst themselves.
+        *   You'd need to uncomment the `cytoscape.use(cytoscapeFcose);` at the top and include the `fcose` library script tag in your HTML.
+        *   `fit: false` is again important.
+        *   `boundingBox`: If you use `fcose`, defining a `boundingBox` for `unpositionedNodes.layout(...)` can help contain them to a specific region (e.g., an empty part of your canvas).
+6.  **`layout.run()` and `layoutstop` event:** The secondary layout is run. When it stops, `cy.animate({ fit: { padding: 50 }})` is called to zoom and pan the viewport to show all nodes (both preset and newly exploded).
+7.  **Else, Just Fit:** If all nodes had coordinates, it just fits the view.
+8.  **Station Info Display:** Updated to show the `hasFigmaCoord` status.
+
+**To Use This:**
+
+1.  **Include fcose (Optional but Recommended for secondary layout):**
+    *   If you want to use `fcose` (which I recommend over `circle` for better spreading of many nodes), add this to your HTML's `<head>` or before your script:
+        ```html
+        <script src="https://unpkg.com/layout-base@2.0.1/layout-base.js"></script>
+        <script src="https://unpkg.com/cose-base@2.1.0/cose-base.js"></script>
+        <script src="https://unpkg.com/cytoscape-fcose@2.2.0/cytoscape-fcose.js"></script>
+        ```
+    *   And uncomment `cytoscape.use(cytoscapeFcose);` at the top of your script. Then, switch the `layoutOptions` to use `fcose`.
+
+2.  **Experiment with Secondary Layout Options:**
+    *   **`circle` radius:** Adjust based on how many unpositioned nodes you have.
+    *   **`fcose` / `cose` parameters:** `idealEdgeLength`, `nodeRepulsion` will affect how spread out they are.
+    *   **`boundingBox` for secondary layout:** This is key if you want to place the "exploded" nodes in a particular area (e.g., a "staging area" on your canvas). You'll need to figure out the coordinates for this box. For example:
+        ```javascript
+        // Assuming your main map is roughly in the positive quadrant
+        const explosionZone = { x1: -500, y1: -500, w: 400, h: 400 }; // A box to the top-left
+        // ...
+        layoutOptions = {
+            name: 'fcose',
+            // ... other fcose params ...
+            boundingBox: explosionZone,
+            fit: false // fcose will fit to its boundingBox if one is provided
+        };
+        ```
+
+This approach gives you a good way to see those unpositioned nodes and their connections without them being lost in a pile at (0,0). You can then decide how to integrate them into your main map (e.g., by adding their coordinates to `figma_coordinates.json`).

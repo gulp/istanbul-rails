@@ -17,47 +17,35 @@ def clean_text(text):
     text = text.replace('\n', ' ').replace('<br>', ' ').replace('<br/>', ' ').replace('<br />', ' ')
     text = text.strip()
     text = re.sub(r'\s+', ' ', text) # Normalize whitespace
-    return textpy
+    return text
 
 def normalize_name_to_id(name):
     """Creates a consistent ID-friendly version of a station or line name."""
-    name = clean_text(name)
-    # Remove specific line/type identifiers often found in names
-    name = re.sub(r'\s*\(Istanbul Metro\)', '', name, flags=re.IGNORECASE)
-    name = re.sub(r'\s*\(Istanbul Tram\)', '', name, flags=re.IGNORECASE)
-    name = re.sub(r'\s*\(Marmaray\)', '', name, flags=re.IGNORECASE)
-    name = re.sub(r'\s*\(İETT\)', '', name, flags=re.IGNORECASE)
-    name = re.sub(r'\s*Metrobüs Station', '', name, flags=re.IGNORECASE)
-    name = re.sub(r'\s*\(Metro\)', '', name, flags=re.IGNORECASE)
-    name = re.sub(r'\s*\(Tram\)', '', name, flags=re.IGNORECASE)
-    name = re.sub(r'\s*\(Funicular\)', '', name, flags=re.IGNORECASE)
-    name = re.sub(r'\s*\(Cable Car\)', '', name, flags=re.IGNORECASE)
-    name = re.sub(r'\s*branch$', '', name, flags=re.IGNORECASE) # Remove " branch" suffix
-    name = re.sub(r'\s*line$', '', name, flags=re.IGNORECASE) # Remove " line" suffix
-    name = re.sub(r'\s*section$', '', name, flags=re.IGNORECASE) # Remove " section" suffix
-    name = re.sub(r'\s*trunk$', '', name, flags=re.IGNORECASE) # Remove " trunk" suffix
+    name = clean_text(name) # Basic cleaning (like MD link removal)
 
+    # Explicitly handle em-dashes and hyphens by replacing them with a space first
+    # This ensures they act as word separators before space-to-underscore conversion.
+    name = name.replace('—', ' ') # em-dash to space
+    name = name.replace('-', ' ') # hyphen to space
 
-    # Handle specific known variations from MD
-    name = name.replace("Şişli - Mecidiyeköy", "Şişli—Mecidiyeköy") # Normalize dash/em-dash
-    name = name.replace("Bakırköy-İncirli", "Bakırköy—İncirli")
-    name = name.replace("Ataköy—Şirinevler", "Ataköy—Şirinevler")
-    name = name.replace("DTM—İstanbul Fuar Merkezi", "DTM—İstanbul Fuar Merkezi")
-
-
+    # Character transliteration (Turkish to ASCII-like)
     name = name.replace('İ', 'I').replace('ı', 'i')
     name = name.replace('Ö', 'O').replace('ö', 'o')
     name = name.replace('Ü', 'U').replace('ü', 'u')
     name = name.replace('Ş', 'S').replace('ş', 's')
     name = name.replace('Ç', 'C').replace('ç', 'c')
     name = name.replace('Ğ', 'G').replace('ğ', 'g')
+    name = name.replace('Â', 'A').replace('â', 'a') # Handle Â/â
     
     name = name.lower()
-    name = re.sub(r'[^\w\s-]', '', name) # Remove most punctuation except underscore and hyphen
-    name = re.sub(r'\s+', '_', name) # Replace spaces with underscores
-    name = name.replace('-', '_') # Replace hyphens with underscores for consistency
-    name = re.sub(r'_+', '_', name) # Replace multiple underscores with one
-    name = name.strip('_')
+    
+    # Remove any remaining punctuation that isn't a letter, number, or whitespace
+    name = re.sub(r'[^\w\s]', '', name)
+    
+    # Convert all whitespace sequences to a single underscore
+    name = re.sub(r'\s+', '_', name)
+    
+    name = name.strip('_') # Remove leading/trailing underscores
     return name if name else "unknown_id_" + str(time.time()) # Ensure an ID is always returned
 
 KNOWN_LINE_CODES_FROM_JSON = set() # Will be populated from input JSON
@@ -203,14 +191,32 @@ def parse_markdown_file(md_content):
                 continue
 
             headers = []
-            header_row = table.find('tr')
-            if header_row:
-                headers = [clean_text(th.get_text()).lower() for th in header_row.find_all(['th', 'td'])]
+            actual_header_row_for_data_iteration = None # To know which row was the header
+            header_found = False
+            all_table_rows = table.find_all('tr')
+            data_row_start_index = 0
+
+            # Find the first row that seems to be a header (has content)
+            for i, r in enumerate(all_table_rows):
+                potential_headers_text = [clean_text(cell.get_text()) for cell in r.find_all(['th', 'td'])]
+                if any(h.strip() for h in potential_headers_text): # If any cell in the row has actual text
+                    headers = [h.lower() for h in potential_headers_text]
+                    actual_header_row_for_data_iteration = r
+                    header_found = True
+                    data_row_start_index = i + 1 # Data rows start after this header
+                    break
+            
+            if not header_found:
+                print(f"Warning: No contentful header row found for table in {current_line_name_full}. Skipping table.")
+                continue
             
             try:
                 station_col_idx = headers.index("station")
             except ValueError:
-                # print(f"Warning: 'Station' column not found in table for {current_line_name_full}. Headers: {headers}. Skipping table.")
+                if current_line_id_md == "M9" and "transfer" in headers:
+                    print(f"Info: For M9, 'station' column not found. The MD for M9 needs a 'Station' column. Found 'transfer' column as first: {headers}. Skipping M9 station processing from this table.")
+                else:
+                    print(f"Warning: 'Station' column not found in table for {current_line_name_full}. Headers: {headers}. Skipping table.")
                 continue # Skip table if no station column
 
             transfer_col_idx = headers.index("transfer") if "transfer" in headers else headers.index("connections") if "connections" in headers else -1
@@ -219,7 +225,8 @@ def parse_markdown_file(md_content):
             
             stations_for_current_section = []
 
-            for row in table.find_all('tr')[1:]: # Skip header row
+            for row_idx in range(data_row_start_index, len(all_table_rows)):
+                row = all_table_rows[row_idx]
                 cells = row.find_all('td')
                 if not cells or len(cells) <= station_col_idx:
                     # Check for "↓↓ Inauguration planned..." type rows
@@ -291,9 +298,85 @@ def consolidate_data(json_data, md_lines_data):
     Consolidates data from json_data with md_lines_data.
     MD data generally takes precedence for station names, notes, transfers, and line station order.
     """
-    # Create lookup for JSON stations
+    # 0. Re-normalize IDs in the input json_data (from stations_lines.json)
+    renormalized_stations_by_new_id = {}
+    old_id_to_new_id_map = {} # To update line station lists
+
+    print("Phase 0: Re-normalizing IDs in loaded JSON data...")
+    for station_from_json in json_data.get("stations", []):
+        original_json_id = station_from_json.get("id")
+        station_name = station_from_json.get("name")
+
+        if not station_name:
+            print(f"  Warning: Station from input JSON with ID '{original_json_id}' has no name. Skipping re-normalization for this entry.")
+            if original_json_id and original_json_id not in renormalized_stations_by_new_id: # Keep if ID is unique and not already processed
+                 renormalized_stations_by_new_id[original_json_id] = station_from_json
+                 old_id_to_new_id_map[original_json_id] = original_json_id
+            continue
+
+        new_id = normalize_name_to_id(station_name)
+        old_id_to_new_id_map[original_json_id] = new_id
+
+        if new_id in renormalized_stations_by_new_id:
+            existing_station = renormalized_stations_by_new_id[new_id]
+            print(f"  Info: Merging JSON station '{station_name}' (old ID: {original_json_id}) into existing entry with new ID '{new_id}'.")
+            
+            existing_lines = set(existing_station.get("lines", []))
+            current_lines = set(station_from_json.get("lines", []))
+            existing_station["lines"] = sorted(list(existing_lines.union(current_lines)))
+
+            existing_transfers = set(existing_station.get("transfers", []))
+            current_transfers = set(station_from_json.get("transfers", []))
+            existing_station["transfers"] = sorted(list(existing_transfers.union(current_transfers)))
+            
+            if not existing_station.get("district") and station_from_json.get("district"):
+                existing_station["district"] = station_from_json.get("district")
+            if not existing_station.get("notes") and station_from_json.get("notes"):
+                existing_station["notes"] = station_from_json.get("notes")
+            existing_station["name"] = station_name # Ensure name consistency
+            if "coordinates" not in existing_station and "coordinates" in station_from_json:
+                existing_station["coordinates"] = station_from_json["coordinates"]
+            # Add other fields to merge as needed, e.g., type
+            if not existing_station.get("type") and station_from_json.get("type"):
+                existing_station["type"] = station_from_json.get("type")
+
+        else:
+            station_from_json["id"] = new_id
+            renormalized_stations_by_new_id[new_id] = station_from_json
+
+    json_data["stations"] = list(renormalized_stations_by_new_id.values())
+    print(f"  Re-normalization of JSON station IDs complete. {len(json_data['stations'])} unique stations after re-normalizing input JSON.")
+
+    # Update station IDs within the 'lines' definitions of json_data
+    for line_from_json in json_data.get("lines", []):
+        if "stations" in line_from_json:
+            updated_stations = []
+            for s_id in line_from_json["stations"]:
+                updated_stations.append(old_id_to_new_id_map.get(s_id, s_id))
+            line_from_json["stations"] = list(dict.fromkeys(updated_stations)) # Remove duplicates
+
+        if "branches" in line_from_json:
+            for branch_name in line_from_json["branches"]:
+                updated_branch_stations = []
+                for s_id in line_from_json["branches"][branch_name]:
+                    updated_branch_stations.append(old_id_to_new_id_map.get(s_id, s_id))
+                line_from_json["branches"][branch_name] = list(dict.fromkeys(updated_branch_stations))
+    print("  Updated station ID references in JSON line definitions.")
+    # --- End of re-normalization of json_data ---
+
+    # Create lookup for JSON stations (now using re-normalized IDs)
     json_stations_lookup = {s["id"]: s for s in json_data["stations"]}
-    json_lines_lookup = {l["id"]: l for l in json_data["lines"]}
+    json_lines_lookup = {}
+    for line_data in json_data.get("lines", []):
+        # Ensure line_data has an 'id' and it's a string before calling .upper()
+        original_line_id = line_data.get("id")
+        if isinstance(original_line_id, str):
+            line_id_upper = original_line_id.upper()
+            line_data["id"] = line_id_upper # Ensure stored ID is also uppercase
+            json_lines_lookup[line_id_upper] = line_data
+        else:
+            # Handle cases where line_id might be missing or not a string, if necessary
+            print(f"Warning: Line data found with missing or non-string ID: {line_data}. Skipping this line for lookup.")
 
     # Populate KNOWN_LINE_CODES_FROM_JSON for transfer parsing reference
     for line_id in json_lines_lookup.keys():
