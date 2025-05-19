@@ -1,0 +1,23 @@
+{
+  "stations": [
+    {"id": "yenikapi", "name": "Yenikapı", "district": "Fatih", "lines": ["M2", "M1"], "transfers": ["MARMARAY", "T6", "FERRY"], "notes": "South Central Hub", "type": "Underground"},
+    {"id": "taksim", "name": "Taksim", "district": "Beyoğlu", "lines": ["M2"], "transfers": ["F1", "T2", "TF1"], "notes": "North Central Hub", "type": null},
+    {"id": "s_is_li___mecidiyeko_y", "name": "Şişli - Mecidiyeköy", "district": "Şişli", "lines": ["M2"], "transfers": ["M7", "METROBUS"], "notes": "North Hub", "type": null},
+    {"id": "levent", "name": "Levent", "district": "Beşiktaş & Şişli", "lines": ["M2", "M1"], "transfers": ["M6"], "notes": "North Business Hub", "type": null},
+    {"id": "haciosman", "name": "Hacıosman", "district": "Sarıyer", "lines": ["M2"], "transfers": [], "notes": "M2 North Terminus", "type": null},
+    {"id": "atatu_rk_havalimani", "name": "Atatürk Havalimanı", "district": "Bakırköy", "lines": ["M1"], "transfers": [], "notes": "M1A West Terminus", "type": null}
+  ],
+  "lines": [
+    { "id": "M2", "name": "M2 - Yenikapı - Hacıosman", "color": "#008000", "type": "Metro",
+      "stations": ["yenikapi", "taksim", "s_is_li___mecidiyeko_y", "levent", "haciosman"],
+      "branches": {}
+    },
+    { "id": "M1", "name": "M1 - Yenikapı - Atatürk Havalimanı / Kirazlı", "color": "#FF0000", "type": "Metro",
+      "stations": ["yenikapi", "aksaray_m1", "otogar"],
+      "branches": {
+        "M1A": ["otogar", "atatu_rk_havalimani"],
+        "M1B": ["otogar", "kirazli"]
+      }
+    }
+  ]
+}
