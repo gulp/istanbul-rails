@@ -6,12 +6,13 @@
       "district": "",
       "lines": [
         "M1",
-        "M2"
+        "M2",
+        "MARMARAY"
       ],
       "transfers": [
         "FERRY"
       ],
-      "notes": "Aksaray Tram Station 750m Walking",
+      "notes": "M1A (Yenikapı-Atatürk Havalimanı Metro Hattı)M1B (Yenikapı-Kirazlı Metro Hattı)M2 (Yenikapı-Hacıosman),Bizans SurlarıPertevniyal Valide Sultan Camiiİstanbul Fotoğraf MüzesiAlaiyeli Kaptanı Derya Ebubekir Ağa KülliyesiErmeni KilisesiPertevniyal Valide Sultan TürbesiNezinedar Usta Çeşmesiİstanbul Üniversitesi Cerrahpaşa Tıp Fakültesi Tıp Tarihi Müzesi",
       "type": null,
       "isInterchange": true
     },
@@ -140,10 +141,10 @@
       "name": "Zeytinburnu",
       "district": "",
       "lines": [
-        "M1"
+        "MARMARAY"
       ],
       "transfers": [],
-      "notes": "",
+      "notes": "Zeytinburnu Tıbbi Bitkiler MerkeziEfendi Camii ve Mezarlığı",
       "type": null,
       "isInterchange": false
     },
@@ -280,120 +281,6 @@
       "notes": "",
       "type": null,
       "isInterchange": true
-    },
-    {
-      "id": "inauguration_planned_in_december_2028_construction_paused_awaiting_resumption",
-      "name": "↓↓ Inauguration planned in December 2028 (construction paused, awaiting resumption) ↓↓",
-      "district": "",
-      "lines": [],
-      "transfers": [],
-      "notes": "",
-      "type": null,
-      "isInterchange": false
-    },
-    {
-      "id": "barbaros",
-      "name": "Barbaros",
-      "district": "",
-      "lines": [],
-      "transfers": [],
-      "notes": "",
-      "type": null,
-      "isInterchange": false
-    },
-    {
-      "id": "malazgirt",
-      "name": "Malazgirt",
-      "district": "",
-      "lines": [],
-      "transfers": [],
-      "notes": "",
-      "type": null,
-      "isInterchange": false
-    },
-    {
-      "id": "mimar_sinan",
-      "name": "Mimar Sinan",
-      "district": "",
-      "lines": [
-        "M9"
-      ],
-      "transfers": [],
-      "notes": "Şehir Korosu Park・Mimar Sinan Street",
-      "type": null,
-      "isInterchange": false
-    },
-    {
-      "id": "fatih",
-      "name": "Fatih",
-      "district": "",
-      "lines": [],
-      "transfers": [],
-      "notes": "",
-      "type": null,
-      "isInterchange": false
-    },
-    {
-      "id": "halkali_universite",
-      "name": "Halkalı Üniversite",
-      "district": "",
-      "lines": [],
-      "transfers": [],
-      "notes": "",
-      "type": null,
-      "isInterchange": false
-    },
-    {
-      "id": "mehmet_akif_ersoy",
-      "name": "Mehmet Akif Ersoy",
-      "district": "",
-      "lines": [],
-      "transfers": [],
-      "notes": "",
-      "type": null,
-      "isInterchange": false
-    },
-    {
-      "id": "yenidogan",
-      "name": "Yenidoğan",
-      "district": "",
-      "lines": [],
-      "transfers": [],
-      "notes": "",
-      "type": null,
-      "isInterchange": false
-    },
-    {
-      "id": "bezirganbahce",
-      "name": "Bezirganbahçe",
-      "district": "",
-      "lines": [],
-      "transfers": [],
-      "notes": "",
-      "type": null,
-      "isInterchange": false
-    },
-    {
-      "id": "halkali",
-      "name": "Halkalı",
-      "district": "",
-      "lines": [],
-      "transfers": [],
-      "notes": "",
-      "type": null,
-      "isInterchange": false
-    },
-    {
-      "id": "vezneciler",
-      "name": "Vezneciler",
-      "district": "",
-      "lines": [
-        "M2"
-      ],
-      "transfers": [],
-      "notes": "Istanbul UniversityLaleli & Vezneciler Campus・Şehzadebaşı Mosque・Süleymaniye Mosque",
-      "type": null,
-      "isInterchange": false
     },
     {
       "id": "halic",
@@ -657,11 +544,9 @@
       "id": "yenimahalle",
       "name": "Yenimahalle",
       "district": "İETT Bus:92, 92B, 92K, 92Ş, 97G, 98D, 98K, HT13",
-      "lines": [
-        "M3"
-      ],
+      "lines": [],
       "transfers": [],
-      "notes": "Gaziosmanpaşa Training & Research Hospital",
+      "notes": "Veliefendi HipodromuYıkık İtalyan Köprüsü",
       "type": null,
       "isInterchange": false
     },
@@ -829,7 +714,7 @@
       ],
       "notes": "",
       "type": null,
-      "isInterchange": false
+      "isInterchange": true
     },
     {
       "id": "acibadem",
@@ -866,7 +751,7 @@
         "M4"
       ],
       "transfers": [],
-      "notes": "",
+      "notes": "Özgürlük Parkı / Filizi KöşkRıdvan Paşa Selamlık Köşkü",
       "type": null,
       "isInterchange": false
     },
@@ -898,21 +783,6 @@
       "isInterchange": true
     },
     {
-      "id": "bostanci",
-      "name": "Bostancı",
-      "district": "",
-      "lines": [
-        "M4",
-        "M8"
-      ],
-      "transfers": [
-        "FERRY"
-      ],
-      "notes": "Bostancı Ferry Terminal・Bostancı Lunapark",
-      "type": null,
-      "isInterchange": true
-    },
-    {
       "id": "kucukyali",
       "name": "Küçükyalı",
       "district": "",
@@ -920,7 +790,7 @@
         "M4"
       ],
       "transfers": [],
-      "notes": "",
+      "notes": "Küçükyalı ArkeoparBryas SarayıSatyros Manastır",
       "type": null,
       "isInterchange": false
     },
@@ -1004,7 +874,7 @@
         "M4"
       ],
       "transfers": [],
-      "notes": "",
+      "notes": "Surp Nisan Ermeni KilisesiTarihi Şifa HamamıKartal Belediyesi Masal Müzesi",
       "type": null,
       "isInterchange": false
     },
@@ -1028,7 +898,7 @@
         "M4"
       ],
       "transfers": [],
-      "notes": "",
+      "notes": "İDO (İstanbul Deniz Otobüsleri)Burla Biraderler Korusu-Latin KilisesiBizans MezarlığıSultan KonağıAydos Kalesi",
       "type": null,
       "isInterchange": false
     },
@@ -1100,15 +970,16 @@
       "name": "Üsküdar",
       "district": "",
       "lines": [
-        "M5"
+        "M5",
+        "MARMARAY"
       ],
       "transfers": [
         "FERRY",
         "MARMARAY"
       ],
-      "notes": "",
+      "notes": "M5 (Üsküdar-Çekmeköy Metro Hattı)Çinili HamamSalih Efendi Açık TürbesiHallaç Baba TekkesiŞerefbad Su DeposuBizans SarnıcıSaadettin Efendi Sebili ve TürbesiKız KulesiHanım Sultanlar TürbesiGülnüş Sultan TürbesiŞeyh Mustafa Detavi TürbesiŞemsi Ahmed Paşa TürbesiAziz Mahmud Hüdayi TürbesiCenned Mehmet Efendi TürbesiHalil Paşa TürbesiYeni Valide Camii ve ÇevresiMihrima Sultan CamiiŞemsi Paşa CamiiUçurtma MüzesiAhmediye CamiiAziz Mahmud Hüdayi Hz. Camii Şerifi",
       "type": null,
-      "isInterchange": false
+      "isInterchange": true
     },
     {
       "id": "fistikagaci",
@@ -1733,12 +1604,13 @@
       "name": "Ataköy",
       "district": "",
       "lines": [
-        "M9"
+        "M9",
+        "MARMARAY"
       ],
       "transfers": [],
-      "notes": "Baruthane Millet Bahçesi・Ataköy 2,5,6. Kısım neighbourhood",
+      "notes": "Sinan Erdem Spor SalonuİspirtohaneYunus Emre Kültür MerkeziAymama DeresiBaruthane Sarnıcı",
       "type": null,
-      "isInterchange": false
+      "isInterchange": true
     },
     {
       "id": "cobancesme",
@@ -1972,13 +1844,555 @@
     },
     {
       "id": "yenimahalle_gaziosmanpasa",
-      "name": "Yenimahalle, Gaziosmanpaşa",
+      "name": "Yenimahalle (Gaziosmanpaşa)",
       "district": "",
       "lines": [
         "M7"
       ],
       "transfers": [],
       "notes": "Gaziosmanpaşa Training & Research Hospital",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "bostanci_kadikoy",
+      "name": "Bostancı (Kadıköy)",
+      "district": "",
+      "lines": [
+        "M4"
+      ],
+      "transfers": [],
+      "notes": "",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "bostanci_maltepe",
+      "name": "Bostancı (Maltepe)",
+      "district": "",
+      "lines": [
+        "M8",
+        "MARMARAY"
+      ],
+      "transfers": [
+        "FERRY",
+        "YHT"
+      ],
+      "notes": "Bostancı Ferry Terminal・Bostancı Lunapark",
+      "type": null,
+      "isInterchange": true
+    },
+    {
+      "id": "vezneciler",
+      "name": "Vezneciler",
+      "district": "",
+      "lines": [
+        "M2"
+      ],
+      "transfers": [],
+      "notes": "Istanbul UniversityLaleli & Vezneciler Campus・Şehzadebaşı Mosque・Süleymaniye Mosque",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "mimar_sinan",
+      "name": "Mimar Sinan",
+      "district": "",
+      "lines": [
+        "M9"
+      ],
+      "transfers": [],
+      "notes": "Şehir Korosu Park・Mimar Sinan Street",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "halkali",
+      "name": "Halkalı",
+      "district": "",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [
+        "YHT"
+      ],
+      "notes": "Yarımburgaz MağaralarıHalkalı Ziraat OkuluBathonea Arkeolojik Kazı AlanıRoma Köprü Kalıntısı",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "mustafa_kemal",
+      "name": "Mustafa Kemal",
+      "district": "",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "kucukcekmece",
+      "name": "Küçükçekmece",
+      "district": "",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Küçükçekmece GölüAntik Rhegion Yerleşim YeriMimar Sinan Köprüsü",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "florya",
+      "name": "Florya",
+      "district": "",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Florya Atatürk OrmanıFlorya Atatürk Deniz Köşkü",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "florya_akvaryum",
+      "name": "Florya Akvaryum",
+      "district": "",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "İstanbul Akvaryumu",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "yesilkoy",
+      "name": "Yeşilköy",
+      "district": "",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "İstanbul Hava Kuvvetleri MüzesiSt.Etienne – Aziz İstefanos Latin Katolik KilisesiYeşilköy Surp Stepanos KilisesiSüryani Kadim Meryem AnaAyazma",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "yesilyurt",
+      "name": "Yeşilyurt",
+      "district": "",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Ayastefenos Feneri",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "bakirkoy",
+      "name": "Bakırköy",
+      "district": "",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [
+        "YHT"
+      ],
+      "notes": "Zuhurat Baba TürbesiHebdamon Sarayı ve SarnıcıResnelliler KöşküBakırköy Ruh ve Sinir Hastalıkları Hastanesi-Bizans KalıntılarıSurp Asdvadzadzin Ermeni KilisesiSakızağacı Mahallesi Tarihi EvlerFildamı SarnıcıMarkiköy Baruthanesi Su KulesiKamera Müzesi",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "kazlicesme",
+      "name": "Kazlıçeşme",
+      "district": "",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Soğanlı Bitkiler ParkıDerya-i Ali Baba TürbesiSurp Pırgiç Ermeni Hastanesi ve ÇevresiBalıklı Rum HastanesiKazlı ÇeşmeErikli Baba TekkesiYedikule Zindanları MüzesiYedi Şehitler Camii",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "sirkeci",
+      "name": "Sirkeci",
+      "district": "",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "ayrilikcesmesi",
+      "name": "Ayrılıkçeşmesi",
+      "district": "",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "M4 (Kadıköy-Tavşantepe Metro Hattı)Ayrılık ÇeşmesiRothko Art GalleryOsmanlı (Arap) MezarlığıHaydarpaşa Gar Binasıİbrahimağa Camii ve ÇeşmesiYeldeğirmeni Tarihi Evler, İlk Apartmanlar, Okullar, Camii Kilise ve SinagogHababam Sınıfı Müzesi",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "sogutlucesme",
+      "name": "Söğütlüçeşme",
+      "district": "",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [
+        "YHT"
+      ],
+      "notes": "Metrobüs HattıİBB Gazhane BinalarıFenerbahçe Parkı (Yarımadası) Harem KalıntılarıTarihi Ahşap EvlerKadıköy Boğa HeykeliOsmanağa ÇeşmesiOsmanağa CamiiBarış Manço MüzesiFenerbahçe Spor Kulübü Müzesi",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "feneryolu",
+      "name": "Feneryolu",
+      "district": "",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Haldun Taner Müze EviRecai Yahya Camii",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "erenkoy",
+      "name": "Erenköy",
+      "district": "",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Kazım Karabekir Paşa MüzesiErenköy İstasyon Çeşmesiİstanbul Oyuncak MüzesiArif Hikmet Paşa KöşküZihni Paşa CamiiErenköy Galip Paşa Camii",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "suadiye",
+      "name": "Suadiye",
+      "district": "",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Suadiye Camii",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "idealtepe",
+      "name": "İdealtepe",
+      "district": "",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Küçükyalı Karavan Parkı",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "sureyya_plaji",
+      "name": "Süreyya Plajı",
+      "district": "",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Bakireler Tapınağı",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "cevizli",
+      "name": "Cevizli",
+      "district": "",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Dragos Arkeolojik Kazı AlanıFeyzullah Efendi Camii ve Hamamı",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "atalar",
+      "name": "Atalar",
+      "district": "",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Dragos Arkeolojik Kazı Alanı",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "basak",
+      "name": "Başak",
+      "district": "",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "yunus",
+      "name": "Yunus",
+      "district": "",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "kaynarca",
+      "name": "Kaynarca",
+      "district": "",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "tersane",
+      "name": "Tersane",
+      "district": "",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Evliyaullah Tan Şeyh Kemikli Hz. TürbesiBotanik Park",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "guzelyali",
+      "name": "Güzelyalı",
+      "district": "",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Doğa Bilim Müzesi",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "aydintepe",
+      "name": "Aydıntepe",
+      "district": "",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Aydıntepe Köyü (Camii-Okul-Fırın)",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "icmeler",
+      "name": "İçmeler",
+      "district": "",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Tuzla Devlet Hastanesiİçmeler Kaplıcaları",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "tuzla",
+      "name": "Tuzla",
+      "district": "",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Antik Mendirek (Mercan)Kamil Abduş GölüTuzla Merkez Kentsel Arkeolojik Sitİntercity Otomobil MüzesiSultan I. Ahmet CamiiThedora Hamamı KalıntısıDavut Ağa ÇeşmesiKürekçioğlu Ali Ağa ÇeşmesiMercan Antik MendirekGlykeria KilisesiHagios Demetrios Su KuyusuManastır MevkiViaport MarinaDavutağa Camii",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "cayirova",
+      "name": "Çayırova",
+      "district": "",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Fatih’in Otağı (Fatih Sultan Mehmet’in Otağı)",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "fatih",
+      "name": "Fatih",
+      "district": "",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "osmangazi",
+      "name": "Osmangazi",
+      "district": "",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Darıca Hayvanat BahçesiBilişim VadisiOsmangazi Köprü Müzesi",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "darica",
+      "name": "Darıca",
+      "district": "",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Darıca Hayvanat BahçesiTarihi İskoliye Mektebi",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "gebze",
+      "name": "Gebze",
+      "district": "",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [
+        "YHT"
+      ],
+      "notes": "Osman Hamdi Bey Evi ve MüzesiEskihisar KalesiÇoban Mustafa Paşa KülliyesiHannibal’in MezarıTarihi Çarşı HamamıArapçeşme CamiiEskihisar Çeşmesi",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "zeytinburnu_bakirkoy",
+      "name": "Zeytinburnu (Bakırköy)",
+      "district": "",
+      "lines": [
+        "M1"
+      ],
+      "transfers": [],
+      "notes": "",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "yenimahalle_bagcilar",
+      "name": "Yenimahalle (Bağcılar)",
+      "district": "İETT Bus:92, 92B, 92K, 92Ş, 97G, 98D, 98K, HT13",
+      "lines": [
+        "M3"
+      ],
+      "transfers": [],
+      "notes": "",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "yenimahalle_bakirkoy",
+      "name": "Yenimahalle (Bakırköy)",
+      "district": "",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Veliefendi HipodromuYıkık İtalyan Köprüsü",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "goztepe_b1",
+      "name": "Göztepe (B1)",
+      "district": "",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Özgürlük Parkı / Filizi KöşkRıdvan Paşa Selamlık Köşkü",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "kucukyali_b1",
+      "name": "Küçükyalı (B1)",
+      "district": "",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Küçükyalı ArkeoparBryas SarayıSatyros Manastır",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "maltepe_b1",
+      "name": "Maltepe (B1)",
+      "district": "",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "kartal_b1",
+      "name": "Kartal (B1)",
+      "district": "",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Surp Nisan Ermeni KilisesiTarihi Şifa HamamıKartal Belediyesi Masal Müzesi",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "pendik_b1",
+      "name": "Pendik (B1)",
+      "district": "",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [
+        "YHT"
+      ],
+      "notes": "İDO (İstanbul Deniz Otobüsleri)Burla Biraderler Korusu-Latin KilisesiBizans MezarlığıSultan KonağıAydos Kalesi",
       "type": null,
       "isInterchange": false
     }
@@ -2005,7 +2419,7 @@
           "terazidere",
           "davutpasaytu",
           "merter",
-          "zeytinburnu",
+          "zeytinburnu_bakirkoy",
           "bakirkoy_incirli",
           "bahcelievler",
           "atakoy_sirinevler",
@@ -2066,7 +2480,7 @@
         "yildiztepe",
         "molla_gurani",
         "kirazli",
-        "yenimahalle",
+        "yenimahalle_bagcilar",
         "mahmutbey",
         "istoc",
         "ikitelli_sanayi",
@@ -2094,7 +2508,7 @@
         "goztepe",
         "yenisahra",
         "kozyatagi",
-        "bostanci",
+        "bostanci_kadikoy",
         "kucukyali",
         "maltepe",
         "huzurevi",
@@ -2191,7 +2605,7 @@
       "color": "#407BBF",
       "type": "Metro",
       "stations": [
-        "bostanci",
+        "bostanci_maltepe",
         "emin_ali_pasa",
         "aysekadin",
         "kozyatagi",
@@ -2247,6 +2661,58 @@
         "kargo_terminalicargo_terminal",
         "tasoluk",
         "arnavutkoy_hastane"
+      ],
+      "branches": {}
+    },
+    {
+      "id": "MARMARAY",
+      "name": "Marmaray",
+      "color": "#CCCCCC",
+      "type": "Metro",
+      "stations": [
+        "halkali",
+        "mustafa_kemal",
+        "kucukcekmece",
+        "florya",
+        "florya_akvaryum",
+        "yesilkoy",
+        "yesilyurt",
+        "atakoy",
+        "bakirkoy",
+        "yenimahalle_bakirkoy",
+        "zeytinburnu",
+        "kazlicesme",
+        "yenikapi",
+        "sirkeci",
+        "uskudar",
+        "ayrilikcesmesi",
+        "sogutlucesme",
+        "feneryolu",
+        "goztepe_b1",
+        "erenkoy",
+        "suadiye",
+        "bostanci_maltepe",
+        "kucukyali_b1",
+        "idealtepe",
+        "sureyya_plaji",
+        "maltepe_b1",
+        "cevizli",
+        "atalar",
+        "basak",
+        "kartal_b1",
+        "yunus",
+        "pendik_b1",
+        "kaynarca",
+        "tersane",
+        "guzelyali",
+        "aydintepe",
+        "icmeler",
+        "tuzla",
+        "cayirova",
+        "fatih",
+        "osmangazi",
+        "darica",
+        "gebze"
       ],
       "branches": {}
     }
