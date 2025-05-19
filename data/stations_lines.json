@@ -541,16 +541,6 @@
       "isInterchange": false
     },
     {
-      "id": "yenimahalle",
-      "name": "Yenimahalle",
-      "district": "İETT Bus:92, 92B, 92K, 92Ş, 97G, 98D, 98K, HT13",
-      "lines": [],
-      "transfers": [],
-      "notes": "Veliefendi HipodromuYıkık İtalyan Köprüsü",
-      "type": null,
-      "isInterchange": false
-    },
-    {
       "id": "mahmutbey",
       "name": "Mahmutbey",
       "district": "İETT Bus:141K, 141M, 144M, 89C, 89T, 91E, 97E, 97GE, 97M, 98A, 98M, H-1, HT10",
@@ -707,12 +697,13 @@
       "name": "Ayrılık Çeşmesi",
       "district": "",
       "lines": [
-        "M4"
+        "M4",
+        "MARMARAY"
       ],
       "transfers": [
         "MARMARAY"
       ],
-      "notes": "",
+      "notes": "Spelled as \"Ayrılıkçeşmesi\" on tcddtasimacilik.gov.tr, M4 (Kadıköy-Tavşantepe Metro Hattı)Ayrılık ÇeşmesiRothko Art GalleryOsmanlı (Arap) MezarlığıHaydarpaşa Gar Binasıİbrahimağa Camii ve ÇeşmesiYeldeğirmeni Tarihi Evler, İlk Apartmanlar, Okullar, Camii Kilise ve SinagogHababam Sınıfı Müzesi",
       "type": null,
       "isInterchange": true
     },
@@ -2031,18 +2022,6 @@
       "isInterchange": false
     },
     {
-      "id": "ayrilikcesmesi",
-      "name": "Ayrılıkçeşmesi",
-      "district": "",
-      "lines": [
-        "MARMARAY"
-      ],
-      "transfers": [],
-      "notes": "M4 (Kadıköy-Tavşantepe Metro Hattı)Ayrılık ÇeşmesiRothko Art GalleryOsmanlı (Arap) MezarlığıHaydarpaşa Gar Binasıİbrahimağa Camii ve ÇeşmesiYeldeğirmeni Tarihi Evler, İlk Apartmanlar, Okullar, Camii Kilise ve SinagogHababam Sınıfı Müzesi",
-      "type": null,
-      "isInterchange": false
-    },
-    {
       "id": "sogutlucesme",
       "name": "Söğütlüçeşme",
       "district": "",
@@ -2323,8 +2302,8 @@
       "isInterchange": false
     },
     {
-      "id": "yenimahalle_bakirkoy",
-      "name": "Yenimahalle (Bakırköy)",
+      "id": "yenimahalle_b1",
+      "name": "Yenimahalle (B1)",
       "district": "",
       "lines": [
         "MARMARAY"
@@ -2679,13 +2658,13 @@
         "yesilyurt",
         "atakoy",
         "bakirkoy",
-        "yenimahalle_bakirkoy",
+        "yenimahalle_b1",
         "zeytinburnu",
         "kazlicesme",
         "yenikapi",
         "sirkeci",
         "uskudar",
-        "ayrilikcesmesi",
+        "ayrilik_cesmesi",
         "sogutlucesme",
         "feneryolu",
         "goztepe_b1",
