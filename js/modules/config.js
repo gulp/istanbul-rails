@@ -23,9 +23,12 @@ export const ORIGINAL_LAYOUT_ID = 'original_unified';
 
 // --- UNDERLAY IMAGE CONFIGURATION ---
 export const UNDERLAY_IMAGE_URL = 'assets/map-underlay.png';
-export const IMAGE_ACTUAL_WIDTH = 3279; 
-export const IMAGE_ACTUAL_HEIGHT = 2064; 
+export const IMAGE_ACTUAL_WIDTH = 3306; 
+export const IMAGE_ACTUAL_HEIGHT = IMAGE_ACTUAL_WIDTH / 1.58; // divided by aspect ratio
 
+
+
+// Manual pixel offsets to nudge the underlay image for perfect alignment.
 // Manual pixel offsets to nudge the underlay image for perfect alignment.
 // Positive MANUAL_OFFSET_X shifts image to the LEFT relative to the Cytoscape drawing
 // Positive MANUAL_OFFSET_Y shifts image UP relative to the Cytoscape drawing
