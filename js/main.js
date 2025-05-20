@@ -9,12 +9,41 @@ let tramData = {};
 let figmaCoordinates = {};
 let globalLineColors = {};
 
+// --- START LABEL POSITIONING ---
+const LABEL_POSITIONS = {
+  'T':  { valign: 'top',    halign: 'center', marginX: 0,  marginY: -12 },
+  'TR': { valign: 'top',    halign: 'right',  marginX: 8,  marginY: -8  },
+  'R':  { valign: 'center', halign: 'right',  marginX: 12, marginY: 0   },
+  'BR': { valign: 'bottom', halign: 'right',  marginX: 8,  marginY: 8   },
+  'B':  { valign: 'bottom', halign: 'center', marginX: 0,  marginY: 12  },
+  'BL': { valign: 'bottom', halign: 'left',   marginX: -8, marginY: 8   },
+  'L':  { valign: 'center', halign: 'left',   marginX: -12,marginY: 0   },
+  'TL': { valign: 'top',    halign: 'left',   marginX: -8, marginY: -8  },
+  'C':  { valign: 'center', halign: 'center', marginX: 0,  marginY: 0   }
+};
+const LABEL_POSITION_KEYS = Object.keys(LABEL_POSITIONS); // ['T', 'TR', ...]
+let stationLabelPositions = {}; // { stationId: 'TR' }
+let selectedNodeForLabeling = null;
+
+function applyLabelPosition(node, positionKey) {
+  const pos = LABEL_POSITIONS[positionKey] || LABEL_POSITIONS['C']; // Default to Center if key is invalid
+  node.style({
+    'text-valign': pos.valign,
+    'text-halign': pos.halign,
+    'text-margin-x': pos.marginX,
+    'text-margin-y': pos.marginY
+  });
+  node.data('labelPosition', positionKey); // Store the key on the node
+  stationLabelPositions[node.id()] = positionKey; // Update our external tracking
+}
+// --- END LABEL POSITIONING ---
+ 
 const RECT_WIDTH = 8;
 const RECT_HEIGHT = 8;
-
+ 
 let allElements = [];
 let cy; // Declare cy here to be accessible in createElementsFromDataset if needed for merging
-
+ 
 // --- START VERSIONING SYSTEM ---
 const SAVED_VERSIONS_KEY = 'cytoscapeSavedLayoutVersions';
 const ORIGINAL_LAYOUT_ID = 'original'; // Identifier for the initial/default layout
@@ -291,9 +320,13 @@ Promise.all([
   fetch('../data/tram_data.json').then(response => response.json()),
   fetch('../data/funicular_data.json').then(response => response.json()),
   fetch('../data/figma_coordinates.json').then(response => response.json()),
-  fetch('../data/colors.json').then(response => response.json())
+  fetch('../data/colors.json').then(response => response.json()),
+  fetch('../data/label_pos.json') // Load label positions
+    .then(response => response.ok ? response.json() : {})
+    .catch(() => ({}))
 ])
-.then(([metroJson, tramJson, funicularJson, figmaCoordsData, colorsJson]) => {
+.then(([metroJson, tramJson, funicularJson, figmaCoordsData, colorsJson, labelPosData]) => { // Added labelPosData
+  stationLabelPositions = labelPosData || {}; // Initialize with loaded data
   metroData = metroJson;
   tramData = tramJson;
   funicularData = funicularJson;
@@ -361,9 +394,16 @@ Promise.all([
       { selector: 'node', style: {
           'background-color': '#888', 
           'label': 'data(name)',
-          'font-size': '10px', 'text-valign': 'bottom', 'text-halign': 'center',
-          'text-margin-y': '3px', 'width': '8px', 'height': '8px',
+          'font-size': '10px',
+          // 'text-valign': 'bottom', // Default valign, will be overridden by applyLabelPosition
+          // 'text-halign': 'center', // Default halign, will be overridden by applyLabelPosition
+          // 'text-margin-y': '3px', // Default margin, will be overridden by applyLabelPosition
+          'width': '8px', 'height': '8px',
           'border-width': 1, 'border-color': '#555'
+      }},
+      { selector: 'node.label-editing', style: { // Added from feedback for visual cue
+          'border-color': '#f90',
+          'border-width': '3px'
       }},
       { selector: 'node[isInterchange="true"]', style: {
           'background-color': '#fff', 'border-color': '#000', 'border-width': 1.5,
@@ -384,6 +424,12 @@ Promise.all([
       fit: false, // Don't fit initially, we'll fit after exploding
       padding: 50
     }
+  });
+ 
+  // Apply initial label positions from label_pos.json or default
+  cy.nodes().forEach(node => {
+    const posKey = stationLabelPositions[node.id()];
+    applyLabelPosition(node, posKey || 'B'); // Default to Bottom
   });
 
   // Initialize Versioning UI elements (called after DOM is ready)
@@ -476,8 +522,69 @@ Promise.all([
         console.log(`Node ${evt.target.id()} moved. Version '${activeVersionId}' auto-saved.`);
       }
     });
-  }
+    // --- END VERSIONING DRAG LISTENER ---
 
+    // --- START LABEL POSITIONING EVENT LISTENERS ---
+    cy.on('tap', 'node', function(evt){
+      selectedNodeForLabeling = evt.target;
+      cy.nodes().removeClass('label-editing'); // Clear from others
+      selectedNodeForLabeling.addClass('label-editing');
+      const currentPosKey = selectedNodeForLabeling.data('labelPosition');
+      document.getElementById('current-label-pos-info').textContent =
+        `Selected: ${selectedNodeForLabeling.data('name')} (${selectedNodeForLabeling.id()}) | Pos: ${currentPosKey || 'Default (B)'}`;
+    });
+
+    cy.on('tap', function(evt){
+      if(evt.target === cy){ // Click on background
+        if (selectedNodeForLabeling) {
+          selectedNodeForLabeling.removeClass('label-editing');
+        }
+        selectedNodeForLabeling = null;
+        document.getElementById('current-label-pos-info').textContent = 'None';
+      }
+    });
+
+    document.addEventListener('keydown', function(event) {
+      if (!selectedNodeForLabeling) return;
+
+      const keyMap = {
+        'W': 'T', 'A': 'L', 'S': 'B', 'D': 'R',
+        'Q': 'TL', 'E': 'TR', 'Z': 'BL', 'C': 'BR', // Changed from your 'C' to 'X' for center
+        'X': 'C' // Using X for Center as it's less likely to conflict
+      };
+      const key = event.key.toUpperCase();
+      const newPosKey = keyMap[key];
+
+      if (newPosKey && LABEL_POSITIONS[newPosKey]) {
+        applyLabelPosition(selectedNodeForLabeling, newPosKey);
+         document.getElementById('current-label-pos-info').textContent =
+          `Selected: ${selectedNodeForLabeling.data('name')} (${selectedNodeForLabeling.id()}) | Pos: ${newPosKey}`;
+        event.preventDefault(); // Prevent default browser actions for these keys
+      }
+    });
+
+    // Save Button for Label Positions
+    const saveLabelsBtn = document.getElementById('save-labels-btn');
+    if (saveLabelsBtn) {
+        saveLabelsBtn.addEventListener('click', function() {
+            const jsonString = JSON.stringify(stationLabelPositions, null, 2);
+            const blob = new Blob([jsonString], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'label_pos.json';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            alert("Label positions saved as label_pos.json!");
+        });
+    } else {
+        console.error("Save Labels Button not found in the DOM.");
+    }
+    // --- END LABEL POSITIONING EVENT LISTENERS ---
+  }
+ 
   // STEP 5: "Explode" Unpositioned Nodes
   const unpositionedNodes = cy.nodes('[!hasFigmaCoord]');
   const positionedNodes = cy.nodes('[hasFigmaCoord]');

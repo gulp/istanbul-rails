@@ -35,3 +35,8 @@ width: 340px;
     font-size: 10px;
     line-height: 13px;
 }
+
+.cy-node.label-editing {
+  border-color: #f90;
+  border-width: 3px;
+}
