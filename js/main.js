@@ -56,7 +56,7 @@ function createElementsFromDataset(dataset, datasetType, nodesWithFigmaCoords, e
             existingNode.addClass(datasetType);
           }
           // Re-evaluating isInterchange on merged nodes
-          existingNode.data('isInterchange', (existingNode.data('lines') && existingNode.data('lines').length > 1) || (existingNode.data('transfers') && existingNode.data('transfers').length > 0) );
+          existingNode.data('isInterchange', (existingNode.data('lines') && existingNode.data('lines').length > 1) || (existingNode.data('transfers') && station.transfers.length > 0) );
       }
     }
   });
@@ -351,5 +351,90 @@ Promise.all([
   // Initial call to set visibility based on default checkbox states
   updateNetworkVisibility();
 
+  // Function to apply localized force-directed layout
+  function expandRegion(hubId) {
+    console.log("Expand region button clicked!"); // Debugging log
+    if (!cy) {
+      console.error("Cytoscape instance is not initialized."); // Debugging log
+      return;
+    }
+
+    let hub = cy.getElementById(hubId);
+    if (!hub || hub.length === 0) {
+      console.warn(`Hub node with ID "${hubId}" not found.`); // Debugging log
+      return;
+    }
+
+    let regionNodes = hub.union(hub.neighborhood('node'));
+    console.log(`Number of nodes in region: ${regionNodes.length}`); // Debugging log
+
+    const nodeRepulsionSlider = document.getElementById('nodeRepulsion');
+    const nodeRepulsionValue = nodeRepulsionSlider.value;
+    const idealEdgeLengthSlider = document.getElementById('idealEdgeLength');
+    const idealEdgeLengthValue = idealEdgeLengthSlider.value;
+    const paddingSlider = document.getElementById('padding');
+    const paddingValue = paddingSlider.value;
+
+    regionNodes.layout({
+      name: 'fcose', // or cose
+      fit: false, // Don't fit this small layout to the whole screen
+      padding: paddingValue,
+      idealEdgeLength: idealEdgeLengthValue,
+      nodeRepulsion: nodeRepulsionValue,
+      animate: true,
+      boundingBox: hub.boundingBox() // Constrain layout to hub's bounding box
+    }).run();
+  }
+
+  // Update nodeRepulsionValue span on slider input
+  const nodeRepulsionSlider = document.getElementById('nodeRepulsion');
+  const nodeRepulsionValueSpan = document.getElementById('nodeRepulsionValue');
+  const idealEdgeLengthSlider = document.getElementById('idealEdgeLength');
+  const idealEdgeLengthValueSpan = document.getElementById('idealEdgeLengthValue');
+  const paddingSlider = document.getElementById('padding');
+  const paddingValueSpan = document.getElementById('paddingValue');
+
+  nodeRepulsionSlider.addEventListener('input', function() {
+    nodeRepulsionValueSpan.textContent = this.value;
+  });
+  idealEdgeLengthSlider.addEventListener('input', function() {
+    idealEdgeLengthValueSpan.textContent = this.value;
+  });
+  paddingSlider.addEventListener('input', function() {
+    paddingValueSpan.textContent = this.value;
+  });
+
+  // Function to reset the layout
+  function resetLayout() {
+    console.log("Reset layout button clicked!"); // Debugging log
+    if (!cy) {
+      console.error("Cytoscape instance is not initialized."); // Debugging log
+      return;
+    }
+
+    // Stop any running layouts
+    cy.stop();
+    cy.layout({
+      name: 'preset',
+      fit: false,
+      padding: 50
+    }).run();
+  }
+
+  // Get references to the buttons
+  const expandRegionButton = document.getElementById('expand-region');
+  const resetLayoutButton = document.getElementById('reset-layout');
+
+  // Add event listeners to the buttons
+  expandRegionButton.addEventListener('click', function() {
+    console.log("Expand region button event fired."); // Debugging log
+    // For now, hardcode the hub ID.  Ideally, this would come from user selection.
+    expandRegion('yenikapi'); // Example hub ID - CHANGED FROM M1
+  });
+
+  resetLayoutButton.addEventListener('click', function() {
+    console.log("Reset layout button event fired."); // Debugging log
+    resetLayout();
+  });
 })
 .catch(error => console.error("Error loading data:", error));

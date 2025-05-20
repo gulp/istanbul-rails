@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Istanbul Metro - Hub Expansion Prototype</title>
+  <script src="https://unpkg.com/cytoscape@3.28.1/dist/cytoscape.min.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    #controls {
+      padding: 10px;
+      background-color: #f0f0f0;
+      border-bottom: 1px solid #ccc;
+      text-align: center;
+      z-index: 10;
+    }
+
+    #cy {
+      flex-grow: 1;
+      /* Takes remaining height */
+      position: relative;
+    }
+
+    button {
+      margin: 5px;
+      padding: 8px 12px;
+    }
+
+    #station-info {
+      margin-top: 10px;
+      font-size: 12px;
+      max-height: 100px;
+      overflow-y: auto;
+      background: white;
+      padding: 5px;
+      border: 1px solid #ddd;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="controls">
+    Hub for Expansion: <select id="hub-select">
+      <option value="">-- Select a Hub --</option>
+    </select> |
+    Expansion Scale: <input type="number" id="expansion-scale" value="1.5" min="1.1" max="4" step="0.1">
+    <button id="expand-btn">Expand Selected Hub Grid</button>
+    <button id="reset-btn">Reset All Positions</button>
+    <div id="station-info">Click a station...</div>
+  </div>
+  <div id="cy"></div>
+
+  <script src="js/expand.js"></script>
+</body>
+
+</html>

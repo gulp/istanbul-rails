@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Istanbul Metro - Hub Expansion Prototype</title>
+<script src="https://unpkg.com/cytoscape@3.28.1/dist/cytoscape.min.js"></script>
+<style>
+  body { font-family: sans-serif; margin: 0; display: flex; flex-direction: column; height: 100vh; }
+  #controls { padding: 10px; background-color: #f0f0f0; border-bottom: 1px solid #ccc; text-align: center; z-index: 10; }
+  #cy { flex-grow: 1; /* Takes remaining height */ position: relative; }
+  button { margin: 5px; padding: 8px 12px; }
+  #station-info { margin-top: 10px; font-size:12px; max-height: 100px; overflow-y:auto; background: white; padding: 5px; border: 1px solid #ddd;}
+</style>
+</head>
+<body>
+
+  <div id="controls">
+    Hub for Expansion: <select id="hub-select"><option value="">-- Select a Hub --</option></select> |
+    Expansion Scale: <input type="number" id="expansion-scale" value="1.5" min="1.1" max="4" step="0.1">
+    <button id="expand-btn">Expand Selected Hub Grid</button>
+    <button id="reset-btn">Reset All Positions</button>
+    <div id="station-info">Click a station...</div>
+  </div>
+  <div id="cy"></div>
+
+<script>
+  let cy;
+  let richData = {};
+  let figmaCoordinates = {};
+  let originalPositions = {}; 
+
+  const DEFAULT_GRID_STEP = 50; 
+  let currentHubId = null;
+  const RECT_WIDTH = 0; 
+  const RECT_HEIGHT = 0;
+
+  function isHub(station) {
+    const linesCount = station.lines ? station.lines.length : 0;
+    const railTransfers = station.transfers ? station.transfers.filter(t => t.match(/^[MTFB]/) || t === "MARMARAY" || t === "METROBUS").length : 0;
+    const knownHubIds = ['yenikapi', 'taksim', 'sisli_mecidiyekoy', 'levent', 'uskudar', 'ayrilik_cesmesi', 'otogar', 'kirazli', 'mecidiyekoy', 'gayrettepe', 'kadikoy', 'zeytinburnu_bakirkoy', 'bakirkoy_incirli', 'mahmutbey', 'kagithane'];
+    if (knownHubIds.includes(station.id)) return true;
+    return (linesCount >= 3) || (linesCount >=2 && railTransfers >=1) || (railTransfers >= 2);
+  }
+
+  Promise.all([
+    fetch('data/metro_data.json').then(response => response.json()), 
+    fetch('data/figma_coordinates.json').then(response => response.json()) 
+  ])
+  .then(([metroData, figmaCoordsData]) => {
+    richData = metroData;
+    figmaCoordinates = figmaCoordsData;
+
+    const nodesWithFigmaCoords = new Set();
+    const elements = [];
+    const stationNodeIds = new Set(); 
+
+    richData.stations.forEach(station => {
+      if (stationNodeIds.has(station.id)) return; 
+
+      const hasFigma = figmaCoordinates[station.id] !== undefined;
+      let figmaX, figmaY, figmaFill;
+
+      if (hasFigma) {
+        figmaX = figmaCoordinates[station.id].x + RECT_WIDTH / 2;
+        figmaY = figmaCoordinates[station.id].y + RECT_HEIGHT / 2;
+        figmaFill = figmaCoordinates[station.id].figmaFill;
+        nodesWithFigmaCoords.add(station.id);
+        originalPositions[station.id] = { x: figmaX, y: figmaY }; 
+      } else {
+        originalPositions[station.id] = undefined; 
+      }
+      
+      const stationIsHub = isHub(station);
+
+      elements.push({
+        group: 'nodes',
+        data: {
+          id: station.id,
+          name: station.name || station.id, 
+          isInterchange: station.isInterchange || stationIsHub, 
+          figmaColor: figmaFill,
+          hasFigmaCoord: hasFigma, // This is the boolean flag
+          isHub: stationIsHub, 
+          lines: station.lines || [],
+          originalX: hasFigma ? figmaX : undefined, 
+          originalY: hasFigma ? figmaY : undefined
+        },
+        position: hasFigma ? { x: figmaX, y: figmaY } : undefined
+      });
+      stationNodeIds.add(station.id);
+    });
+
+    richData.lines.forEach(line => {
+      function addEdgesForStationList(stations, branchName = null, lineId, lineColor) {
+        for (let i = 0; i < stations.length - 1; i++) {
+          const source = stations[i];
+          const target = stations[i+1];
+          if (stationNodeIds.has(source) && stationNodeIds.has(target)) {
+            elements.push({
+              group: 'edges',
+              data: {
+                id: `edge-${lineId}-${branchName ? branchName + '-' : ''}${source}-${target}`,
+                source: source,
+                target: target,
+                lineColor: lineColor || '#888888', 
+                lineId: lineId
+              }
+            });
+          } else {
+            console.warn(`Edge creation skipped for line ${lineId}: ${source} or ${target} not found in stationNodeIds`);
+          }
+        }
+      }
+      if (line.stations && line.stations.length > 0) {
+        addEdgesForStationList(line.stations, null, line.id, line.color);
+      }
+      if (line.branches) {
+        for (const branchKey in line.branches) {
+          if (line.branches[branchKey] && line.branches[branchKey].length > 0) {
+            addEdgesForStationList(line.branches[branchKey], branchKey, line.id, line.color);
+          }
+        }
+      }
+    });
+
+    cy = cytoscape({
+      container: document.getElementById('cy'),
+      elements: elements,
+      style: [
+        { selector: 'node', style: {
+            'label': 'data(name)', 'width': 10, 'height': 10, 
+            'font-size': '8px', 'text-valign':'bottom', 'text-halign':'center', 
+            'text-margin-y': '2px', 'background-color': '#aaa',
+            'border-color': '#666', 'border-width': 1
+        }},
+        { selector: 'node[?figmaColor]', style: { 'background-color': 'data(figmaColor)'}},
+        { selector: 'node[isInterchange="true"]', style: { 
+            'background-color': '#fff', 'border-color': 'black', 'width': 14, 'height': 14, 'border-width': 1.5
+        }},
+        { selector: 'node[?isHub]', style: { 
+             'shape': 'diamond', 'width': 18, 'height': 18, 'background-color': 'gold', 'border-color': 'orange'
+        }},
+        { selector: 'edge', style: { 
+            'width': 2.5, 'line-color': 'data(lineColor)', 
+            'curve-style': 'bezier', 
+            'opacity': 0.7 
+        }}
+      ],
+      layout: {
+        name: 'preset',
+        fit: false, 
+        padding: 50
+      }
+    });
+
+    const hubSelect = document.getElementById('hub-select');
+    cy.nodes('[?isHub]').sort((a,b) => (a.data('name') || '').localeCompare(b.data('name') || '') ).forEach(hubNode => { // Added fallback for name
+        const option = document.createElement('option');
+        option.value = hubNode.id();
+        option.textContent = hubNode.data('name');
+        hubSelect.appendChild(option);
+    });
+    
+    cy.nodes().forEach(node => {
+        if (!originalPositions[node.id()] && node.data('hasFigmaCoord') === false) { 
+            originalPositions[node.id()] = { ...node.position() }; 
+        } else if (!originalPositions[node.id()] && node.data('hasFigmaCoord') === true) {
+             originalPositions[node.id()] = { x: node.data('originalX'), y: node.data('originalY') };
+        }
+    });
+
+    // --- CORRECTED SELECTORS ---
+    const unpositionedNodes = cy.nodes('[!hasFigmaCoord]'); 
+    const positionedNodes = cy.nodes('[hasFigmaCoord]');
+    // --- END CORRECTION ---
+
+    if (unpositionedNodes.length > 0) {
+        console.log(`Found ${unpositionedNodes.length} unpositioned nodes. Applying a separate layout.`);
+        let bb = { x1: 0, y1: 0, w: 100, h: 100}; 
+        if (positionedNodes.length > 0) {
+            bb = positionedNodes.boundingBox();
+        } else {
+             console.warn("No positioned nodes found to base bounding box on. Unpositioned nodes might be placed at origin initially.");
+        }
+        const radius = Math.max(100, unpositionedNodes.length * 8);
+        const unpositionedLayoutOptions = {
+            name: 'circle',
+            fit: false,
+            padding: 30,
+            radius: radius,
+            startAngle: -Math.PI / 2,
+            boundingBox: { 
+                x1: bb.x1 + bb.w + radius + 50, 
+                y1: bb.y1, 
+                w: radius * 2, 
+                h: radius * 2
+            }
+        };
+        let layoutRun = unpositionedNodes.layout(unpositionedLayoutOptions);
+        layoutRun.pon('layoutstop', function(){
+            cy.animate({ fit: { eles: cy.elements(), padding: 50 } }, { duration: 500 });
+        });
+        layoutRun.run();
+    } else {
+        cy.fit(50); 
+    }
+
+    cy.on('tap', 'node', function(evt){
+      const node = evt.target;
+      document.getElementById('station-info').innerHTML = 
+        `ID: ${node.id()}<br>Name: ${node.data('name')}<br>Hub: ${node.data('isHub') ? 'Yes' : 'No'}<br>Lines: ${(node.data('lines')||[]).join(', ')}`;
+      if (node.data('isHub')) {
+        currentHubId = node.id();
+        hubSelect.value = currentHubId; 
+      }
+    });
+    hubSelect.addEventListener('change', (event) => {
+        currentHubId = event.target.value;
+    });
+
+    document.getElementById('expand-btn').addEventListener('click', expandHubGrid);
+    document.getElementById('reset-btn').addEventListener('click', resetPositions);
+  })
+  .catch(error => console.error("Error loading or processing data:", error));
+
+  function expandHubGrid() {
+    const selectedHubIdFromDropdown = document.getElementById('hub-select').value;
+    if (!selectedHubIdFromDropdown) {
+      alert("Please select a hub from the dropdown.");
+      return;
+    }
+    currentHubId = selectedHubIdFromDropdown; 
+
+    const hubNode = cy.getElementById(currentHubId);
+    if (hubNode.empty()) {
+        console.error(`Hub node with ID ${currentHubId} not found.`);
+        return;
+    }
+
+    const expansionScale = parseFloat(document.getElementById('expansion-scale').value) || 1.5;
+    const expandedGridStep = DEFAULT_GRID_STEP * expansionScale;
+    const hubOriginalPos = originalPositions[hubNode.id()] || hubNode.position(); 
+    const neighbors = hubNode.neighborhood('node');
+
+    neighbors.forEach(neighborNode => {
+      const neighborId = neighborNode.id();
+      const originalNeighborPos = originalPositions[neighborId] || neighborNode.position();
+      const originalHubPosForThisNeighbor = originalPositions[hubNode.id()] || hubNode.position(); 
+
+      let dxOriginal = originalNeighborPos.x - originalHubPosForThisNeighbor.x;
+      let dyOriginal = originalNeighborPos.y - originalHubPosForThisNeighbor.y;
+
+      let angle = Math.atan2(dyOriginal, dxOriginal);
+      const piOver4 = Math.PI / 4;
+      let snappedAngle = Math.round(angle / piOver4) * piOver4;
+
+      let newX = hubOriginalPos.x + expandedGridStep * Math.cos(snappedAngle);
+      let newY = hubOriginalPos.y + expandedGridStep * Math.sin(snappedAngle);
+      
+      let attempt = 0;
+      const MIN_SEP_DIST = expandedGridStep * 0.3; 
+      while(isPositionTooClose(newX, newY, neighborNode, neighbors, MIN_SEP_DIST) && attempt < 16) { 
+          snappedAngle += piOver4 / (attempt < 8 ? 2 : 4) ; 
+          newX = hubOriginalPos.x + expandedGridStep * Math.cos(snappedAngle);
+          newY = hubOriginalPos.y + expandedGridStep * Math.sin(snappedAngle);
+          attempt++;
+      }
+
+      console.log(`Expanding ${neighborId} from ${currentHubId}: New Pos (${newX.toFixed(0)}, ${newY.toFixed(0)})`);
+      neighborNode.animate({
+        position: { x: newX, y: newY }
+      }, { duration: 300 });
+    });
+  }
+
+  function isPositionTooClose(x, y, currentNode, otherNodes, minDistance) {
+      for (let i = 0; i < otherNodes.length; i++) {
+          const otherNode = otherNodes[i];
+          if (otherNode.id() === currentNode.id()) continue;
+          const otherPos = otherNode.isMoving && otherNode.isMoving() ? otherNode.targetPosition() : otherNode.position();
+          if (!otherPos) continue; 
+          const dist = Math.sqrt(Math.pow(otherPos.x - x, 2) + Math.pow(otherPos.y - y, 2));
+          if (dist < minDistance) {
+              return true;
+          }
+      }
+      return false;
+  }
+
+  function resetPositions() {
+    cy.nodes().forEach(node => {
+      const originalPos = originalPositions[node.id()]; 
+      if (originalPos) { 
+        node.animate({
+          position: { x: originalPos.x, y: originalPos.y }
+        }, { duration: 300 });
+      } 
+    });
+    document.getElementById('hub-select').value = ""; 
+    currentHubId = null;
+    document.getElementById('station-info').innerHTML = "Click a station..."; 
+
+    // --- CORRECTED SELECTORS ---
+    const unpositionedNodes = cy.nodes('[!hasFigmaCoord]');
+    const positionedNodes = cy.nodes('[hasFigmaCoord]');
+    // --- END CORRECTION ---
+
+    if (unpositionedNodes.length > 0) {
+        let bb = positionedNodes.length > 0 ? positionedNodes.boundingBox() : { x1: 0, y1: 0, w: cy.width() / 2, h: cy.height() / 2 };
+        const radius = Math.max(100, unpositionedNodes.length * 8);
+        const layoutOptions = {
+            name: 'circle', fit: false, padding: 30, radius: radius, startAngle: -Math.PI / 2,
+            boundingBox: { x1: bb.x1 + bb.w + radius + 50, y1: bb.y1, w: radius * 2, h: radius * 2 }
+        };
+        let unpositionedLayout = unpositionedNodes.layout(layoutOptions);
+        unpositionedLayout.pon('layoutstop', () => cy.animate({ fit: { eles: cy.elements(), padding: 50 } }, { duration: 500 }));
+        unpositionedLayout.run();
+    } else {
+      cy.animate({ fit: { eles: cy.elements(), padding: 50 } }, { duration: 300 });
+    }
+  }
+</script>
+</body>
+</html>
