@@ -1915,8 +1915,8 @@
       "isInterchange": false
     },
     {
-      "id": "florya",
-      "name": "Florya",
+      "id": "florya_b1",
+      "name": "Florya (B1)",
       "lines": [
         "MARMARAY"
       ],
@@ -2624,7 +2624,7 @@
         "halkali",
         "mustafa_kemal",
         "kucukcekmece",
-        "florya",
+        "florya_b1",
         "florya_akvaryum",
         "yesilkoy",
         "yesilyurt",

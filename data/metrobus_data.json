@@ -1,0 +1,486 @@
+{
+  "stations": [
+    {
+      "id": "beylikduzu_sondurak",
+      "name": "Beylikdüzü Sondurak",
+      "lines": [],
+      "transfers": [],
+      "notes": "Western terminus. Near Beylikdüzü Life Valley Park.",
+      "district": "",
+      "type": null
+    },
+    {
+      "id": "beykent_tuyap_yonu",
+      "name": "Beykent / Tüyap Yönü",
+      "lines": [],
+      "transfers": [],
+      "notes": "Close to TÜYAP Fair & Congress Center.",
+      "district": "",
+      "type": null
+    },
+    {
+      "id": "cumhuriyet_mahallesi",
+      "name": "Cumhuriyet Mahallesi",
+      "lines": [],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": null
+    },
+    {
+      "id": "beylikduzu_belediyesi",
+      "name": "Beylikdüzü Belediyesi",
+      "lines": [],
+      "transfers": [],
+      "notes": "Beylikdüzü City Hall and public square nearby.",
+      "district": "",
+      "type": null
+    },
+    {
+      "id": "beylikduzu_tuyap_yonu",
+      "name": "Beylikdüzü / Tüyap Yönü",
+      "lines": [],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": null
+    },
+    {
+      "id": "guzelyurt",
+      "name": "Güzelyurt",
+      "lines": [],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": null
+    },
+    {
+      "id": "haramidere",
+      "name": "Haramidere",
+      "lines": [],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": null
+    },
+    {
+      "id": "haramidere_sanayi",
+      "name": "Haramidere Sanayi",
+      "lines": [],
+      "transfers": [],
+      "notes": "Industrial zone.",
+      "district": "",
+      "type": null
+    },
+    {
+      "id": "saadetdere_mahallesi",
+      "name": "Saadetdere Mahallesi",
+      "lines": [],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": null
+    },
+    {
+      "id": "mustafa_kemal_pasa",
+      "name": "Mustafa Kemal Paşa",
+      "lines": [],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": null
+    },
+    {
+      "id": "cihangir_univ_mahallesi",
+      "name": "Cihangir Üniv. Mahallesi",
+      "lines": [],
+      "transfers": [],
+      "notes": "Near Istanbul Esenyurt University campus.",
+      "district": "",
+      "type": null
+    },
+    {
+      "id": "avcilar_merkez_univ_kampusu",
+      "name": "Avcılar Merkez Üniv. Kampüsü",
+      "lines": [],
+      "transfers": [],
+      "notes": "Istanbul University–Avcılar Campus.",
+      "district": "",
+      "type": null
+    },
+    {
+      "id": "sukrubey",
+      "name": "Şükrübey",
+      "lines": [],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": null
+    },
+    {
+      "id": "ibb_sosyal_tesisleri",
+      "name": "İBB Sosyal Tesisleri",
+      "lines": [],
+      "transfers": [],
+      "notes": "Near Istanbul Metropolitan Municipality Social Facilities.",
+      "district": "",
+      "type": null
+    },
+    {
+      "id": "kucukcekmece",
+      "name": "Küçükçekmece",
+      "lines": [],
+      "transfers": [
+        "MARMARAY"
+      ],
+      "notes": "Lake Küçükçekmece; gateway to ancient Bathonea archaeological site (ongoing excavation).",
+      "district": "",
+      "type": null
+    },
+    {
+      "id": "cennet_mahallesi",
+      "name": "Cennet Mahallesi",
+      "lines": [],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": null
+    },
+    {
+      "id": "florya",
+      "name": "Florya",
+      "lines": [],
+      "transfers": [],
+      "notes": "Florya Atatürk Marine Mansion & Florya Beach.",
+      "district": "",
+      "type": null
+    },
+    {
+      "id": "besyol",
+      "name": "Beşyol",
+      "lines": [],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": null
+    },
+    {
+      "id": "sefakoy",
+      "name": "Sefaköy",
+      "lines": [],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": null
+    },
+    {
+      "id": "yenibosna",
+      "name": "Yenibosna",
+      "lines": [],
+      "transfers": [],
+      "notes": "Proximity to Istanbul World Trade Center & exhibition halls.",
+      "district": "",
+      "type": null
+    },
+    {
+      "id": "sirinevler",
+      "name": "Şirinevler",
+      "lines": [],
+      "transfers": [
+        "M1A"
+      ],
+      "notes": "Dense transfer hub; near local eateries & commercial streets.",
+      "district": "",
+      "type": null
+    },
+    {
+      "id": "bahcelievler",
+      "name": "Bahçelievler",
+      "lines": [],
+      "transfers": [
+        "M1A"
+      ],
+      "notes": "Residential heart of Istanbul; known for leafy streets and classic apartment blocks.",
+      "district": "",
+      "type": null
+    },
+    {
+      "id": "incirli",
+      "name": "İncirli",
+      "lines": [],
+      "transfers": [
+        "M1A",
+        "M3"
+      ],
+      "notes": "Close to Bakırköy shopping streets and hospitals.",
+      "district": "",
+      "type": null
+    },
+    {
+      "id": "zeytinburnu_bakirkoy",
+      "name": "Zeytinburnu (Bakırköy)",
+      "lines": [],
+      "transfers": [
+        "M1A",
+        "T1"
+      ],
+      "notes": "Near Panorama 1453 History Museum & historic city walls.",
+      "district": "",
+      "type": null
+    },
+    {
+      "id": "merter",
+      "name": "Merter",
+      "lines": [],
+      "transfers": [
+        "M1A"
+      ],
+      "notes": "Istanbul's textile wholesale district.",
+      "district": "",
+      "type": null
+    },
+    {
+      "id": "cevizlibag",
+      "name": "Cevizlibağ",
+      "lines": [],
+      "transfers": [
+        "T1"
+      ],
+      "notes": "Close to Istanbul University–Cerrahpaşa and medical campuses.",
+      "district": "",
+      "type": null
+    },
+    {
+      "id": "topkapi_metrobus",
+      "name": "Topkapı Metrobüs",
+      "lines": [],
+      "transfers": [
+        "T1",
+        "T4"
+      ],
+      "notes": "Topkapı city walls, Mihrimah Sultan Mosque (Mimar Sinan).",
+      "district": "",
+      "type": null
+    },
+    {
+      "id": "bayrampasa_maltepe_metrobus",
+      "name": "Bayrampaşa–Maltepe (Metrobüs)",
+      "lines": [],
+      "transfers": [],
+      "notes": "Near Istanbul Bus Terminal (Esenler Otogar) via short ride.",
+      "district": "",
+      "type": null
+    },
+    {
+      "id": "edirnekapi_metrobus",
+      "name": "Edirnekapı (Metrobüs)",
+      "lines": [],
+      "transfers": [
+        "T4"
+      ],
+      "notes": "Chora Church (Kariye Mosque), Tekfur Palace, historic land walls.",
+      "district": "",
+      "type": null
+    },
+    {
+      "id": "ayvansaray_eyup_sultan",
+      "name": "Ayvansaray–Eyüp Sultan",
+      "lines": [],
+      "transfers": [],
+      "notes": "Close to Eyüp Sultan Mosque, Pierre Loti Hill (via Eyüp cable car).",
+      "district": "",
+      "type": null
+    },
+    {
+      "id": "halicioglu",
+      "name": "Halıcıoğlu",
+      "lines": [],
+      "transfers": [],
+      "notes": "Views of the Golden Horn; former Ottoman slaughterhouses repurposed into museums.",
+      "district": "",
+      "type": null
+    },
+    {
+      "id": "okmeydani",
+      "name": "Okmeydanı",
+      "lines": [],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": null
+    },
+    {
+      "id": "darulaceze_perpa",
+      "name": "Darülaceze–Perpa",
+      "lines": [],
+      "transfers": [],
+      "notes": "Near Perpa Trade Center and historic Darülaceze hospice.",
+      "district": "",
+      "type": null
+    },
+    {
+      "id": "okmeydani_hastane",
+      "name": "Okmeydanı Hastane",
+      "lines": [],
+      "transfers": [],
+      "notes": "Okmeydanı State Hospital.",
+      "district": "",
+      "type": null
+    },
+    {
+      "id": "caglayan",
+      "name": "Çağlayan",
+      "lines": [],
+      "transfers": [],
+      "notes": "Istanbul Justice Palace (Caglayan Courthouse), Turkey's largest courthouse.",
+      "district": "",
+      "type": null
+    },
+    {
+      "id": "mecidiyekoy_metrobus",
+      "name": "Mecidiyeköy Metrobüs",
+      "lines": [],
+      "transfers": [
+        "M2",
+        "M7"
+      ],
+      "notes": "Business core. Access to Cevahir Mall and Istanbul TV towers.",
+      "district": "",
+      "type": null
+    },
+    {
+      "id": "zincirlikuyu",
+      "name": "Zincirlikuyu",
+      "lines": [],
+      "transfers": [
+        "M2"
+      ],
+      "notes": "High-rise offices, Kanyon and Zorlu shopping districts.",
+      "district": "",
+      "type": null
+    },
+    {
+      "id": "15_temmuz_sehitler_koprusu",
+      "name": "15 Temmuz Şehitler Köprüsü",
+      "lines": [],
+      "transfers": [],
+      "notes": "Entrance to the July 15 Martyrs Bridge; Bosphorus view.",
+      "district": "",
+      "type": null
+    },
+    {
+      "id": "burhaniye",
+      "name": "Burhaniye",
+      "lines": [],
+      "transfers": [],
+      "notes": "Quiet residential area with historical mosques.",
+      "district": "",
+      "type": null
+    },
+    {
+      "id": "altunizade",
+      "name": "Altunizade",
+      "lines": [],
+      "transfers": [
+        "M5"
+      ],
+      "notes": "Capitol Mall, Altunizade Mosque, access to Üsküdar–Beykoz axis.",
+      "district": "",
+      "type": null
+    },
+    {
+      "id": "acibadem_metrobus",
+      "name": "Acıbadem (Metrobüs)",
+      "lines": [],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": null
+    },
+    {
+      "id": "uzuncayir",
+      "name": "Uzunçayır",
+      "lines": [],
+      "transfers": [
+        "M4"
+      ],
+      "notes": "Kadıköy Anadolu Lisesi; major transfer point for Asian side access.",
+      "district": "",
+      "type": null
+    },
+    {
+      "id": "fikirtepe",
+      "name": "Fikirtepe",
+      "lines": [],
+      "transfers": [],
+      "notes": "Urban transformation zone; formerly historic workers' neighborhood.",
+      "district": "",
+      "type": null
+    },
+    {
+      "id": "sogutlucesme",
+      "name": "Söğütlüçeşme",
+      "lines": [],
+      "transfers": [
+        "MARMARAY"
+      ],
+      "notes": "Near Şükrü Saracoğlu Stadium (Fenerbahçe); Kadıköy center.",
+      "district": "",
+      "type": null
+    }
+  ],
+  "lines": [
+    {
+      "name": "Metrobüs",
+      "id": "METROBUS",
+      "type": "Metrobus",
+      "stations": [
+        "beylikduzu_sondurak",
+        "beykent_tuyap_yonu",
+        "cumhuriyet_mahallesi",
+        "beylikduzu_belediyesi",
+        "beylikduzu_tuyap_yonu",
+        "guzelyurt",
+        "haramidere",
+        "haramidere_sanayi",
+        "saadetdere_mahallesi",
+        "mustafa_kemal_pasa",
+        "cihangir_univ_mahallesi",
+        "avcilar_merkez_univ_kampusu",
+        "sukrubey",
+        "ibb_sosyal_tesisleri",
+        "kucukcekmece",
+        "cennet_mahallesi",
+        "florya",
+        "besyol",
+        "sefakoy",
+        "yenibosna",
+        "sirinevler",
+        "bahcelievler",
+        "incirli",
+        "zeytinburnu_bakirkoy",
+        "merter",
+        "cevizlibag",
+        "topkapi_metrobus",
+        "bayrampasa_maltepe_metrobus",
+        "edirnekapi_metrobus",
+        "ayvansaray_eyup_sultan",
+        "halicioglu",
+        "okmeydani",
+        "darulaceze_perpa",
+        "okmeydani_hastane",
+        "caglayan",
+        "mecidiyekoy_metrobus",
+        "zincirlikuyu",
+        "15_temmuz_sehitler_koprusu",
+        "burhaniye",
+        "altunizade",
+        "acibadem_metrobus",
+        "uzuncayir",
+        "fikirtepe",
+        "sogutlucesme"
+      ],
+      "branches": {}
+    }
+  ]
+}

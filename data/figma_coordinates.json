@@ -1448,5 +1448,225 @@
     "x": 1628.0,
     "y": 831.0,
     "figmaFill": "#4E4A38"
+  },
+  "sogutlucesme_2": {
+    "x": 1787.0,
+    "y": 1388.0,
+    "figmaFill": "#807B55"
+  },
+  "fikirtepe": {
+    "x": 1822.0,
+    "y": 1355.0,
+    "figmaFill": "#807B55"
+  },
+  "uzuncayir": {
+    "x": 1857.0,
+    "y": 1309.0,
+    "figmaFill": "#807B55"
+  },
+  "acibadem_metrobus": {
+    "x": 1857.0,
+    "y": 1215.0,
+    "figmaFill": "#807B55"
+  },
+  "altunizade_2": {
+    "x": 1791.0,
+    "y": 1078.0,
+    "figmaFill": "#807B55"
+  },
+  "burhaniye": {
+    "x": 1791.0,
+    "y": 991.0,
+    "figmaFill": "#807B55"
+  },
+  "15_temmuz_sehitler_koprusu": {
+    "x": 1725.0,
+    "y": 906.0,
+    "figmaFill": "#807B55"
+  },
+  "zincirlikuyu": {
+    "x": 1476.0,
+    "y": 906.0,
+    "figmaFill": "#807B55"
+  },
+  "mecidiyekoy_metrobus": {
+    "x": 1430.0,
+    "y": 938.0,
+    "figmaFill": "#807B55"
+  },
+  "caglayan_2": {
+    "x": 1409.0,
+    "y": 958.0,
+    "figmaFill": "#807B55"
+  },
+  "okmeydani_hastane": {
+    "x": 1398.0,
+    "y": 991.0,
+    "figmaFill": "#807B55"
+  },
+  "darulaceze_perpa": {
+    "x": 1398.0,
+    "y": 1030.0,
+    "figmaFill": "#807B55"
+  },
+  "okmeydani": {
+    "x": 1379.0,
+    "y": 1065.0,
+    "figmaFill": "#807B55"
+  },
+  "halicioglu": {
+    "x": 1344.0,
+    "y": 1098.0,
+    "figmaFill": "#807B55"
+  },
+  "ayvansaray_eyup_sultan": {
+    "x": 1290.0,
+    "y": 1153.0,
+    "figmaFill": "#807B55"
+  },
+  "edirnekapi_metrobus": {
+    "x": 1232.0,
+    "y": 1209.0,
+    "figmaFill": "#807B55"
+  },
+  "bayrampasa_maltepe_metrobus": {
+    "x": 1153.0,
+    "y": 1290.0,
+    "figmaFill": "#807B55"
+  },
+  "topkapi_metrobus": {
+    "x": 1114.0,
+    "y": 1331.0,
+    "figmaFill": "#807B55"
+  },
+  "cevizlibag": {
+    "x": 1082.0,
+    "y": 1350.0,
+    "figmaFill": "#807B55"
+  },
+  "merter_2": {
+    "x": 966.0,
+    "y": 1274.0,
+    "figmaFill": "#807B55"
+  },
+  "zeytinburnu_3": {
+    "x": 932.0,
+    "y": 1307.0,
+    "figmaFill": "#807B55"
+  },
+  "incirli_2": {
+    "x": 905.0,
+    "y": 1350.0,
+    "figmaFill": "#807B55"
+  },
+  "bahcelievler_2": {
+    "x": 905.0,
+    "y": 1401.0,
+    "figmaFill": "#807B55"
+  },
+  "sirinevler": {
+    "x": 829.0,
+    "y": 1405.0,
+    "figmaFill": "#807B55"
+  },
+  "yenibosna_3": {
+    "x": 783.0,
+    "y": 1405.0,
+    "figmaFill": "#807B55"
+  },
+  "sefakoy": {
+    "x": 683.0,
+    "y": 1405.0,
+    "figmaFill": "#807B55"
+  },
+  "besyol": {
+    "x": 626.0,
+    "y": 1405.0,
+    "figmaFill": "#807B55"
+  },
+  "florya_b1": {
+    "x": 569.0,
+    "y": 1405.0,
+    "figmaFill": "#807B55"
+  },
+  "cennet_mahallesi": {
+    "x": 512.0,
+    "y": 1405.0,
+    "figmaFill": "#807B55"
+  },
+  "kucukcekmece_2": {
+    "x": 441.0,
+    "y": 1405.0,
+    "figmaFill": "#807B55"
+  },
+  "ibb_sosyal_tesisleri": {
+    "x": 410.0,
+    "y": 1405.0,
+    "figmaFill": "#807B55"
+  },
+  "sukrubey": {
+    "x": 379.0,
+    "y": 1405.0,
+    "figmaFill": "#807B55"
+  },
+  "avcilar_merkez_univ_kampusu": {
+    "x": 348.0,
+    "y": 1405.0,
+    "figmaFill": "#807B55"
+  },
+  "cihangir_univ_mahallesi": {
+    "x": 317.0,
+    "y": 1405.0,
+    "figmaFill": "#807B55"
+  },
+  "mustafa_kemal_pasa": {
+    "x": 282.0,
+    "y": 1401.0,
+    "figmaFill": "#807B55"
+  },
+  "saadetdere_mahallesi": {
+    "x": 258.0,
+    "y": 1381.0,
+    "figmaFill": "#807B55"
+  },
+  "haramidere_sanayi": {
+    "x": 237.0,
+    "y": 1358.0,
+    "figmaFill": "#807B55"
+  },
+  "haramidere": {
+    "x": 216.0,
+    "y": 1338.0,
+    "figmaFill": "#807B55"
+  },
+  "guzelyurt": {
+    "x": 193.0,
+    "y": 1314.0,
+    "figmaFill": "#807B55"
+  },
+  "beylikduzu_tuyap_yonu": {
+    "x": 170.0,
+    "y": 1290.0,
+    "figmaFill": "#807B55"
+  },
+  "beylikduzu_belediyesi": {
+    "x": 147.0,
+    "y": 1266.0,
+    "figmaFill": "#807B55"
+  },
+  "cumhuriyet_mahallesi": {
+    "x": 141.0,
+    "y": 1232.0,
+    "figmaFill": "#807B55"
+  },
+  "beykent_tuyap_yonu": {
+    "x": 141.0,
+    "y": 1206.0,
+    "figmaFill": "#807B55"
+  },
+  "beylikduzu_sondurak": {
+    "x": 141.0,
+    "y": 1180.0,
+    "figmaFill": "#807B55"
   }
 }

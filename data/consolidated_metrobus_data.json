@@ -1,0 +1,618 @@
+{
+  "stations": [
+    {
+      "id": "beylikduzu_sondurak",
+      "name": "Beylikdüzü Sondurak",
+      "lines": [
+        "METROBUS"
+      ],
+      "transfers": [],
+      "notes": "Western terminus. Near Beylikdüzü Life Valley Park.",
+      "district": "",
+      "type": "Metrobus Station",
+      "isInterchange": false
+    },
+    {
+      "id": "beykent_tuyap_yonu",
+      "name": "Beykent / Tüyap Yönü",
+      "lines": [
+        "METROBUS"
+      ],
+      "transfers": [],
+      "notes": "Close to TÜYAP Fair & Congress Center.",
+      "district": "",
+      "type": "Metrobus Station",
+      "isInterchange": false
+    },
+    {
+      "id": "cumhuriyet_mahallesi",
+      "name": "Cumhuriyet Mahallesi",
+      "lines": [
+        "METROBUS"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metrobus Station",
+      "isInterchange": false
+    },
+    {
+      "id": "beylikduzu_belediyesi",
+      "name": "Beylikdüzü Belediyesi",
+      "lines": [
+        "METROBUS"
+      ],
+      "transfers": [],
+      "notes": "Beylikdüzü City Hall and public square nearby.",
+      "district": "",
+      "type": "Metrobus Station",
+      "isInterchange": false
+    },
+    {
+      "id": "beylikduzu_tuyap_yonu",
+      "name": "Beylikdüzü / Tüyap Yönü",
+      "lines": [
+        "METROBUS"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metrobus Station",
+      "isInterchange": false
+    },
+    {
+      "id": "guzelyurt",
+      "name": "Güzelyurt",
+      "lines": [
+        "METROBUS"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metrobus Station",
+      "isInterchange": false
+    },
+    {
+      "id": "haramidere",
+      "name": "Haramidere",
+      "lines": [
+        "METROBUS"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metrobus Station",
+      "isInterchange": false
+    },
+    {
+      "id": "haramidere_sanayi",
+      "name": "Haramidere Sanayi",
+      "lines": [
+        "METROBUS"
+      ],
+      "transfers": [],
+      "notes": "Industrial zone.",
+      "district": "",
+      "type": "Metrobus Station",
+      "isInterchange": false
+    },
+    {
+      "id": "saadetdere_mahallesi",
+      "name": "Saadetdere Mahallesi",
+      "lines": [
+        "METROBUS"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metrobus Station",
+      "isInterchange": false
+    },
+    {
+      "id": "mustafa_kemal_pasa",
+      "name": "Mustafa Kemal Paşa",
+      "lines": [
+        "METROBUS"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metrobus Station",
+      "isInterchange": false
+    },
+    {
+      "id": "cihangir_univ_mahallesi",
+      "name": "Cihangir Üniv. Mahallesi",
+      "lines": [
+        "METROBUS"
+      ],
+      "transfers": [],
+      "notes": "Near Istanbul Esenyurt University campus.",
+      "district": "",
+      "type": "Metrobus Station",
+      "isInterchange": false
+    },
+    {
+      "id": "avcilar_merkez_univ_kampusu",
+      "name": "Avcılar Merkez Üniv. Kampüsü",
+      "lines": [
+        "METROBUS"
+      ],
+      "transfers": [],
+      "notes": "Istanbul University–Avcılar Campus.",
+      "district": "",
+      "type": "Metrobus Station",
+      "isInterchange": false
+    },
+    {
+      "id": "sukrubey",
+      "name": "Şükrübey",
+      "lines": [
+        "METROBUS"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metrobus Station",
+      "isInterchange": false
+    },
+    {
+      "id": "ibb_sosyal_tesisleri",
+      "name": "İBB Sosyal Tesisleri",
+      "lines": [
+        "METROBUS"
+      ],
+      "transfers": [],
+      "notes": "Near Istanbul Metropolitan Municipality Social Facilities.",
+      "district": "",
+      "type": "Metrobus Station",
+      "isInterchange": false
+    },
+    {
+      "id": "kucukcekmece",
+      "name": "Küçükçekmece",
+      "lines": [
+        "METROBUS"
+      ],
+      "transfers": [
+        "MARMARAY"
+      ],
+      "notes": "Lake Küçükçekmece; gateway to ancient Bathonea archaeological site (ongoing excavation).",
+      "district": "",
+      "type": "Metrobus Station",
+      "isInterchange": false
+    },
+    {
+      "id": "cennet_mahallesi",
+      "name": "Cennet Mahallesi",
+      "lines": [
+        "METROBUS"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metrobus Station",
+      "isInterchange": false
+    },
+    {
+      "id": "florya",
+      "name": "Florya",
+      "lines": [
+        "METROBUS"
+      ],
+      "transfers": [],
+      "notes": "Florya Atatürk Marine Mansion & Florya Beach.",
+      "district": "",
+      "type": "Metrobus Station",
+      "isInterchange": false
+    },
+    {
+      "id": "besyol",
+      "name": "Beşyol",
+      "lines": [
+        "METROBUS"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metrobus Station",
+      "isInterchange": false
+    },
+    {
+      "id": "sefakoy",
+      "name": "Sefaköy",
+      "lines": [
+        "METROBUS"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metrobus Station",
+      "isInterchange": false
+    },
+    {
+      "id": "yenibosna",
+      "name": "Yenibosna",
+      "lines": [
+        "METROBUS"
+      ],
+      "transfers": [],
+      "notes": "Proximity to Istanbul World Trade Center & exhibition halls.",
+      "district": "",
+      "type": "Metrobus Station",
+      "isInterchange": false
+    },
+    {
+      "id": "sirinevler",
+      "name": "Şirinevler",
+      "lines": [
+        "METROBUS"
+      ],
+      "transfers": [
+        "M1A"
+      ],
+      "notes": "Dense transfer hub; near local eateries & commercial streets.",
+      "district": "",
+      "type": "Metrobus Station",
+      "isInterchange": false
+    },
+    {
+      "id": "bahcelievler",
+      "name": "Bahçelievler",
+      "lines": [
+        "METROBUS"
+      ],
+      "transfers": [
+        "M1A"
+      ],
+      "notes": "Residential heart of Istanbul; known for leafy streets and classic apartment blocks.",
+      "district": "",
+      "type": "Metrobus Station",
+      "isInterchange": false
+    },
+    {
+      "id": "incirli",
+      "name": "İncirli",
+      "lines": [
+        "METROBUS"
+      ],
+      "transfers": [
+        "M1A",
+        "M3"
+      ],
+      "notes": "Close to Bakırköy shopping streets and hospitals.",
+      "district": "",
+      "type": "Metrobus Station",
+      "isInterchange": false
+    },
+    {
+      "id": "zeytinburnu_bakirkoy",
+      "name": "Zeytinburnu (Bakırköy)",
+      "lines": [
+        "METROBUS"
+      ],
+      "transfers": [
+        "M1A",
+        "T1"
+      ],
+      "notes": "Near Panorama 1453 History Museum & historic city walls.",
+      "district": "",
+      "type": "Metrobus Station",
+      "isInterchange": false
+    },
+    {
+      "id": "merter",
+      "name": "Merter",
+      "lines": [
+        "METROBUS"
+      ],
+      "transfers": [
+        "M1A"
+      ],
+      "notes": "Istanbul's textile wholesale district.",
+      "district": "",
+      "type": "Metrobus Station",
+      "isInterchange": false
+    },
+    {
+      "id": "cevizlibag",
+      "name": "Cevizlibağ",
+      "lines": [
+        "METROBUS"
+      ],
+      "transfers": [
+        "T1"
+      ],
+      "notes": "Close to Istanbul University–Cerrahpaşa and medical campuses.",
+      "district": "",
+      "type": "Metrobus Station",
+      "isInterchange": false
+    },
+    {
+      "id": "topkapi_metrobus",
+      "name": "Topkapı Metrobüs",
+      "lines": [
+        "METROBUS"
+      ],
+      "transfers": [
+        "T1",
+        "T4"
+      ],
+      "notes": "Topkapı city walls, Mihrimah Sultan Mosque (Mimar Sinan).",
+      "district": "",
+      "type": "Metrobus Station",
+      "isInterchange": false
+    },
+    {
+      "id": "bayrampasa_maltepe_metrobus",
+      "name": "Bayrampaşa–Maltepe (Metrobüs)",
+      "lines": [
+        "METROBUS"
+      ],
+      "transfers": [],
+      "notes": "Near Istanbul Bus Terminal (Esenler Otogar) via short ride.",
+      "district": "",
+      "type": "Metrobus Station",
+      "isInterchange": false
+    },
+    {
+      "id": "edirnekapi_metrobus",
+      "name": "Edirnekapı (Metrobüs)",
+      "lines": [
+        "METROBUS"
+      ],
+      "transfers": [
+        "T4"
+      ],
+      "notes": "Chora Church (Kariye Mosque), Tekfur Palace, historic land walls.",
+      "district": "",
+      "type": "Metrobus Station",
+      "isInterchange": false
+    },
+    {
+      "id": "ayvansaray_eyup_sultan",
+      "name": "Ayvansaray–Eyüp Sultan",
+      "lines": [
+        "METROBUS"
+      ],
+      "transfers": [],
+      "notes": "Close to Eyüp Sultan Mosque, Pierre Loti Hill (via Eyüp cable car).",
+      "district": "",
+      "type": "Metrobus Station",
+      "isInterchange": false
+    },
+    {
+      "id": "halicioglu",
+      "name": "Halıcıoğlu",
+      "lines": [
+        "METROBUS"
+      ],
+      "transfers": [],
+      "notes": "Views of the Golden Horn; former Ottoman slaughterhouses repurposed into museums.",
+      "district": "",
+      "type": "Metrobus Station",
+      "isInterchange": false
+    },
+    {
+      "id": "okmeydani",
+      "name": "Okmeydanı",
+      "lines": [
+        "METROBUS"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metrobus Station",
+      "isInterchange": false
+    },
+    {
+      "id": "darulaceze_perpa",
+      "name": "Darülaceze–Perpa",
+      "lines": [
+        "METROBUS"
+      ],
+      "transfers": [],
+      "notes": "Near Perpa Trade Center and historic Darülaceze hospice.",
+      "district": "",
+      "type": "Metrobus Station",
+      "isInterchange": false
+    },
+    {
+      "id": "okmeydani_hastane",
+      "name": "Okmeydanı Hastane",
+      "lines": [
+        "METROBUS"
+      ],
+      "transfers": [],
+      "notes": "Okmeydanı State Hospital.",
+      "district": "",
+      "type": "Metrobus Station",
+      "isInterchange": false
+    },
+    {
+      "id": "caglayan",
+      "name": "Çağlayan",
+      "lines": [
+        "METROBUS"
+      ],
+      "transfers": [],
+      "notes": "Istanbul Justice Palace (Caglayan Courthouse), Turkey's largest courthouse.",
+      "district": "",
+      "type": "Metrobus Station",
+      "isInterchange": false
+    },
+    {
+      "id": "mecidiyekoy_metrobus",
+      "name": "Mecidiyeköy Metrobüs",
+      "lines": [
+        "METROBUS"
+      ],
+      "transfers": [
+        "M2",
+        "M7"
+      ],
+      "notes": "Business core. Access to Cevahir Mall and Istanbul TV towers.",
+      "district": "",
+      "type": "Metrobus Station",
+      "isInterchange": false
+    },
+    {
+      "id": "zincirlikuyu",
+      "name": "Zincirlikuyu",
+      "lines": [
+        "METROBUS"
+      ],
+      "transfers": [
+        "M2"
+      ],
+      "notes": "High-rise offices, Kanyon and Zorlu shopping districts.",
+      "district": "",
+      "type": "Metrobus Station",
+      "isInterchange": false
+    },
+    {
+      "id": "15_temmuz_sehitler_koprusu",
+      "name": "15 Temmuz Şehitler Köprüsü",
+      "lines": [
+        "METROBUS"
+      ],
+      "transfers": [],
+      "notes": "Entrance to the July 15 Martyrs Bridge; Bosphorus view.",
+      "district": "",
+      "type": "Metrobus Station",
+      "isInterchange": false
+    },
+    {
+      "id": "burhaniye",
+      "name": "Burhaniye",
+      "lines": [
+        "METROBUS"
+      ],
+      "transfers": [],
+      "notes": "Quiet residential area with historical mosques.",
+      "district": "",
+      "type": "Metrobus Station",
+      "isInterchange": false
+    },
+    {
+      "id": "altunizade",
+      "name": "Altunizade",
+      "lines": [
+        "METROBUS"
+      ],
+      "transfers": [
+        "M5"
+      ],
+      "notes": "Capitol Mall, Altunizade Mosque, access to Üsküdar–Beykoz axis.",
+      "district": "",
+      "type": "Metrobus Station",
+      "isInterchange": false
+    },
+    {
+      "id": "acibadem_metrobus",
+      "name": "Acıbadem (Metrobüs)",
+      "lines": [
+        "METROBUS"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metrobus Station",
+      "isInterchange": false
+    },
+    {
+      "id": "uzuncayir",
+      "name": "Uzunçayır",
+      "lines": [
+        "METROBUS"
+      ],
+      "transfers": [
+        "M4"
+      ],
+      "notes": "Kadıköy Anadolu Lisesi; major transfer point for Asian side access.",
+      "district": "",
+      "type": "Metrobus Station",
+      "isInterchange": false
+    },
+    {
+      "id": "fikirtepe",
+      "name": "Fikirtepe",
+      "lines": [
+        "METROBUS"
+      ],
+      "transfers": [],
+      "notes": "Urban transformation zone; formerly historic workers' neighborhood.",
+      "district": "",
+      "type": "Metrobus Station",
+      "isInterchange": false
+    },
+    {
+      "id": "sogutlucesme",
+      "name": "Söğütlüçeşme",
+      "lines": [
+        "METROBUS"
+      ],
+      "transfers": [
+        "MARMARAY"
+      ],
+      "notes": "Near Şükrü Saracoğlu Stadium (Fenerbahçe); Kadıköy center.",
+      "district": "",
+      "type": "Metrobus Station",
+      "isInterchange": false
+    }
+  ],
+  "lines": [
+    {
+      "name": "Metrobüs",
+      "id": "METROBUS",
+      "type": "Metrobus",
+      "stations": [
+        "beylikduzu_sondurak",
+        "beykent_tuyap_yonu",
+        "cumhuriyet_mahallesi",
+        "beylikduzu_belediyesi",
+        "beylikduzu_tuyap_yonu",
+        "guzelyurt",
+        "haramidere",
+        "haramidere_sanayi",
+        "saadetdere_mahallesi",
+        "mustafa_kemal_pasa",
+        "cihangir_univ_mahallesi",
+        "avcilar_merkez_univ_kampusu",
+        "sukrubey",
+        "ibb_sosyal_tesisleri",
+        "kucukcekmece",
+        "cennet_mahallesi",
+        "florya",
+        "besyol",
+        "sefakoy",
+        "yenibosna",
+        "sirinevler",
+        "bahcelievler",
+        "incirli",
+        "zeytinburnu_bakirkoy",
+        "merter",
+        "cevizlibag",
+        "topkapi_metrobus",
+        "bayrampasa_maltepe_metrobus",
+        "edirnekapi_metrobus",
+        "ayvansaray_eyup_sultan",
+        "halicioglu",
+        "okmeydani",
+        "darulaceze_perpa",
+        "okmeydani_hastane",
+        "caglayan",
+        "mecidiyekoy_metrobus",
+        "zincirlikuyu",
+        "15_temmuz_sehitler_koprusu",
+        "burhaniye",
+        "altunizade",
+        "acibadem_metrobus",
+        "uzuncayir",
+        "fikirtepe",
+        "sogutlucesme"
+      ],
+      "branches": {}
+    }
+  ]
+}

@@ -511,6 +511,7 @@ def main():
         "tram": {"path_fragment": "tram_data.md", "default_type": "Tram"},
         "marmaray": {"path_fragment": "marmaray_data.md", "default_type": "Suburban Rail"},
         "funicular": {"path_fragment": "funicular_data.md", "default_type": "Funicular"},
+        "metrobus": {"path_fragment": "metrobus_data.md", "default_type": "Metrobus"}, 
     }
 
     types_to_process_str = args.types.lower()

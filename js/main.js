@@ -9,6 +9,7 @@ import * as ui from './modules/ui-interactions.js';
 let metroData = {};
 let tramData = {};
 let funicularData = {};
+let metrobusData = {};
 let figmaCoordinates = {};
 let globalLineColors = {};
 
@@ -35,13 +36,15 @@ Promise.all([
   fetch('./data/metro_data.json').then(response => response.json()),
   fetch('./data/tram_data.json').then(response => response.json()),
   fetch('./data/funicular_data.json').then(response => response.json()),
+  fetch('./data/metrobus_data.json').then(response => response.json()),
   fetch('./data/figma_coordinates.json').then(response => response.json()),
   fetch('./data/colors.json').then(response => response.json())
 ])
-.then(([metroJson, tramJson, funicularJsonData, figmaCoordsData, colorsJson]) => {
+.then(([metroJson, tramJson, funicularJsonData, metrobusJsonData, figmaCoordsData, colorsJson]) => {
   metroData = metroJson; 
   tramData = tramJson; 
   funicularData = funicularJsonData; 
+  metrobusData = metrobusJsonData; 
   figmaCoordinates = figmaCoordsData; 
   globalLineColors = colorsJson.line_colors || {};
   
@@ -72,6 +75,9 @@ Promise.all([
     }
     if (funicularData && funicularData.stations && funicularData.lines) {
       allElements = allElements.concat(createElementsFromDataset(funicularData, "funicular", figmaCoordinates, new Set(), new Set(), { ...globalLineColors, ...(funicularData.line_colors || {}) }, null));
+    }
+    if (metrobusData && metrobusData.stations && metrobusData.lines) { 
+      allElements = allElements.concat(createElementsFromDataset(metrobusData, "metrobus", figmaCoordinates, new Set(), new Set(), { ...globalLineColors, ...(metrobusData.line_colors || {}) }, null));
     }
     console.log("Datasets processed. Total elements:", allElements.length);
 
