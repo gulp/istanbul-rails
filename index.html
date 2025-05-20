@@ -20,6 +20,26 @@
       <label><input type="checkbox" id="toggle-tram" checked> Tram</label><br>
       <label><input type="checkbox" id="toggle-funicular" checked> Funicular</label><br>
     </div>
+    <div id="layout-controls">
+      <h3>Layout Management</h3>
+      <div id="version-select-container">
+        <label for="version-select">Version:</label>
+        <select id="version-select">
+          <option value="original">Original Layout</option>
+        </select>
+        <br>
+        <span id="changes-made-indicator" style="display:none; color: orange; margin-left: 10px;">Unsaved changes to original</span>
+      </div>
+      <button id="save-btn" style="display:none;">Save</button>
+      <button id="new-version-btn">Make a new copy</button>
+      <button id="reset-layout-btn">Reset</button>
+      <hr>
+      <button id="export-layout-btn">Export Current</button><br>
+      <input type="file" id="import-layout-file" accept=".json" style="display: none;">
+      <button id="import-layout-btn">Import as New</button>
+      <hr>
+      <button id="destroy-all-btn" style="color: red;">Destroy</button>
+    </div>
   </div>
   <div id="cy"></div>
 <script src="js/main.js"></script>
