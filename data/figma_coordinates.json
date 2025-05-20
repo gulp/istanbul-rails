@@ -29,6 +29,11 @@
     "y": 358.0,
     "figmaFill": "#FF00E6"
   },
+  "terminal_2": {
+    "x": 788.0,
+    "y": 191.0,
+    "figmaFill": "#FF00E6"
+  },
   "istanbul_havalimani_airport": {
     "x": 729.0,
     "y": 191.0,
@@ -393,21 +398,6 @@
     "x": 2573.0,
     "y": 1050.0,
     "figmaFill": "#FF00E6"
-  },
-  "veysel_karani": {
-    "x": 2631.5,
-    "y": 1050.5,
-    "figmaFill": "#000000"
-  },
-  "hasanpasa": {
-    "x": 2686.5,
-    "y": 1050.5,
-    "figmaFill": "#000000"
-  },
-  "sultanbeyli": {
-    "x": 2736.5,
-    "y": 1050.5,
-    "figmaFill": "#000000"
   },
   "kadikoy": {
     "x": 1687.0,
