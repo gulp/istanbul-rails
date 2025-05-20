@@ -4,6 +4,7 @@
 *.swp
 *~
 Thumbs.db
+prompts
 
 # Node modules
 node_modules/

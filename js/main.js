@@ -32,11 +32,11 @@ let allElements = [];
 
 // --- DATA FETCHING AND CYTOSCAPE INITIALIZATION ---
 Promise.all([
-  fetch('../data/metro_data.json').then(response => response.json()),
-  fetch('../data/tram_data.json').then(response => response.json()),
-  fetch('../data/funicular_data.json').then(response => response.json()),
-  fetch('../data/figma_coordinates.json').then(response => response.json()),
-  fetch('../data/colors.json').then(response => response.json())
+  fetch('./data/metro_data.json').then(response => response.json()),
+  fetch('./data/tram_data.json').then(response => response.json()),
+  fetch('./data/funicular_data.json').then(response => response.json()),
+  fetch('./data/figma_coordinates.json').then(response => response.json()),
+  fetch('./data/colors.json').then(response => response.json())
 ])
 .then(([metroJson, tramJson, funicularJsonData, figmaCoordsData, colorsJson]) => {
   metroData = metroJson; 
