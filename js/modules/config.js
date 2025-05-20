@@ -29,5 +29,10 @@ export const IMAGE_ACTUAL_HEIGHT = 2064;
 // Manual pixel offsets to nudge the underlay image for perfect alignment.
 // Positive MANUAL_OFFSET_X shifts image to the LEFT relative to the Cytoscape drawing
 // Positive MANUAL_OFFSET_Y shifts image UP relative to the Cytoscape drawing
-export const MANUAL_OFFSET_X = 0; 
+export const MANUAL_OFFSET_X = 0;
 export const MANUAL_OFFSET_Y = 0;
+
+// --- DEBUGGING FLAGS ---
+// export const DEBUG_DRAW_IMAGE_BOUNDS = true; // This was for the previous approach, effectively replaced by styling the underlay node itself.
+export const DEBUG_SHOW_UNDERLAY_NODE_BORDER = true; // Set to true to make the __underlayNode__ border visible (e.g., green)
+export const DEBUG_DRAW_COORDINATE_RECT = true; // Set to true to draw a red rectangle at 0,0 with IMAGE_ACTUAL_WIDTH/HEIGHT

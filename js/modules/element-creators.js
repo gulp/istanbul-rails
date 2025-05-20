@@ -43,7 +43,6 @@ export function createElementsFromDataset(dataset, datasetType, figmaCoordinates
       });
       existingStationIds.add(stationId);
     } else {
-      // Handle existing station (merge lines, etc.) if cyInstance is available
       if (cyInstance) {
         const existingNode = cyInstance.getElementById(stationId);
         if (existingNode && existingNode.length > 0) {
@@ -54,8 +53,6 @@ export function createElementsFromDataset(dataset, datasetType, figmaCoordinates
             existingNode.data('isInterchange', (existingNode.data('lines').length > 1) || (existingNode.data('transfers') && existingNode.data('transfers').length > 0) );
         }
       } else {
-        // This case should ideally be handled by processing all datasets before cy init,
-        // or by ensuring cyInstance is passed if elements are added dynamically post-init.
         console.warn(`Station ${stationId} from ${datasetType} already processed but cyInstance not available for merging.`);
       }
     }
@@ -104,5 +101,34 @@ export function createUnderlayNodeElement() {
       pannable: true, 
       locked: true,   
       classes: 'underlay-node'
+  };
+}
+
+/**
+ * Creates a debug rectangle node definition representing the Cytoscape coordinate space
+ * based on IMAGE_ACTUAL_WIDTH and IMAGE_ACTUAL_HEIGHT, anchored at (0,0).
+ * @returns {object | null} Cytoscape node definition for the debug rectangle, or null if debug flag is false.
+ */
+export function createCoordinateSpaceDebugRectangle() {
+  if (!config.DEBUG_DRAW_COORDINATE_RECT) {
+    return null;
+  }
+  return {
+    group: 'nodes',
+    data: {
+      id: '__coordinateSpaceDebugRect__', // New ID
+      imgWidth: config.IMAGE_ACTUAL_WIDTH,   // For styling width/height
+      imgHeight: config.IMAGE_ACTUAL_HEIGHT
+    },
+    // Position its center such that its top-left is at (0,0) of the coordinate space
+    position: {
+      x: config.IMAGE_ACTUAL_WIDTH / 2,
+      y: config.IMAGE_ACTUAL_HEIGHT / 2
+    },
+    selectable: false,
+    grabbable: false,
+    pannable: true, // Should pan with the graph
+    locked: true,   // Should not be draggable itself
+    classes: 'coordinate-space-debug-rect' // New class for specific styling
   };
 }

@@ -49,11 +49,12 @@ export const cytoscapeStylesheet = [
         'background-height': 'data(imgHeight)',
         'width': 'data(imgWidth)',
         'height': 'data(imgHeight)',
-        'opacity': 0.4, 
-        'border-width': 5, // Temporarily make border visible for debugging bounds
-        'border-color': 'red', // Use a distinct color for the debug border
+        'opacity': 0.4,
+        // Default border for underlay node
+        'border-width': (typeof config.DEBUG_SHOW_UNDERLAY_NODE_BORDER !== 'undefined' && config.DEBUG_SHOW_UNDERLAY_NODE_BORDER) ? 5 : 0,
+        'border-color': (typeof config.DEBUG_SHOW_UNDERLAY_NODE_BORDER !== 'undefined' && config.DEBUG_SHOW_UNDERLAY_NODE_BORDER) ? 'green' : 'transparent',
         'border-style': 'solid',
-        'label': '', 
+        'label': '',
         'shape': 'rectangle',
         'z-compound-depth': 'bottom', 
         'z-index': -999
@@ -67,6 +68,21 @@ export const cytoscapeStylesheet = [
       'curve-style': 'bezier', 
       'target-arrow-shape': 'none', 
       'opacity': 0.7 
+    }
+  },
+  {
+    selector: 'node.coordinate-space-debug-rect', // Style for the new coordinate space debug rectangle
+    style: {
+        'background-opacity': 0, // No fill
+        'border-color': 'red',
+        'border-width': 3,       
+        'border-style': 'dashed', 
+        'width': 'data(imgWidth)',
+        'height': 'data(imgHeight)',
+        'shape': 'rectangle',
+        'label': '',
+        'z-index': 1000,             // Ensure it's on top
+        'events': 'no'               // Make it non-interactive for pointer events
     }
   }
 ];
