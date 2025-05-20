@@ -134,7 +134,7 @@
     "y": 1065.0,
     "figmaFill": "#FF00E6"
   },
-  "modokokeyap": {
+  "modoko_keyap": {
     "x": 2218.0,
     "y": 1099.0,
     "figmaFill": "#FF00E6"
@@ -224,7 +224,7 @@
     "y": 905.0,
     "figmaFill": "#FF00E6"
   },
-  "veysel_karaniaksemsettin": {
+  "veysel_karani_aksemsettin": {
     "x": 1105.0,
     "y": 905.0,
     "figmaFill": "#FF00E6"
@@ -249,7 +249,7 @@
     "y": 905.0,
     "figmaFill": "#FF00E6"
   },
-  "giyimkenttekstilkent": {
+  "giyimkent_tekstilkent": {
     "x": 815.0,
     "y": 905.0,
     "figmaFill": "#FF00E6"
@@ -504,12 +504,12 @@
     "y": 1386.0,
     "figmaFill": "#FF00E6"
   },
-  "fevzi_cakmakhastane": {
+  "fevzi_cakmak_hastane": {
     "x": 2803.0,
     "y": 1368.0,
     "figmaFill": "#FF00E6"
   },
-  "yayalarseyhli": {
+  "yayalar_seyhli": {
     "x": 2835.0,
     "y": 1335.0,
     "figmaFill": "#FF00E6"
@@ -684,7 +684,7 @@
     "y": 706.0,
     "figmaFill": "#FF00E6"
   },
-  "ituayazaga": {
+  "itu_ayazaga": {
     "x": 1498.0,
     "y": 643.0,
     "figmaFill": "#FF00E6"
@@ -774,7 +774,7 @@
     "y": 1256.0,
     "figmaFill": "#FF00E6"
   },
-  "davutpasaytu": {
+  "davutpasa_ytu": {
     "x": 991.0,
     "y": 1213.0,
     "figmaFill": "#FF00E6"
@@ -1043,5 +1043,380 @@
     "x": 3181.0,
     "y": 1245.0,
     "figmaFill": "#FF00E6"
+  },
+  "bagcilar_t1": {
+    "x": 787.0,
+    "y": 1118.0,
+    "figmaFill": "#043E63"
+  },
+  "gunestepe": {
+    "x": 787.0,
+    "y": 1151.0,
+    "figmaFill": "#043E63"
+  },
+  "yavuz_selim": {
+    "x": 803.0,
+    "y": 1179.0,
+    "figmaFill": "#043E63"
+  },
+  "soganli": {
+    "x": 825.0,
+    "y": 1200.0,
+    "figmaFill": "#043E63"
+  },
+  "akincilar": {
+    "x": 846.0,
+    "y": 1222.0,
+    "figmaFill": "#043E63"
+  },
+  "gungoren": {
+    "x": 868.0,
+    "y": 1243.0,
+    "figmaFill": "#043E63"
+  },
+  "merter_tekstil_merkezi": {
+    "x": 889.0,
+    "y": 1264.0,
+    "figmaFill": "#043E63"
+  },
+  "mehmet_akif": {
+    "x": 910.0,
+    "y": 1286.0,
+    "figmaFill": "#043E63"
+  },
+  "zeytinburnu_2": {
+    "x": 953.0,
+    "y": 1330.0,
+    "figmaFill": "#043E63"
+  },
+  "mithatpasa": {
+    "x": 978.0,
+    "y": 1354.0,
+    "figmaFill": "#043E63"
+  },
+  "seyitnizam_aksemsettin": {
+    "x": 1010.0,
+    "y": 1386.0,
+    "figmaFill": "#043E63"
+  },
+  "merkezefendi": {
+    "x": 1046.0,
+    "y": 1403.0,
+    "figmaFill": "#043E63"
+  },
+  "cevizlibag_aoy": {
+    "x": 1081.0,
+    "y": 1378.0,
+    "figmaFill": "#043E63"
+  },
+  "topkapi_t1": {
+    "x": 1114.0,
+    "y": 1368.0,
+    "figmaFill": "#043E63"
+  },
+  "pazartekke": {
+    "x": 1154.0,
+    "y": 1368.0,
+    "figmaFill": "#043E63"
+  },
+  "capa_sehremini": {
+    "x": 1191.0,
+    "y": 1368.0,
+    "figmaFill": "#043E63"
+  },
+  "findikzade": {
+    "x": 1228.0,
+    "y": 1368.0,
+    "figmaFill": "#043E63"
+  },
+  "haseki": {
+    "x": 1265.0,
+    "y": 1368.0,
+    "figmaFill": "#043E63"
+  },
+  "yusufpasa": {
+    "x": 1303.0,
+    "y": 1368.0,
+    "figmaFill": "#043E63"
+  },
+  "aksaray_t1": {
+    "x": 1346.0,
+    "y": 1368.0,
+    "figmaFill": "#043E63"
+  },
+  "laleli_istanbul_u": {
+    "x": 1394.0,
+    "y": 1368.0,
+    "figmaFill": "#043E63"
+  },
+  "beyazit_kapalicarsi": {
+    "x": 1436.0,
+    "y": 1368.0,
+    "figmaFill": "#043E63"
+  },
+  "cemberlitas": {
+    "x": 1483.0,
+    "y": 1368.0,
+    "figmaFill": "#043E63"
+  },
+  "sultanahmet": {
+    "x": 1531.0,
+    "y": 1364.0,
+    "figmaFill": "#043E63"
+  },
+  "gulhane": {
+    "x": 1537.0,
+    "y": 1324.0,
+    "figmaFill": "#043E63"
+  },
+  "sirkeci_2": {
+    "x": 1537.0,
+    "y": 1286.0,
+    "figmaFill": "#043E63"
+  },
+  "eminonu_t1": {
+    "x": 1537.0,
+    "y": 1252.0,
+    "figmaFill": "#043E63"
+  },
+  "karakoy_t1": {
+    "x": 1537.0,
+    "y": 1180.0,
+    "figmaFill": "#043E63"
+  },
+  "tophane": {
+    "x": 1537.0,
+    "y": 1152.0,
+    "figmaFill": "#043E63"
+  },
+  "findikli_mimar_sinan_u": {
+    "x": 1537.0,
+    "y": 1119.0,
+    "figmaFill": "#043E63"
+  },
+  "kabatas": {
+    "x": 1537.0,
+    "y": 1087.0,
+    "figmaFill": "#043E63"
+  },
+  "topkapi_t1_2": {
+    "x": 1114.0,
+    "y": 1354.0,
+    "figmaFill": "#9B3509"
+  },
+  "fetihkapi": {
+    "x": 1166.0,
+    "y": 1320.0,
+    "figmaFill": "#9B3509"
+  },
+  "vatan": {
+    "x": 1219.0,
+    "y": 1268.0,
+    "figmaFill": "#9B3509"
+  },
+  "edirnekapi": {
+    "x": 1249.0,
+    "y": 1226.0,
+    "figmaFill": "#9B3509"
+  },
+  "sehitlik": {
+    "x": 1231.0,
+    "y": 1189.0,
+    "figmaFill": "#9B3509"
+  },
+  "demirkapi": {
+    "x": 1202.0,
+    "y": 1160.0,
+    "figmaFill": "#9B3509"
+  },
+  "topcular": {
+    "x": 1173.0,
+    "y": 1131.0,
+    "figmaFill": "#9B3509"
+  },
+  "rami": {
+    "x": 1141.0,
+    "y": 1099.0,
+    "figmaFill": "#9B3509"
+  },
+  "uluyol_berec": {
+    "x": 1109.0,
+    "y": 1067.0,
+    "figmaFill": "#9B3509"
+  },
+  "sagmalcilar_bayrampasa": {
+    "x": 1076.0,
+    "y": 1038.0,
+    "figmaFill": "#9B3509"
+  },
+  "bosna_cukurcesme": {
+    "x": 1021.0,
+    "y": 1032.0,
+    "figmaFill": "#9B3509"
+  },
+  "ali_fuat_basgil": {
+    "x": 962.0,
+    "y": 1019.0,
+    "figmaFill": "#9B3509"
+  },
+  "taskopru": {
+    "x": 924.0,
+    "y": 981.0,
+    "figmaFill": "#9B3509"
+  },
+  "karadeniz": {
+    "x": 896.0,
+    "y": 953.0,
+    "figmaFill": "#9B3509"
+  },
+  "kiptas_venezia": {
+    "x": 875.0,
+    "y": 893.0,
+    "figmaFill": "#9B3509"
+  },
+  "cumhuriyet": {
+    "x": 875.0,
+    "y": 849.0,
+    "figmaFill": "#9B3509"
+  },
+  "50_yil_bastabya": {
+    "x": 875.0,
+    "y": 805.0,
+    "figmaFill": "#9B3509"
+  },
+  "haci_sukru": {
+    "x": 875.0,
+    "y": 759.0,
+    "figmaFill": "#9B3509"
+  },
+  "yeni_mahalle": {
+    "x": 875.0,
+    "y": 713.0,
+    "figmaFill": "#9B3509"
+  },
+  "sultanciftligi": {
+    "x": 875.0,
+    "y": 667.0,
+    "figmaFill": "#9B3509"
+  },
+  "cebeci": {
+    "x": 875.0,
+    "y": 621.0,
+    "figmaFill": "#9B3509"
+  },
+  "mescid_i_selam": {
+    "x": 875.0,
+    "y": 575.0,
+    "figmaFill": "#9B3509"
+  },
+  "eminonu": {
+    "x": 1520.0,
+    "y": 1252.0,
+    "figmaFill": "#161622"
+  },
+  "kucukpazar": {
+    "x": 1442.0,
+    "y": 1252.0,
+    "figmaFill": "#161622"
+  },
+  "cibali": {
+    "x": 1403.0,
+    "y": 1236.0,
+    "figmaFill": "#161622"
+  },
+  "fener": {
+    "x": 1371.0,
+    "y": 1205.0,
+    "figmaFill": "#161622"
+  },
+  "balat": {
+    "x": 1345.0,
+    "y": 1179.0,
+    "figmaFill": "#161622"
+  },
+  "ayvansaray": {
+    "x": 1319.0,
+    "y": 1153.0,
+    "figmaFill": "#161622"
+  },
+  "feshane": {
+    "x": 1283.0,
+    "y": 1119.0,
+    "figmaFill": "#161622"
+  },
+  "eyupsultan_teleferik": {
+    "x": 1253.0,
+    "y": 1090.0,
+    "figmaFill": "#161622"
+  },
+  "eyupsultan_devlet_hastanesi": {
+    "x": 1221.0,
+    "y": 1050.0,
+    "figmaFill": "#161622"
+  },
+  "silahtaraga_mahallesi": {
+    "x": 1219.0,
+    "y": 1018.0,
+    "figmaFill": "#161622"
+  },
+  "universite": {
+    "x": 1219.0,
+    "y": 982.0,
+    "figmaFill": "#161622"
+  },
+  "alibeykoy_merkez": {
+    "x": 1219.0,
+    "y": 946.0,
+    "figmaFill": "#161622"
+  },
+  "alibeykoy_metro": {
+    "x": 1219.0,
+    "y": 894.0,
+    "figmaFill": "#161622"
+  },
+  "alibeykoy_cep_otogari": {
+    "x": 1187.0,
+    "y": 855.0,
+    "figmaFill": "#161622"
+  },
+  "sirkeci_3": {
+    "x": 1545.0,
+    "y": 1276.0,
+    "figmaFill": "#DD5250"
+  },
+  "cankurtaran": {
+    "x": 1558.0,
+    "y": 1367.0,
+    "figmaFill": "#DD5250"
+  },
+  "kumkapi": {
+    "x": 1402.0,
+    "y": 1415.0,
+    "figmaFill": "#DD5250"
+  },
+  "yenikapi_4": {
+    "x": 1353.0,
+    "y": 1453.0,
+    "figmaFill": "#DD5250"
+  },
+  "cerrahpasa": {
+    "x": 1271.0,
+    "y": 1492.0,
+    "figmaFill": "#DD5250"
+  },
+  "kocamustafapasa": {
+    "x": 1224.0,
+    "y": 1492.0,
+    "figmaFill": "#DD5250"
+  },
+  "yedikule": {
+    "x": 1177.0,
+    "y": 1492.0,
+    "figmaFill": "#DD5250"
+  },
+  "kazlicesme_2": {
+    "x": 1141.0,
+    "y": 1492.0,
+    "figmaFill": "#DD5250"
   }
 }

@@ -1,0 +1,3606 @@
+{
+  "stations": [
+    {
+      "id": "yenikapi",
+      "name": "Yenikapı",
+      "lines": [
+        "M1",
+        "M2",
+        "MARMARAY",
+        "T6"
+      ],
+      "transfers": [
+        "FERRY"
+      ],
+      "notes": "Yenikapı Square・Dr. Kadir Topbaş Exhibition & Art Center・Yenikapı İETT PlatformThe station will be 750m from theAksaraytram station with a transfer opportunity.",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": true
+    },
+    {
+      "id": "aksaray",
+      "name": "Aksaray",
+      "lines": [
+        "M1"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "emniyet_fatih",
+      "name": "Emniyet-Fatih",
+      "lines": [
+        "M1"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "topkapi_ulubatli",
+      "name": "Topkapı-Ulubatlı",
+      "lines": [
+        "M1"
+      ],
+      "transfers": [],
+      "notes": "Park and Ride facility",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "bayrampasa_maltepe",
+      "name": "Bayrampaşa-Maltepe",
+      "lines": [
+        "M1"
+      ],
+      "transfers": [],
+      "notes": "Axis Mall",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "sagmalcilar",
+      "name": "Sağmalcılar",
+      "lines": [
+        "M1"
+      ],
+      "transfers": [],
+      "notes": "Bayrampaşa State Hospital",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "kocatepe",
+      "name": "Kocatepe",
+      "lines": [
+        "M1"
+      ],
+      "transfers": [],
+      "notes": "Forum İstanbul Mall",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "otogar",
+      "name": "Otogar",
+      "lines": [
+        "M1"
+      ],
+      "transfers": [],
+      "notes": "Bayrampaşa Grand İstanbul Bus Station",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "terazidere",
+      "name": "Terazidere",
+      "lines": [],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "davutpasa_ytu",
+      "name": "Davutpaşa–YTÜ",
+      "lines": [],
+      "transfers": [],
+      "notes": "Yıldız Technical University",
+      "district": "",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "merter",
+      "name": "Merter",
+      "lines": [],
+      "transfers": [],
+      "notes": "Park and Ride facility",
+      "district": "",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "zeytinburnu_bakirkoy",
+      "name": "Zeytinburnu (Bakirkoy)",
+      "lines": [
+        "T1"
+      ],
+      "transfers": [],
+      "notes": "Transition point before coastal route.",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "bakirkoy_incirli",
+      "name": "Bakırköy-İncirli",
+      "lines": [],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "bahcelievler",
+      "name": "Bahçelievler",
+      "lines": [],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "atakoy_sirinevler",
+      "name": "Ataköy—Şirinevler",
+      "lines": [],
+      "transfers": [],
+      "notes": "Park and Ride facility",
+      "district": "",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "yenibosna",
+      "name": "Yenibosna",
+      "lines": [
+        "M9"
+      ],
+      "transfers": [],
+      "notes": "Eski Dostlar Park",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "dtm_istanbul_fuar_merkezi",
+      "name": "DTM—İstanbul Fuar Merkezi",
+      "lines": [],
+      "transfers": [],
+      "notes": "World Trade Center and İstanbul Expo Center",
+      "district": "",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "ataturk_havalimani",
+      "name": "Atatürk Havalimanı",
+      "lines": [],
+      "transfers": [],
+      "notes": "Atatürk Airport",
+      "district": "",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "esenler",
+      "name": "Esenler",
+      "lines": [],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "menderes",
+      "name": "Menderes",
+      "lines": [],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "ucyuzlu",
+      "name": "Üçyüzlü",
+      "lines": [],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "bagcilar_meydan",
+      "name": "Bağcılar Meydan",
+      "lines": [],
+      "transfers": [],
+      "notes": "300m walk between lines",
+      "district": "",
+      "type": null,
+      "isInterchange": false
+    },
+    {
+      "id": "kirazli",
+      "name": "Kirazlı",
+      "lines": [
+        "M3"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "・İETT Bus:92K, 98K, HT10, MK42",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "vezneciler",
+      "name": "Vezneciler",
+      "lines": [
+        "M2"
+      ],
+      "transfers": [],
+      "notes": "Istanbul UniversityLaleli & Vezneciler Campus・Şehzadebaşı Mosque・Süleymaniye Mosque",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "halic",
+      "name": "Haliç",
+      "lines": [
+        "M2"
+      ],
+      "transfers": [],
+      "notes": "Haliç Metro Bridge・Atatürk Bridge・Sokullu Mehmet Paşa Mosque",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "sishane",
+      "name": "Şişhane",
+      "lines": [
+        "M2"
+      ],
+      "transfers": [],
+      "notes": "İstiklal Avenue・Zemin İstanbul・Galata Tower・Kasımpaşa",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "taksim",
+      "name": "Taksim",
+      "lines": [
+        "M2"
+      ],
+      "transfers": [],
+      "notes": "Taksim Square・Taksim Mosque・Taksim Gezi Park・Atatürk Culturel Center・İstiklal Avenue・About 1 km from Taşkışla station.",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "osmanbey",
+      "name": "Osmanbey",
+      "lines": [
+        "M2"
+      ],
+      "transfers": [],
+      "notes": "Pangaltı・Nişantaşı",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "sisli_mecidiyekoy",
+      "name": "Şişli - Mecidiyeköy",
+      "lines": [
+        "M2"
+      ],
+      "transfers": [],
+      "notes": "Cevahir AVM・Profilo AVM・Trump Towers・Şişli Mosque・Mecidiyeköy Square",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "gayrettepe",
+      "name": "Gayrettepe",
+      "lines": [
+        "M11",
+        "M2"
+      ],
+      "transfers": [
+        "METROBUS"
+      ],
+      "notes": "Zincirlikuyu Cemetery・Büyükdere Avenue・Zorlu Center・ Zincirlikuyu İETT Platforms",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": true
+    },
+    {
+      "id": "levent",
+      "name": "Levent",
+      "lines": [
+        "M2",
+        "M6"
+      ],
+      "transfers": [],
+      "notes": "Metrocity・Kanyon・ÖzdilekPark・Gültepe・Levent Mosque・İş Kuleleri",
+      "district": "Beşiktaş",
+      "type": "Metro Station",
+      "isInterchange": true
+    },
+    {
+      "id": "4_levent",
+      "name": "4. Levent",
+      "lines": [
+        "M2"
+      ],
+      "transfers": [],
+      "notes": "Istanbul Sapphire・Yeni Levent・QNB Finansbank Cristal Tower",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "sanayi_mahallesi",
+      "name": "Sanayi Mahallesi",
+      "lines": [
+        "M2"
+      ],
+      "transfers": [],
+      "notes": "It is possible to go in the direction ofYenikapıandHacıosmanby changing the platform.",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "itu_ayazaga",
+      "name": "İTÜ–Ayazağa",
+      "lines": [
+        "M2"
+      ],
+      "transfers": [],
+      "notes": "Istanbul Technical University (İTÜ) Ayazağa Campus・Maslak",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "ataturk_oto_sanayi",
+      "name": "Atatürk Oto Sanayi",
+      "lines": [
+        "M2"
+      ],
+      "transfers": [],
+      "notes": "Vodafone Station (Sponsor)",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "darussafaka",
+      "name": "Darüşşafaka",
+      "lines": [
+        "M2"
+      ],
+      "transfers": [],
+      "notes": "Darüşşafaka・Atatürk Urban Forest (South login)",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "haciosman",
+      "name": "Hacıosman",
+      "lines": [
+        "M2"
+      ],
+      "transfers": [],
+      "notes": "Atatürk Urban Forest (North login)",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "seyrantepe",
+      "name": "Seyrantepe",
+      "lines": [
+        "M2"
+      ],
+      "transfers": [],
+      "notes": "Rams Park・Police Housing",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "bakirkoy_sahil",
+      "name": "Bakırköy Sahil",
+      "lines": [
+        "M3"
+      ],
+      "transfers": [
+        "FERRY"
+      ],
+      "notes": "Rauf Orbay St・Ataköy Marina・Galleria・Kennedy St",
+      "district": "Bakırköy",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "ozgurluk_meydani",
+      "name": "Özgürlük Meydanı",
+      "lines": [
+        "M3"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "・(Bakırköy Train Station)İETT Bus:50B, 71T, 72T, 94A 73B, 76, 76B, 76C, 76V, 76Y, 79B, 89YB, 94Y, 98, 98A, 98AB, 98B, 98D, 98E, 98G, 98H, 98K, 98M, 98MB, 98S, 98T, 98TB, 98Y, 146, E-57",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "incirli",
+      "name": "İncirli",
+      "lines": [
+        "M3"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "・・İETT Bus:31, 31E, 50B, 71T, 72T, 73, 73F, 76D, 78ZB, 79G, 79Ş, 82, 89, 89A, 89B, 89K, 89M, 89S, 92, 94, 94A, 94Y, 97, 97A, 97BT, 97E, 97KZ, 97T, H-9, HT13, MK97",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "haznedar",
+      "name": "Haznedar",
+      "lines": [
+        "M3"
+      ],
+      "transfers": [],
+      "notes": "Güngören Park・Naci Kazım St・Naci Kazım Park",
+      "district": "Güngören",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "ilkyuva",
+      "name": "İlkyuva",
+      "lines": [
+        "M3"
+      ],
+      "transfers": [],
+      "notes": "Bağcılar Street・Bahçelievler İSKİ Build",
+      "district": "Bahçelievler",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "yildiztepe",
+      "name": "Yıldıztepe",
+      "lines": [
+        "M3"
+      ],
+      "transfers": [],
+      "notes": "Bağcılar St・Kıbrıs St・Bağcılar Anadolu High School・Bağcılar Yıldıztepe Primary School・Hoca Ahmet Yesevi Middle SchoolStation Under Construction - Passing",
+      "district": "Bağcılar",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "molla_gurani",
+      "name": "Molla Gürani",
+      "lines": [
+        "M3"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "İETT Bus:98K, HT10, HT11",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "yenimahalle_bagcilar",
+      "name": "Yenimahalle (Bağcılar)",
+      "lines": [
+        "M3"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "İETT Bus:92, 92B, 92K, 92Ş, 97G, 98D, 98K, HT13",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "mahmutbey",
+      "name": "Mahmutbey",
+      "lines": [
+        "M3",
+        "M7"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "İETT Bus:141K, 141M, 144M, 89C, 89T, 91E, 97E, 97GE, 97M, 98A, 98M, H-1, HT10",
+      "type": "Metro Station",
+      "isInterchange": true
+    },
+    {
+      "id": "istoc",
+      "name": "İSTOÇ",
+      "lines": [
+        "M3"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "İETT Bus:143, 146B, 146K, 146M, 31Y, 76O, 78, 89F, 98M",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "ikitelli_sanayi",
+      "name": "İkitelli Sanayi",
+      "lines": [
+        "M3",
+        "M9"
+      ],
+      "transfers": [
+        "M9"
+      ],
+      "notes": "Free transfer to the line.",
+      "district": "Başakşehir",
+      "type": "Metro Station",
+      "isInterchange": true
+    },
+    {
+      "id": "turgut_ozal",
+      "name": "Turgut Özal",
+      "lines": [
+        "M3"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "İETT Bus:31Y, 78B, 78Ş, 82S, 98KM, 146K, 146M, MK31",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "siteler",
+      "name": "Siteler",
+      "lines": [
+        "M3"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "İETT Bus:143, 146B, 146K, 146M, 78C, 79E, 82S, 98KM",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "basak_konutlari",
+      "name": "Başak Konutları",
+      "lines": [
+        "M3"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "İETT Bus:78ZB, 89C, 98, 98KM, 143",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "metrokent",
+      "name": "MetroKent",
+      "lines": [
+        "M3"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "Havaist Bus TransferİETT Bus:78, 78BE, 78F, 89C, 98H, 98KM, 146B, MK1, MK22",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "onurkent",
+      "name": "Onurkent",
+      "lines": [
+        "M3"
+      ],
+      "transfers": [],
+      "notes": "Onurkent Park・Mimar Kemalettin Street・Akif İnan Anadolu İmam Hatip Lİsesi",
+      "district": "Başakşehir",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "sehir_hastanesi",
+      "name": "Şehir Hastanesi",
+      "lines": [
+        "M3"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "İETT Bus:36F, 78E, 78F, 78Ş, 79B, 79E, 79F, 79FY, 79GE, 79KM, 79KT, 79T, 146BA, 146F, HS1, HS2, MK1, MK2, MK22, MR50",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "toplu_konutlar",
+      "name": "Toplu Konutlar",
+      "lines": [
+        "M3"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "İETT Bus:36AS, 78E,78G, 78Ş, 79B, 79C, 79E, 79F, 79G, 79K, 79KM, 79KT, 79T, 79Y, MK11",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "kayasehir_merkez",
+      "name": "Kayaşehir Merkez",
+      "lines": [
+        "M3"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "İETT Bus:36F, 78E, 78F, 79F, 79FY, 79GE, 79KM, 79KT, 79M, 146BA, 146F, MK1, MK2",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "kadikoy",
+      "name": "Kadıköy",
+      "lines": [
+        "M4"
+      ],
+      "transfers": [
+        "AIRPORT_SHUTTLE",
+        "B1",
+        "FERRY"
+      ],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "ayrilik_cesmesi",
+      "name": "Ayrılık Çeşmesi",
+      "lines": [
+        "M4",
+        "MARMARAY"
+      ],
+      "transfers": [
+        "MARMARAY"
+      ],
+      "notes": "Spelled as \"Ayrılıkçeşmesi\" on tcddtasimacilik.gov.tr, M4 (Kadıköy-Tavşantepe Metro Hattı)Ayrılık ÇeşmesiRothko Art GalleryOsmanlı (Arap) MezarlığıHaydarpaşa Gar Binasıİbrahimağa Camii ve ÇeşmesiYeldeğirmeni Tarihi Evler, İlk Apartmanlar, Okullar, Camii Kilise ve SinagogHababam Sınıfı Müzesi",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": true
+    },
+    {
+      "id": "acibadem",
+      "name": "Acıbadem",
+      "lines": [
+        "M4"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "unalan",
+      "name": "Ünalan",
+      "lines": [
+        "M4"
+      ],
+      "transfers": [
+        "AIRPORT_SHUTTLE",
+        "METROBUS"
+      ],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "goztepe",
+      "name": "Göztepe",
+      "lines": [
+        "M4"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "yenisahra",
+      "name": "Yenisahra",
+      "lines": [
+        "M4"
+      ],
+      "transfers": [
+        "AIRPORT_SHUTTLE"
+      ],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "kozyatagi",
+      "name": "Kozyatağı",
+      "lines": [
+        "M4",
+        "M8"
+      ],
+      "transfers": [],
+      "notes": "Kozyatağı Shopping Mall",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": true
+    },
+    {
+      "id": "bostanci_kadikoy",
+      "name": "Bostancı (Kadıköy)",
+      "lines": [
+        "M4"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "kucukyali",
+      "name": "Küçükyalı",
+      "lines": [
+        "M4"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "maltepe",
+      "name": "Maltepe",
+      "lines": [
+        "M4"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "huzurevi",
+      "name": "Huzurevi",
+      "lines": [
+        "M4"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "gulsuyu",
+      "name": "Gülsuyu",
+      "lines": [
+        "M4"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "esenkent",
+      "name": "Esenkent",
+      "lines": [
+        "M4"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "hastane_adliye",
+      "name": "Hastane -Adliye",
+      "lines": [
+        "M4"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "soganlik",
+      "name": "Soğanlık",
+      "lines": [
+        "M4"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "kartal",
+      "name": "Kartal",
+      "lines": [
+        "M4"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "yakacik_adnan_kahveci",
+      "name": "Yakacık -Adnan Kahveci",
+      "lines": [
+        "M4"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "pendik",
+      "name": "Pendik",
+      "lines": [
+        "M4"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "tavsantepe",
+      "name": "Tavşantepe",
+      "lines": [
+        "M4"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "fevzi_cakmak_hastane",
+      "name": "Fevzi Çakmak–Hastane",
+      "lines": [
+        "M4"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "yayalar_seyhli",
+      "name": "Yayalar–Şeyhli",
+      "lines": [
+        "M4"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "kurtkoy",
+      "name": "Kurtköy",
+      "lines": [
+        "M4"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "sabiha_gokcen_havalimani",
+      "name": "Sabiha Gökçen Havalimanı",
+      "lines": [
+        "M4"
+      ],
+      "transfers": [
+        "AIRPORT_SHUTTLE",
+        "YHT"
+      ],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "uskudar",
+      "name": "Üsküdar",
+      "lines": [
+        "M5",
+        "MARMARAY"
+      ],
+      "transfers": [
+        "FERRY",
+        "MARMARAY"
+      ],
+      "notes": "M5 (Üsküdar-Çekmeköy Metro Hattı)Çinili HamamSalih Efendi Açık TürbesiHallaç Baba TekkesiŞerefbad Su DeposuBizans SarnıcıSaadettin Efendi Sebili ve TürbesiKız KulesiHanım Sultanlar TürbesiGülnüş Sultan TürbesiŞeyh Mustafa Detavi TürbesiŞemsi Ahmed Paşa TürbesiAziz Mahmud Hüdayi TürbesiCenned Mehmet Efendi TürbesiHalil Paşa TürbesiYeni Valide Camii ve ÇevresiMihrima Sultan CamiiŞemsi Paşa CamiiUçurtma MüzesiAhmediye CamiiAziz Mahmud Hüdayi Hz. Camii Şerifi",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": true
+    },
+    {
+      "id": "fistikagaci",
+      "name": "Fıstıkağacı",
+      "lines": [
+        "M5"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "baglarbasi",
+      "name": "Bağlarbaşı",
+      "lines": [
+        "M5"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "altunizade",
+      "name": "Altunizade",
+      "lines": [
+        "M5"
+      ],
+      "transfers": [
+        "METROBUS"
+      ],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "kisikli",
+      "name": "Kısıklı",
+      "lines": [
+        "M5"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "bulgurlu",
+      "name": "Bulgurlu",
+      "lines": [
+        "M5"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "umraniye",
+      "name": "Ümraniye",
+      "lines": [
+        "M5"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "carsi",
+      "name": "Çarşı",
+      "lines": [
+        "M5"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "yamanevler",
+      "name": "Yamanevler",
+      "lines": [
+        "M5"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "cakmak",
+      "name": "Çakmak",
+      "lines": [
+        "M5"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "ihlamurkuyu",
+      "name": "Ihlamurkuyu",
+      "lines": [
+        "M5"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "altinsehir",
+      "name": "Altınşehir",
+      "lines": [
+        "M5"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "imam_hatip_lisesi",
+      "name": "İmam Hatip Lisesi",
+      "lines": [
+        "M5"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "dudullu",
+      "name": "Dudullu",
+      "lines": [
+        "M5",
+        "M8"
+      ],
+      "transfers": [],
+      "notes": "MetroCorner AVM・Alemdağ Avenue",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": true
+    },
+    {
+      "id": "necip_fazil",
+      "name": "Necip Fazıl",
+      "lines": [
+        "M5"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "cekmekoy",
+      "name": "Çekmeköy",
+      "lines": [
+        "M5"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "meclis",
+      "name": "Meclis",
+      "lines": [
+        "M5"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "sarigazi",
+      "name": "Sarıgazi",
+      "lines": [
+        "M5"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "sancaktepe_sehir_hastanesi",
+      "name": "Sancaktepe Şehir Hastanesi",
+      "lines": [
+        "M5"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "sancaktepe",
+      "name": "Sancaktepe",
+      "lines": [
+        "M5"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "samandira_merkez",
+      "name": "Samandıra Merkez",
+      "lines": [
+        "M5"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "veysel_karani",
+      "name": "Veysel Karani",
+      "lines": [
+        "M5"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "hasanpasa",
+      "name": "Hasanpaşa",
+      "lines": [
+        "M5"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "sultanbeyli",
+      "name": "Sultanbeyli",
+      "lines": [
+        "M5"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "nispetiye",
+      "name": "Nispetiye",
+      "lines": [
+        "M6"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "İETT Bus: DT1, DT2 U1, U2",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "etiler",
+      "name": "Etiler",
+      "lines": [
+        "M6"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "İETT Bus: 43R, 59K, 59R, 59RS, 59UÇ, 559U",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "bogazici_universitesi",
+      "name": "Boğaziçi Üniversitesi",
+      "lines": [
+        "M6"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "İETT Bus: 43R, 59R, 59RS, 559CIstanbul Funicular:",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "yildiz",
+      "name": "Yıldız",
+      "lines": [
+        "M7"
+      ],
+      "transfers": [],
+      "notes": "Yıldız Technical UniversityYıldız Campus・Yıldız Mosque・Sait Çiftçi State Hospital・Barbaros Boulevard",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "fulya",
+      "name": "Fulya",
+      "lines": [
+        "M7"
+      ],
+      "transfers": [],
+      "notes": "Darphane ve Damga Matbaası Genel Müdürlüğü",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "mecidiyekoy",
+      "name": "Mecidiyeköy",
+      "lines": [
+        "M7"
+      ],
+      "transfers": [
+        "METROBUS"
+      ],
+      "notes": "Büyükdere ave・Cevahir Shopping Mall・Profilo Shopping Mall・Trump Towers・Mecidiyeköy Square",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "caglayan",
+      "name": "Çağlayan",
+      "lines": [
+        "M7"
+      ],
+      "transfers": [],
+      "notes": "Istanbul Justice Palace・Hürriyet neighbourhood・Florence Nightingale Hospital",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "kagithane",
+      "name": "Kâğıthane",
+      "lines": [
+        "M11",
+        "M7"
+      ],
+      "transfers": [],
+      "notes": "Kağıthane Creek・Kağıthane İETT Platforms",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": true
+    },
+    {
+      "id": "nurtepe",
+      "name": "Nurtepe",
+      "lines": [
+        "M7"
+      ],
+      "transfers": [],
+      "notes": "Güzeltepe・İSKİ・AKOM",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "alibeykoy",
+      "name": "Alibeyköy",
+      "lines": [
+        "M7"
+      ],
+      "transfers": [],
+      "notes": "Alibeyköy Creek",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "circir",
+      "name": "Çırçır",
+      "lines": [
+        "M7"
+      ],
+      "transfers": [],
+      "notes": "İBB Tevfik Aydeniz Sports Facilities",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "veysel_karani_aksemsettin",
+      "name": "Veysel Karani–Akşemsettin",
+      "lines": [
+        "M7"
+      ],
+      "transfers": [],
+      "notes": "Eyüp Park Shopping Mall・İsfanbul Theme Park",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "yesilpinar",
+      "name": "Yeşilpınar",
+      "lines": [
+        "M7"
+      ],
+      "transfers": [],
+      "notes": "İBB Erdem Beyazıt Library",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "kazim_karabekir",
+      "name": "Kâzım Karabekir",
+      "lines": [
+        "M7"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "yenimahalle_gaziosmanpasa",
+      "name": "Yenimahalle (Gaziosmanpaşa)",
+      "lines": [
+        "M7"
+      ],
+      "transfers": [],
+      "notes": "Gaziosmanpaşa Training & Research Hospital",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "karadeniz_mahallesi",
+      "name": "Karadeniz Mahallesi",
+      "lines": [
+        "M7"
+      ],
+      "transfers": [],
+      "notes": "Venezia Mega Outlet・Metris",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "giyimkent_tekstilkent",
+      "name": "Giyimkent–Tekstilkent",
+      "lines": [
+        "M7"
+      ],
+      "transfers": [],
+      "notes": "Depot・Giyimkent・Tekstilkent",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "oruc_reis_yuzyil",
+      "name": "Oruç Reis - Yüzyıl",
+      "lines": [
+        "M7"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "goztepe_mahallesi",
+      "name": "Göztepe Mahallesi",
+      "lines": [
+        "M7"
+      ],
+      "transfers": [],
+      "notes": "Medipol University Hospital",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "bostanci_maltepe",
+      "name": "Bostancı (Maltepe)",
+      "lines": [
+        "M8",
+        "MARMARAY"
+      ],
+      "transfers": [
+        "FERRY",
+        "YHT"
+      ],
+      "notes": "Bostancı Ferry Terminal・Bostancı Lunapark",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": true
+    },
+    {
+      "id": "emin_ali_pasa",
+      "name": "Emin Ali Paşa",
+      "lines": [
+        "M8"
+      ],
+      "transfers": [],
+      "notes": "Şemsettin Günaltay Avenue",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "aysekadin",
+      "name": "Ayşekadın",
+      "lines": [
+        "M8"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "kucukbakkalkoy",
+      "name": "Küçükbakkalköy",
+      "lines": [
+        "M8"
+      ],
+      "transfers": [],
+      "notes": "Acıbadem University Kerem Aydınlar Campus",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "icerenkoy",
+      "name": "İçerenköy",
+      "lines": [
+        "M8"
+      ],
+      "transfers": [],
+      "notes": "Ataşehir Sebze ve Meyve Hali・İETTAnatolian Garage",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "kayisdagi",
+      "name": "Kayışdağı",
+      "lines": [
+        "M8"
+      ],
+      "transfers": [],
+      "notes": "Brandium AVM・Erenköy Gümrük Müdürlüğü",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "mevlana",
+      "name": "Mevlana",
+      "lines": [
+        "M8"
+      ],
+      "transfers": [],
+      "notes": "İskan Konutları・Yeniçamlıca Mahallesi",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "imes",
+      "name": "İMES",
+      "lines": [
+        "M8"
+      ],
+      "transfers": [],
+      "notes": "İMES・Dudullu Organize Sanayi Sitesi・Tavukçuyolu Avenue",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "modoko_keyap",
+      "name": "MODOKO–KEYAP",
+      "lines": [
+        "M8"
+      ],
+      "transfers": [],
+      "notes": "Modoko・KEYAP・Osmangazi Korusu・NATO Yolu Avenue",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "huzur",
+      "name": "Huzur",
+      "lines": [
+        "M8"
+      ],
+      "transfers": [],
+      "notes": "Doğa Park・Ümit Park・Adem Yavuz Sağlık Ocağı・Karadeniz Avenue",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "parseller",
+      "name": "Parseller",
+      "lines": [
+        "M8"
+      ],
+      "transfers": [],
+      "notes": "Depot・Kesikkaya Avenue・Karadeniz Avenue",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "atakoy",
+      "name": "Ataköy",
+      "lines": [
+        "M9",
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Sinan Erdem Spor SalonuİspirtohaneYunus Emre Kültür MerkeziAymama DeresiBaruthane Sarnıcı",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": true
+    },
+    {
+      "id": "cobancesme",
+      "name": "Çobançeşme",
+      "lines": [
+        "M9"
+      ],
+      "transfers": [],
+      "notes": "Kuyumcukent・29 October Street",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "29_ekim_cumhuriyet",
+      "name": "29 Ekim Cumhuriyet",
+      "lines": [
+        "M9"
+      ],
+      "transfers": [],
+      "notes": "29 October Street",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "dogu_sanayi",
+      "name": "Doğu Sanayi",
+      "lines": [
+        "M9"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "mimar_sinan",
+      "name": "Mimar Sinan",
+      "lines": [
+        "M9"
+      ],
+      "transfers": [],
+      "notes": "Şehir Korosu Park・Mimar Sinan Street",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "15_temmuz",
+      "name": "15 Temmuz",
+      "lines": [
+        "M9"
+      ],
+      "transfers": [],
+      "notes": "Gülbahar Street",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "halkali_caddesi",
+      "name": "Halkalı Caddesi",
+      "lines": [
+        "M9"
+      ],
+      "transfers": [],
+      "notes": "212 AVM・Basın Ekspres Road",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "ataturk_mahallesi",
+      "name": "Atatürk Mahallesi",
+      "lines": [
+        "M9"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "bahariye",
+      "name": "Bahariye",
+      "lines": [
+        "M9"
+      ],
+      "transfers": [],
+      "notes": "Rıdvan Özden Park",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "masko",
+      "name": "MASKO",
+      "lines": [
+        "M9"
+      ],
+      "transfers": [],
+      "notes": "Masko・Mall of İstanbul",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "ziya_gokalp_mahallesi",
+      "name": "Ziya Gökalp Mahallesi",
+      "lines": [
+        "M9"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "olimpiyat",
+      "name": "Olimpiyat",
+      "lines": [
+        "M9"
+      ],
+      "transfers": [],
+      "notes": "Atatürk Olympic Stadium",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "hasdal",
+      "name": "Hasdal",
+      "lines": [
+        "M11"
+      ],
+      "transfers": [],
+      "notes": "D.020・(New) Istanbul University (Çapa) Medical Faculty Hospital・Hasdal Barracks",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "kemerburgaz",
+      "name": "Kemerburgaz",
+      "lines": [
+        "M11"
+      ],
+      "transfers": [],
+      "notes": "Kasımpaşa SKKemerburgaz Facilities・Kemerburgaz City Forest・Consulate General of Turkmenistan",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "gokturk",
+      "name": "Göktürk",
+      "lines": [
+        "M11"
+      ],
+      "transfers": [],
+      "notes": "Istanbul Regional Directorate of Forestry Göktürk Nursery",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "ihsaniye",
+      "name": "İhsaniye",
+      "lines": [
+        "M11"
+      ],
+      "transfers": [],
+      "notes": "İBBBiomethanization Facility",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "terminal_2",
+      "name": "Terminal 2",
+      "lines": [
+        "M11"
+      ],
+      "transfers": [
+        "FERRY",
+        "YHT"
+      ],
+      "notes": "Station Not In Operation - Passing",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "istanbul_havalimani_airport",
+      "name": "İstanbul Havalimanı (Airport)",
+      "lines": [
+        "M11"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "kargo_terminalicargo_terminal",
+      "name": "Kargo Terminali(Cargo Terminal)",
+      "lines": [
+        "M11"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "tasoluk",
+      "name": "Taşoluk",
+      "lines": [
+        "M11"
+      ],
+      "transfers": [],
+      "notes": "Depot・Ministry of Forestry Plantation Site",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "arnavutkoy_hastane",
+      "name": "Arnavutköy Hastane",
+      "lines": [
+        "M11"
+      ],
+      "transfers": [],
+      "notes": "Arnavutköy State Hospital・Arnavutköy City Park・Arnavutköy İETT Platforms",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "halkali",
+      "name": "Halkalı",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [
+        "YHT"
+      ],
+      "notes": "Yarımburgaz MağaralarıHalkalı Ziraat OkuluBathonea Arkeolojik Kazı AlanıRoma Köprü Kalıntısı",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "mustafa_kemal",
+      "name": "Mustafa Kemal",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "kucukcekmece",
+      "name": "Küçükçekmece",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Küçükçekmece GölüAntik Rhegion Yerleşim YeriMimar Sinan Köprüsü",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "florya",
+      "name": "Florya",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Florya Atatürk OrmanıFlorya Atatürk Deniz Köşkü",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "florya_akvaryum",
+      "name": "Florya Akvaryum",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "İstanbul Akvaryumu",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "yesilkoy",
+      "name": "Yeşilköy",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "İstanbul Hava Kuvvetleri MüzesiSt.Etienne – Aziz İstefanos Latin Katolik KilisesiYeşilköy Surp Stepanos KilisesiSüryani Kadim Meryem AnaAyazma",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "yesilyurt",
+      "name": "Yeşilyurt",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Ayastefenos Feneri",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "bakirkoy",
+      "name": "Bakırköy",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [
+        "YHT"
+      ],
+      "notes": "Zuhurat Baba TürbesiHebdamon Sarayı ve SarnıcıResnelliler KöşküBakırköy Ruh ve Sinir Hastalıkları Hastanesi-Bizans KalıntılarıSurp Asdvadzadzin Ermeni KilisesiSakızağacı Mahallesi Tarihi EvlerFildamı SarnıcıMarkiköy Baruthanesi Su KulesiKamera Müzesi",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "yenimahalle_b1",
+      "name": "Yenimahalle (B1)",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Veliefendi HipodromuYıkık İtalyan Köprüsü",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "zeytinburnu",
+      "name": "Zeytinburnu",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Zeytinburnu Tıbbi Bitkiler MerkeziEfendi Camii ve Mezarlığı",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "kazlicesme",
+      "name": "Kazlıçeşme",
+      "lines": [
+        "MARMARAY",
+        "T6"
+      ],
+      "transfers": [],
+      "notes": "Soğanlı Bitkiler ParkıDerya-i Ali Baba TürbesiSurp Pırgiç Ermeni Hastanesi ve ÇevresiBalıklı Rum HastanesiKazlı ÇeşmeErikli Baba TekkesiYedikule Zindanları MüzesiYedi Şehitler Camii",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": true
+    },
+    {
+      "id": "sirkeci",
+      "name": "Sirkeci",
+      "lines": [
+        "MARMARAY",
+        "T1",
+        "T6"
+      ],
+      "transfers": [],
+      "notes": "Sirkeci Station・Sirkeci Railway Museum・Gülhane Park・Istanbul Governorate・Eminönü",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": true
+    },
+    {
+      "id": "sogutlucesme",
+      "name": "Söğütlüçeşme",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [
+        "YHT"
+      ],
+      "notes": "Metrobüs HattıİBB Gazhane BinalarıFenerbahçe Parkı (Yarımadası) Harem KalıntılarıTarihi Ahşap EvlerKadıköy Boğa HeykeliOsmanağa ÇeşmesiOsmanağa CamiiBarış Manço MüzesiFenerbahçe Spor Kulübü Müzesi",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "feneryolu",
+      "name": "Feneryolu",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Haldun Taner Müze EviRecai Yahya Camii",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "goztepe_b1",
+      "name": "Göztepe (B1)",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Özgürlük Parkı / Filizi KöşkRıdvan Paşa Selamlık Köşkü",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "erenkoy",
+      "name": "Erenköy",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Kazım Karabekir Paşa MüzesiErenköy İstasyon Çeşmesiİstanbul Oyuncak MüzesiArif Hikmet Paşa KöşküZihni Paşa CamiiErenköy Galip Paşa Camii",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "suadiye",
+      "name": "Suadiye",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Suadiye Camii",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "kucukyali_b1",
+      "name": "Küçükyalı (B1)",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Küçükyalı ArkeoparBryas SarayıSatyros Manastır",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "idealtepe",
+      "name": "İdealtepe",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Küçükyalı Karavan Parkı",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "sureyya_plaji",
+      "name": "Süreyya Plajı",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Bakireler Tapınağı",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "maltepe_b1",
+      "name": "Maltepe (B1)",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "cevizli",
+      "name": "Cevizli",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Dragos Arkeolojik Kazı AlanıFeyzullah Efendi Camii ve Hamamı",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "atalar",
+      "name": "Atalar",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Dragos Arkeolojik Kazı Alanı",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "basak",
+      "name": "Başak",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "kartal_b1",
+      "name": "Kartal (B1)",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Surp Nisan Ermeni KilisesiTarihi Şifa HamamıKartal Belediyesi Masal Müzesi",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "yunus",
+      "name": "Yunus",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "pendik_b1",
+      "name": "Pendik (B1)",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [
+        "YHT"
+      ],
+      "notes": "İDO (İstanbul Deniz Otobüsleri)Burla Biraderler Korusu-Latin KilisesiBizans MezarlığıSultan KonağıAydos Kalesi",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "kaynarca",
+      "name": "Kaynarca",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "tersane",
+      "name": "Tersane",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Evliyaullah Tan Şeyh Kemikli Hz. TürbesiBotanik Park",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "guzelyali",
+      "name": "Güzelyalı",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Doğa Bilim Müzesi",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "aydintepe",
+      "name": "Aydıntepe",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Aydıntepe Köyü (Camii-Okul-Fırın)",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "icmeler",
+      "name": "İçmeler",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Tuzla Devlet Hastanesiİçmeler Kaplıcaları",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "tuzla",
+      "name": "Tuzla",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Antik Mendirek (Mercan)Kamil Abduş GölüTuzla Merkez Kentsel Arkeolojik Sitİntercity Otomobil MüzesiSultan I. Ahmet CamiiThedora Hamamı KalıntısıDavut Ağa ÇeşmesiKürekçioğlu Ali Ağa ÇeşmesiMercan Antik MendirekGlykeria KilisesiHagios Demetrios Su KuyusuManastır MevkiViaport MarinaDavutağa Camii",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "cayirova",
+      "name": "Çayırova",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Fatih’in Otağı (Fatih Sultan Mehmet’in Otağı)",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "fatih",
+      "name": "Fatih",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "osmangazi",
+      "name": "Osmangazi",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Darıca Hayvanat BahçesiBilişim VadisiOsmangazi Köprü Müzesi",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "darica",
+      "name": "Darıca",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [],
+      "notes": "Darıca Hayvanat BahçesiTarihi İskoliye Mektebi",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "gebze",
+      "name": "Gebze",
+      "lines": [
+        "MARMARAY"
+      ],
+      "transfers": [
+        "YHT"
+      ],
+      "notes": "Osman Hamdi Bey Evi ve MüzesiEskihisar KalesiÇoban Mustafa Paşa KülliyesiHannibal’in MezarıTarihi Çarşı HamamıArapçeşme CamiiEskihisar Çeşmesi",
+      "district": "",
+      "type": "Metro Station",
+      "isInterchange": false
+    },
+    {
+      "id": "kabatas",
+      "name": "Kabataş",
+      "lines": [
+        "T1"
+      ],
+      "transfers": [],
+      "notes": "Sea Bus ferry dock; connected by funicular to Taksim Square.",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "findikli_mimar_sinan_u",
+      "name": "Fındıklı-Mimar Sinan Ü.",
+      "lines": [
+        "T1"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "tophane",
+      "name": "Tophane",
+      "lines": [
+        "T1"
+      ],
+      "transfers": [],
+      "notes": "Near İstanbul Modern Art Museum.",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "karakoy_t1",
+      "name": "Karaköy (T1)",
+      "lines": [
+        "T1"
+      ],
+      "transfers": [],
+      "notes": "Near Yolcu Salonu passenger ship terminal; Galata Bridge crossing starts here.",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "eminonu_t1",
+      "name": "Eminönü (T1)",
+      "lines": [
+        "T1"
+      ],
+      "transfers": [],
+      "notes": "Quays and ferry terminals.",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "gulhane",
+      "name": "Gülhane",
+      "lines": [
+        "T1"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "sultanahmet",
+      "name": "Sultanahmet",
+      "lines": [
+        "T1"
+      ],
+      "transfers": [],
+      "notes": "Historic center of Old İstanbul; near Hippodrome.",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "cemberlitas",
+      "name": "Çemberlitaş",
+      "lines": [
+        "T1"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "beyazit_kapalicarsi",
+      "name": "Beyazıt-Kapalıçarşı",
+      "lines": [
+        "T1"
+      ],
+      "transfers": [],
+      "notes": "Near the Grand Bazaar (Kapalı Çarşı).",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "laleli_istanbul_u",
+      "name": "Laleli-İstanbul Ü.",
+      "lines": [
+        "T1"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "aksaray_t1",
+      "name": "Aksaray (T1)",
+      "lines": [
+        "T1"
+      ],
+      "transfers": [],
+      "notes": "Main east-west axis; follows old Divan Yolu.",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "yusufpasa",
+      "name": "Yusufpaşa",
+      "lines": [
+        "T1"
+      ],
+      "transfers": [],
+      "notes": "Part of route through Old City.",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "haseki",
+      "name": "Haseki",
+      "lines": [
+        "T1"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "findikzade",
+      "name": "Fındıkzade",
+      "lines": [
+        "T1"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "capa_sehremini",
+      "name": "Çapa-Şehremini",
+      "lines": [
+        "T1"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "pazartekke",
+      "name": "Pazartekke",
+      "lines": [
+        "T1"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "topkapi_t1",
+      "name": "Topkapı (T1)",
+      "lines": [
+        "T1",
+        "T4"
+      ],
+      "transfers": [],
+      "notes": "Southern terminus",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": true
+    },
+    {
+      "id": "cevizlibag_aoy",
+      "name": "Cevizlibağ - A.Ö.Y.",
+      "lines": [
+        "T1"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "merkezefendi",
+      "name": "Merkezefendi",
+      "lines": [
+        "T1"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "seyitnizam_aksemsettin",
+      "name": "Seyitnizam-Akşemsettin",
+      "lines": [
+        "T1"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "mithatpasa",
+      "name": "Mithatpaşa",
+      "lines": [
+        "T1"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "mehmet_akif",
+      "name": "Mehmet Akif",
+      "lines": [
+        "T1"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "merter_tekstil_merkezi",
+      "name": "Merter Tekstil Merkezi",
+      "lines": [
+        "T1"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "gungoren",
+      "name": "Güngören",
+      "lines": [
+        "T1"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "akincilar",
+      "name": "Akıncılar",
+      "lines": [
+        "T1"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "soganli",
+      "name": "Soğanlı",
+      "lines": [
+        "T1"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "yavuz_selim",
+      "name": "Yavuz Selim",
+      "lines": [
+        "T1"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "gunestepe",
+      "name": "Güneştepe",
+      "lines": [
+        "T1"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "bagcilar_t1",
+      "name": "Bağcılar (T1)",
+      "lines": [
+        "T1"
+      ],
+      "transfers": [],
+      "notes": "Western/northwestern terminus of line.",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "fetihkapi",
+      "name": "Fetihkapı",
+      "lines": [
+        "T4"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "vatan",
+      "name": "Vatan",
+      "lines": [
+        "T4"
+      ],
+      "transfers": [],
+      "notes": "Park and Ride facility",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "edirnekapi",
+      "name": "Edirnekapı",
+      "lines": [
+        "T4"
+      ],
+      "transfers": [],
+      "notes": "Original southern terminus",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "sehitlik",
+      "name": "Şehitlik",
+      "lines": [
+        "T4"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "demirkapi",
+      "name": "Demirkapı",
+      "lines": [
+        "T4"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "topcular",
+      "name": "Topçular",
+      "lines": [
+        "T4"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "rami",
+      "name": "Rami",
+      "lines": [
+        "T4"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "uluyol_berec",
+      "name": "Uluyol-Bereç",
+      "lines": [
+        "T4"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "sagmalcilar_bayrampasa",
+      "name": "Sağmalcılar (Bayrampaşa)",
+      "lines": [
+        "T4"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "bosna_cukurcesme",
+      "name": "Bosna-Çukurçeşme",
+      "lines": [
+        "T4"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "ali_fuat_basgil",
+      "name": "Ali Fuat Başgil",
+      "lines": [
+        "T4"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "taskopru",
+      "name": "Taşköprü",
+      "lines": [
+        "T4"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "karadeniz",
+      "name": "Karadeniz",
+      "lines": [
+        "T4"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "kiptas_venezia",
+      "name": "KİPTAŞ Venezia",
+      "lines": [
+        "T4"
+      ],
+      "transfers": [],
+      "notes": "Formerly known as Metris",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "cumhuriyet",
+      "name": "Cumhuriyet",
+      "lines": [
+        "T4"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "50_yil_bastabya",
+      "name": "50. Yıl-Baştabya",
+      "lines": [
+        "T4"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "haci_sukru",
+      "name": "Hacı Şükrü",
+      "lines": [
+        "T4"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "yeni_mahalle",
+      "name": "Yeni Mahalle",
+      "lines": [
+        "T4"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "sultanciftligi",
+      "name": "Sultançiftliği",
+      "lines": [
+        "T4"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "cebeci",
+      "name": "Cebeci",
+      "lines": [
+        "T4"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "mescid_i_selam",
+      "name": "Mescid-i Selam",
+      "lines": [
+        "T4"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "eminonu",
+      "name": "Eminönü",
+      "lines": [
+        "T5"
+      ],
+      "transfers": [
+        "FERRY"
+      ],
+      "notes": "Spice Bazaar・Galata Bridge・New Mosque",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "kucukpazar",
+      "name": "Küçükpazar",
+      "lines": [
+        "T5"
+      ],
+      "transfers": [],
+      "notes": "Haliç Metro Bridge",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "cibali",
+      "name": "Cibali",
+      "lines": [
+        "T5"
+      ],
+      "transfers": [],
+      "notes": "Kadir Has UniversityCibali Campus",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "fener",
+      "name": "Fener",
+      "lines": [
+        "T5"
+      ],
+      "transfers": [
+        "FERRY"
+      ],
+      "notes": "Yavuz Sultan Selim Mosque",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "balat",
+      "name": "Balat",
+      "lines": [
+        "T5"
+      ],
+      "transfers": [
+        "FERRY"
+      ],
+      "notes": "",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "ayvansaray",
+      "name": "Ayvansaray",
+      "lines": [
+        "T5"
+      ],
+      "transfers": [
+        "FERRY"
+      ],
+      "notes": "It is approximately 1 km (0.62 mi) from AyvansarayMetrobusStation.",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "feshane",
+      "name": "Feshane",
+      "lines": [
+        "T5"
+      ],
+      "transfers": [
+        "FERRY"
+      ],
+      "notes": "Eyüp Sultan Mosque・Artistanbul Feshane・Zal Mahmud Paşa Mosque",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "eyupsultan_teleferik",
+      "name": "Eyüpsultan Teleferik",
+      "lines": [
+        "T5"
+      ],
+      "transfers": [],
+      "notes": "Eyüp Sultan Mosque・Eyüpsultan Mezarlığı・Pierre Loti",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "eyupsultan_devlet_hastanesi",
+      "name": "Eyüpsultan Devlet Hastanesi",
+      "lines": [
+        "T5"
+      ],
+      "transfers": [],
+      "notes": "Eyüpsultan Country Hospital",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "silahtaraga_mahallesi",
+      "name": "Silahtarağa Mahallesi",
+      "lines": [
+        "T5"
+      ],
+      "transfers": [],
+      "notes": "Santralistanbul・İstanbul Bilgi ÜniversitesiSantralistanbul Kampüsü・Silahtarağa Yeni Camii",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "universite",
+      "name": "Üniversite",
+      "lines": [
+        "T5"
+      ],
+      "transfers": [],
+      "notes": "Bezmialem Foundation UniversityEyüpsultan Campus・Silahtarağa Merkez Camii・İstanbul Bilgi UniversitySantralistanbulCampus",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "alibeykoy_merkez",
+      "name": "Alibeyköy Merkez",
+      "lines": [
+        "T5"
+      ],
+      "transfers": [],
+      "notes": "Alibeyköy Camii",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "alibeykoy_metro",
+      "name": "Alibeyköy Metro",
+      "lines": [
+        "T5"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "alibeykoy_cep_otogari",
+      "name": "Alibeyköy Cep Otogarı",
+      "lines": [
+        "T5"
+      ],
+      "transfers": [],
+      "notes": "Alibeyköy Cep Bus Terminal・5. Levent",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "cankurtaran",
+      "name": "Cankurtaran",
+      "lines": [
+        "T6"
+      ],
+      "transfers": [],
+      "notes": "Cankurtaran Social Facility",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "kumkapi",
+      "name": "Kumkapı",
+      "lines": [
+        "T6"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "cerrahpasa",
+      "name": "Cerrahpaşa",
+      "lines": [
+        "T6"
+      ],
+      "transfers": [],
+      "notes": "Cerrahpaşa Hospital",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "kocamustafapasa",
+      "name": "Kocamustafapaşa",
+      "lines": [
+        "T6"
+      ],
+      "transfers": [],
+      "notes": "",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    },
+    {
+      "id": "yedikule",
+      "name": "Yedikule",
+      "lines": [
+        "T6"
+      ],
+      "transfers": [],
+      "notes": "Yedikule Dungeons",
+      "district": "",
+      "type": "Tram Stop",
+      "isInterchange": false
+    }
+  ],
+  "lines": [
+    {
+      "id": "M1",
+      "name": "M1 trunk section (served by both the M1A and M1B lines)",
+      "color": "#888888",
+      "type": "Metro",
+      "stations": [
+        "yenikapi",
+        "aksaray",
+        "emniyet_fatih",
+        "topkapi_ulubatli",
+        "bayrampasa_maltepe",
+        "sagmalcilar",
+        "kocatepe",
+        "otogar"
+      ],
+      "branches": {}
+    },
+    {
+      "id": "M2",
+      "name": "M2 Line",
+      "color": "#888888",
+      "type": "Metro",
+      "stations": [
+        "yenikapi",
+        "vezneciler",
+        "halic",
+        "sishane",
+        "taksim",
+        "osmanbey",
+        "sisli_mecidiyekoy",
+        "gayrettepe",
+        "levent",
+        "4_levent",
+        "sanayi_mahallesi",
+        "itu_ayazaga",
+        "ataturk_oto_sanayi",
+        "darussafaka",
+        "haciosman"
+      ],
+      "branches": {
+        "M2": [
+          "sanayi_mahallesi",
+          "seyrantepe"
+        ]
+      }
+    },
+    {
+      "id": "M3",
+      "name": "M3 Line",
+      "color": "#888888",
+      "type": "Metro",
+      "stations": [
+        "bakirkoy_sahil",
+        "ozgurluk_meydani",
+        "incirli",
+        "haznedar",
+        "ilkyuva",
+        "yildiztepe",
+        "molla_gurani",
+        "kirazli",
+        "yenimahalle_bagcilar",
+        "mahmutbey",
+        "istoc",
+        "ikitelli_sanayi",
+        "turgut_ozal",
+        "siteler",
+        "basak_konutlari",
+        "metrokent",
+        "onurkent",
+        "sehir_hastanesi",
+        "toplu_konutlar",
+        "kayasehir_merkez"
+      ],
+      "branches": {}
+    },
+    {
+      "id": "M4",
+      "name": "M4 Line",
+      "color": "#888888",
+      "type": "Metro",
+      "stations": [
+        "kadikoy",
+        "ayrilik_cesmesi",
+        "acibadem",
+        "unalan",
+        "goztepe",
+        "yenisahra",
+        "kozyatagi",
+        "bostanci_kadikoy",
+        "kucukyali",
+        "maltepe",
+        "huzurevi",
+        "gulsuyu",
+        "esenkent",
+        "hastane_adliye",
+        "soganlik",
+        "kartal",
+        "yakacik_adnan_kahveci",
+        "pendik",
+        "tavsantepe",
+        "fevzi_cakmak_hastane",
+        "yayalar_seyhli",
+        "kurtkoy",
+        "sabiha_gokcen_havalimani"
+      ],
+      "branches": {}
+    },
+    {
+      "id": "M5",
+      "name": "M5 Line",
+      "color": "#888888",
+      "type": "Metro",
+      "stations": [
+        "uskudar",
+        "fistikagaci",
+        "baglarbasi",
+        "altunizade",
+        "kisikli",
+        "bulgurlu",
+        "umraniye",
+        "carsi",
+        "yamanevler",
+        "cakmak",
+        "ihlamurkuyu",
+        "altinsehir",
+        "imam_hatip_lisesi",
+        "dudullu",
+        "necip_fazil",
+        "cekmekoy",
+        "meclis",
+        "sarigazi",
+        "sancaktepe_sehir_hastanesi",
+        "sancaktepe",
+        "samandira_merkez",
+        "veysel_karani",
+        "hasanpasa",
+        "sultanbeyli"
+      ],
+      "branches": {}
+    },
+    {
+      "id": "M6",
+      "name": "M6 Line",
+      "color": "#888888",
+      "type": "Metro",
+      "stations": [
+        "levent",
+        "nispetiye",
+        "etiler",
+        "bogazici_universitesi"
+      ],
+      "branches": {}
+    },
+    {
+      "id": "M7",
+      "name": "M7 Line",
+      "color": "#888888",
+      "type": "Metro",
+      "stations": [
+        "yildiz",
+        "fulya",
+        "mecidiyekoy",
+        "caglayan",
+        "kagithane",
+        "nurtepe",
+        "alibeykoy",
+        "circir",
+        "veysel_karani_aksemsettin",
+        "yesilpinar",
+        "kazim_karabekir",
+        "yenimahalle_gaziosmanpasa",
+        "karadeniz_mahallesi",
+        "giyimkent_tekstilkent",
+        "oruc_reis_yuzyil",
+        "goztepe_mahallesi",
+        "mahmutbey"
+      ],
+      "branches": {}
+    },
+    {
+      "id": "M8",
+      "name": "M8 Line",
+      "color": "#888888",
+      "type": "Metro",
+      "stations": [
+        "bostanci_maltepe",
+        "emin_ali_pasa",
+        "aysekadin",
+        "kozyatagi",
+        "kucukbakkalkoy",
+        "icerenkoy",
+        "kayisdagi",
+        "mevlana",
+        "imes",
+        "modoko_keyap",
+        "dudullu",
+        "huzur",
+        "parseller"
+      ],
+      "branches": {}
+    },
+    {
+      "id": "M9",
+      "name": "M9 Line",
+      "color": "#888888",
+      "type": "Metro",
+      "stations": [
+        "atakoy",
+        "yenibosna",
+        "cobancesme",
+        "29_ekim_cumhuriyet",
+        "dogu_sanayi",
+        "mimar_sinan",
+        "15_temmuz",
+        "halkali_caddesi",
+        "ataturk_mahallesi",
+        "bahariye",
+        "masko",
+        "ikitelli_sanayi",
+        "ziya_gokalp_mahallesi",
+        "olimpiyat"
+      ],
+      "branches": {}
+    },
+    {
+      "id": "M11",
+      "name": "M11 Line",
+      "color": "#888888",
+      "type": "Metro",
+      "stations": [
+        "gayrettepe",
+        "kagithane",
+        "hasdal",
+        "kemerburgaz",
+        "gokturk",
+        "ihsaniye",
+        "terminal_2",
+        "istanbul_havalimani_airport",
+        "kargo_terminalicargo_terminal",
+        "tasoluk",
+        "arnavutkoy_hastane"
+      ],
+      "branches": {}
+    },
+    {
+      "id": "MARMARAY",
+      "name": "Marmaray",
+      "color": "#888888",
+      "type": "Metro",
+      "stations": [
+        "halkali",
+        "mustafa_kemal",
+        "kucukcekmece",
+        "florya",
+        "florya_akvaryum",
+        "yesilkoy",
+        "yesilyurt",
+        "atakoy",
+        "bakirkoy",
+        "yenimahalle_b1",
+        "zeytinburnu",
+        "kazlicesme",
+        "yenikapi",
+        "sirkeci",
+        "uskudar",
+        "ayrilik_cesmesi",
+        "sogutlucesme",
+        "feneryolu",
+        "goztepe_b1",
+        "erenkoy",
+        "suadiye",
+        "bostanci_maltepe",
+        "kucukyali_b1",
+        "idealtepe",
+        "sureyya_plaji",
+        "maltepe_b1",
+        "cevizli",
+        "atalar",
+        "basak",
+        "kartal_b1",
+        "yunus",
+        "pendik_b1",
+        "kaynarca",
+        "tersane",
+        "guzelyali",
+        "aydintepe",
+        "icmeler",
+        "tuzla",
+        "cayirova",
+        "fatih",
+        "osmangazi",
+        "darica",
+        "gebze"
+      ],
+      "branches": {}
+    },
+    {
+      "id": "T1",
+      "name": "T1 Tram",
+      "color": "#FFA500",
+      "type": "Tram",
+      "stations": [
+        "kabatas",
+        "findikli_mimar_sinan_u",
+        "tophane",
+        "karakoy_t1",
+        "eminonu_t1",
+        "sirkeci",
+        "gulhane",
+        "sultanahmet",
+        "cemberlitas",
+        "beyazit_kapalicarsi",
+        "laleli_istanbul_u",
+        "aksaray_t1",
+        "yusufpasa",
+        "haseki",
+        "findikzade",
+        "capa_sehremini",
+        "pazartekke",
+        "topkapi_t1",
+        "cevizlibag_aoy",
+        "merkezefendi",
+        "seyitnizam_aksemsettin",
+        "mithatpasa",
+        "zeytinburnu_bakirkoy",
+        "mehmet_akif",
+        "merter_tekstil_merkezi",
+        "gungoren",
+        "akincilar",
+        "soganli",
+        "yavuz_selim",
+        "gunestepe",
+        "bagcilar_t1"
+      ],
+      "branches": {}
+    },
+    {
+      "id": "T4",
+      "name": "T4 Tram",
+      "color": "#FFA500",
+      "type": "Tram",
+      "stations": [
+        "topkapi_t1",
+        "fetihkapi",
+        "vatan",
+        "edirnekapi",
+        "sehitlik",
+        "demirkapi",
+        "topcular",
+        "rami",
+        "uluyol_berec",
+        "sagmalcilar_bayrampasa",
+        "bosna_cukurcesme",
+        "ali_fuat_basgil",
+        "taskopru",
+        "karadeniz",
+        "kiptas_venezia",
+        "cumhuriyet",
+        "50_yil_bastabya",
+        "haci_sukru",
+        "yeni_mahalle",
+        "sultanciftligi",
+        "cebeci",
+        "mescid_i_selam"
+      ],
+      "branches": {}
+    },
+    {
+      "id": "T5",
+      "name": "T5 Tram",
+      "color": "#FFA500",
+      "type": "Tram",
+      "stations": [
+        "eminonu",
+        "kucukpazar",
+        "cibali",
+        "fener",
+        "balat",
+        "ayvansaray",
+        "feshane",
+        "eyupsultan_teleferik",
+        "eyupsultan_devlet_hastanesi",
+        "silahtaraga_mahallesi",
+        "universite",
+        "alibeykoy_merkez",
+        "alibeykoy_metro",
+        "alibeykoy_cep_otogari"
+      ],
+      "branches": {}
+    },
+    {
+      "id": "T6",
+      "name": "T6 Tram",
+      "color": "#FFA500",
+      "type": "Tram",
+      "stations": [
+        "sirkeci",
+        "cankurtaran",
+        "kumkapi",
+        "yenikapi",
+        "cerrahpasa",
+        "kocamustafapasa",
+        "yedikule",
+        "kazlicesme"
+      ],
+      "branches": {}
+    }
+  ]
+}
