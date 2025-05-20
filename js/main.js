@@ -38,7 +38,8 @@ function createElementsFromDataset(dataset, datasetType, nodesWithFigmaCoords, e
           figmaColor: hasFigma ? figmaCoordinates[stationId].figmaFill : undefined,
           hasFigmaCoord: hasFigma,
           datasetType: datasetType, // Added datasetType to node data
-          lines: station.lines || []
+          lines: station.lines || [],
+          notes: station.notes // Added notes to node data
         },
         classes: datasetType,
         position: hasFigma ? { x: figmaCoordinates[stationId].x + RECT_WIDTH / 2, y: figmaCoordinates[stationId].y + RECT_HEIGHT / 2 } : undefined,
@@ -102,12 +103,14 @@ function createElementsFromDataset(dataset, datasetType, nodesWithFigmaCoords, e
 Promise.all([
   fetch('../data/metro_data.json').then(response => response.json()),
   fetch('../data/tram_data.json').then(response => response.json()),
+  fetch('../data/funicular_data.json').then(response => response.json()),
   fetch('../data/figma_coordinates.json').then(response => response.json()),
   fetch('../data/colors.json').then(response => response.json())
 ])
-.then(([metroJson, tramJson, figmaCoordsData, colorsJson]) => {
+.then(([metroJson, tramJson, funicularJson, figmaCoordsData, colorsJson]) => {
   metroData = metroJson;
   tramData = tramJson;
+  funicularData = funicularJson;
   figmaCoordinates = figmaCoordsData;
   globalLineColors = colorsJson.line_colors || {};
 
@@ -146,6 +149,22 @@ Promise.all([
     allElements = allElements.concat(tramElements);
   } else {
     console.warn("Tram data is missing or malformed. Skipping tram elements.");
+  }
+
+  // Process Funicular Data
+  // Note: createElementsFromDataset will handle merging if station IDs already exist
+  if (funicularData && funicularData.stations && funicularData.lines) {
+    const effectiveFunicularLineColors = { ...(globalLineColors || {}), ...(funicularData.line_colors || {}) };
+    const funicularElements = createElementsFromDataset(
+      funicularData,
+      "funicular",
+      nodesWithFigmaCoords,
+      combinedStationIds,
+      effectiveFunicularLineColors
+    );
+    allElements = allElements.concat(funicularElements);
+  } else {
+    console.warn("Funicular data is missing or malformed. Skipping funicular elements.");
   }
 
   // STEP 4: Initialize Cytoscape
@@ -274,46 +293,52 @@ Promise.all([
     let types = [];
     if (node.hasClass('metro')) types.push('Metro');
     if (node.hasClass('tram')) types.push('Tram');
+    if (node.hasClass('funicular')) types.push('Funicular');
     const typeInfo = types.length > 0 ? types.join('/') : 'N/A';
-    const stationInfo = `ID: ${node.id()}<br>Name: ${node.data('name') || node.id()}<br>Type: ${typeInfo}<br>Has Figma Coord: ${node.data('hasFigmaCoord')}`;
+    const stationInfo = `ID: ${node.id()}<br>Name: ${node.data('name') || node.id()}<br>Type: ${typeInfo}<br>Notes: ${node.data('notes') || ''}`;
     document.getElementById('station-info').innerHTML = stationInfo; // Use innerHTML for <br>
   });
 
   // STEP 6: Setup UI Toggles
   const toggleMetro = document.getElementById('toggle-metro');
   const toggleTram = document.getElementById('toggle-tram');
+  const toggleFunicular = document.getElementById('toggle-funicular');
 
   function updateNetworkVisibility() {
     if (!cy) return; // Ensure cy is initialized
 
     const showMetro = toggleMetro.checked;
     const showTram = toggleTram.checked;
+    const showFunicular = toggleFunicular.checked;
 
     cy.batch(function() {
       cy.elements().forEach(el => {
         const isMetro = el.hasClass('metro');
         const isTram = el.hasClass('tram');
-        let hideElement = false;
+        const isFunicular = el.hasClass('funicular');
 
-        if (isMetro && isTram) { // Element is part of both Metro and Tram (e.g., interchange station)
-          if (!showMetro && !showTram) {
-            hideElement = true; // Hide only if both toggles are off
-          }
-        } else if (isMetro) { // Element is Metro-only
-          if (!showMetro) {
-            hideElement = true;
-          }
-        } else if (isTram) { // Element is Tram-only
-          if (!showTram) {
-            hideElement = true;
-          }
+        // If the element is not part of any specific network type we manage with toggles,
+        // leave its visibility as is (don't hide it by default based on these toggles).
+        if (!isMetro && !isTram && !isFunicular) {
+          // el.show(); // Or do nothing to preserve its current state
+          return; // Skip to the next element
         }
-        // Elements that are neither metro nor tram (if any) will not be hidden by this logic.
 
-        if (hideElement) {
-          el.hide(); // Use Cytoscape's hide method
+        let shouldBeVisible = false;
+        if (isMetro && showMetro) {
+          shouldBeVisible = true;
+        }
+        if (isTram && showTram) {
+          shouldBeVisible = true;
+        }
+        if (isFunicular && showFunicular) {
+          shouldBeVisible = true;
+        }
+
+        if (shouldBeVisible) {
+          el.show();
         } else {
-          el.show(); // Use Cytoscape's show method
+          el.hide();
         }
       });
     }); // End batch
@@ -321,6 +346,7 @@ Promise.all([
 
   toggleMetro.addEventListener('change', updateNetworkVisibility);
   toggleTram.addEventListener('change', updateNetworkVisibility);
+  toggleFunicular.addEventListener('change', updateNetworkVisibility);
 
   // Initial call to set visibility based on default checkbox states
   updateNetworkVisibility();

@@ -1196,7 +1196,7 @@
   },
   "kabatas": {
     "x": 1537.0,
-    "y": 1087.0,
+    "y": 1086.0,
     "figmaFill": "#043E63"
   },
   "topkapi_t1_2": {
@@ -1418,5 +1418,45 @@
     "x": 1141.0,
     "y": 1492.0,
     "figmaFill": "#DD5250"
+  },
+  "taksim_2": {
+    "x": 1470.0,
+    "y": 1086.0,
+    "figmaFill": "#4E4A38"
+  },
+  "taksim_3": {
+    "x": 1525.0,
+    "y": 1086.0,
+    "figmaFill": "#4E4A38"
+  },
+  "beyoglu_tunel": {
+    "x": 1470.0,
+    "y": 1180.0,
+    "figmaFill": "#4E4A38"
+  },
+  "karakoy_tunel": {
+    "x": 1524.0,
+    "y": 1180.0,
+    "figmaFill": "#4E4A38"
+  },
+  "seyrantepe_2": {
+    "x": 1427.0,
+    "y": 706.0,
+    "figmaFill": "#4E4A38"
+  },
+  "vadistanbul": {
+    "x": 1367.0,
+    "y": 706.0,
+    "figmaFill": "#4E4A38"
+  },
+  "rumeli_hisarustu": {
+    "x": 1575.0,
+    "y": 831.0,
+    "figmaFill": "#4E4A38"
+  },
+  "asiyan": {
+    "x": 1628.0,
+    "y": 831.0,
+    "figmaFill": "#4E4A38"
   }
 }

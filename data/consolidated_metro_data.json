@@ -1254,42 +1254,6 @@
       "isInterchange": false
     },
     {
-      "id": "veysel_karani",
-      "name": "Veysel Karani",
-      "lines": [
-        "M5"
-      ],
-      "transfers": [],
-      "notes": "",
-      "district": "",
-      "type": "Metro Station",
-      "isInterchange": false
-    },
-    {
-      "id": "hasanpasa",
-      "name": "Hasanpaşa",
-      "lines": [
-        "M5"
-      ],
-      "transfers": [],
-      "notes": "",
-      "district": "",
-      "type": "Metro Station",
-      "isInterchange": false
-    },
-    {
-      "id": "sultanbeyli",
-      "name": "Sultanbeyli",
-      "lines": [
-        "M5"
-      ],
-      "transfers": [],
-      "notes": "",
-      "district": "",
-      "type": "Metro Station",
-      "isInterchange": false
-    },
-    {
       "id": "nispetiye",
       "name": "Nispetiye",
       "lines": [
@@ -2549,10 +2513,7 @@
         "sarigazi",
         "sancaktepe_sehir_hastanesi",
         "sancaktepe",
-        "samandira_merkez",
-        "veysel_karani",
-        "hasanpasa",
-        "sultanbeyli"
+        "samandira_merkez"
       ],
       "branches": {}
     },

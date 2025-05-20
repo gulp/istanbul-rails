@@ -297,13 +297,14 @@
       "id": "taksim",
       "name": "Taksim",
       "lines": [
+        "F1",
         "M2"
       ],
       "transfers": [],
-      "notes": "Taksim Square・Taksim Mosque・Taksim Gezi Park・Atatürk Culturel Center・İstiklal Avenue・About 1 km from Taşkışla station.",
+      "notes": "Taksim Square・Republic Monument・Atatürk Cultural Center (AKM)・Gezi Park・Start ofİstiklal Avenue",
       "district": "",
       "type": "Metro Station",
-      "isInterchange": false
+      "isInterchange": true
     },
     {
       "id": "osmanbey",
@@ -433,13 +434,16 @@
       "id": "seyrantepe",
       "name": "Seyrantepe",
       "lines": [
+        "F3",
         "M2"
       ],
-      "transfers": [],
-      "notes": "Rams Park・Police Housing",
+      "transfers": [
+        "M2"
+      ],
+      "notes": "Rams Park・Stadium for Galatasaray S.K. home matches",
       "district": "",
       "type": "Metro Station",
-      "isInterchange": false
+      "isInterchange": true
     },
     {
       "id": "bakirkoy_sahil",
@@ -1217,42 +1221,6 @@
     {
       "id": "samandira_merkez",
       "name": "Samandıra Merkez",
-      "lines": [
-        "M5"
-      ],
-      "transfers": [],
-      "notes": "",
-      "district": "",
-      "type": "Metro Station",
-      "isInterchange": false
-    },
-    {
-      "id": "veysel_karani",
-      "name": "Veysel Karani",
-      "lines": [
-        "M5"
-      ],
-      "transfers": [],
-      "notes": "",
-      "district": "",
-      "type": "Metro Station",
-      "isInterchange": false
-    },
-    {
-      "id": "hasanpasa",
-      "name": "Hasanpaşa",
-      "lines": [
-        "M5"
-      ],
-      "transfers": [],
-      "notes": "",
-      "district": "",
-      "type": "Metro Station",
-      "isInterchange": false
-    },
-    {
-      "id": "sultanbeyli",
-      "name": "Sultanbeyli",
       "lines": [
         "M5"
       ],
@@ -2358,13 +2326,16 @@
       "id": "kabatas",
       "name": "Kabataş",
       "lines": [
+        "F1",
         "T1"
       ],
-      "transfers": [],
-      "notes": "Sea Bus ferry dock; connected by funicular to Taksim Square.",
+      "transfers": [
+        "FERRY"
+      ],
+      "notes": "Kabataş Pier・Fındıklı Campus (Mimar Sinan University)・Dolmabahçe Palace・Clock Tower",
       "district": "",
       "type": "Tram Stop",
-      "isInterchange": false
+      "isInterchange": true
     },
     {
       "id": "findikli_mimar_sinan_u",
@@ -3192,6 +3163,75 @@
       "district": "",
       "type": "Tram Stop",
       "isInterchange": false
+    },
+    {
+      "id": "karakoy_tunel",
+      "name": "Karaköy (Tünel)",
+      "lines": [
+        "F2"
+      ],
+      "transfers": [
+        "FERRY",
+        "T1"
+      ],
+      "notes": "Galata Bridge・Karaköy Pier・Tersane Istanbul・Kılıç Ali Pasha Complex・Galataport・Istanbul Modern",
+      "district": "",
+      "type": "Funicular Station",
+      "isInterchange": true
+    },
+    {
+      "id": "beyoglu_tunel",
+      "name": "Beyoğlu (Tünel)",
+      "lines": [
+        "F2"
+      ],
+      "transfers": [
+        "M2"
+      ],
+      "notes": "İstiklal Avenue・Pera Museum・Salt Beyoğlu・Saint Anthony of Padua Church・Metrohan Building・Taksim access",
+      "district": "",
+      "type": "Funicular Station",
+      "isInterchange": true
+    },
+    {
+      "id": "rumeli_hisarustu",
+      "name": "Rumeli Hisarüstü",
+      "lines": [
+        "F4"
+      ],
+      "transfers": [
+        "M6"
+      ],
+      "notes": "Boğaziçi University・Rumeli Fortress・Access to the Bosphorus waterfront via Aşiyan Funicular (F4)",
+      "district": "",
+      "type": "Funicular Station",
+      "isInterchange": true
+    },
+    {
+      "id": "asiyan",
+      "name": "Aşiyan",
+      "lines": [
+        "F4"
+      ],
+      "transfers": [
+        "FERRY"
+      ],
+      "notes": "Aşiyan Cemetery・Graves of poets like Tevfik Fikret・Seaside promenade and green spaces",
+      "district": "",
+      "type": "Funicular Station",
+      "isInterchange": false
+    },
+    {
+      "id": "vadistanbul",
+      "name": "Vadistanbul",
+      "lines": [
+        "F3"
+      ],
+      "transfers": [],
+      "notes": "Vadistanbul Mall・Upscale shopping, dining, and office complex",
+      "district": "",
+      "type": "Funicular Station",
+      "isInterchange": false
     }
   ],
   "lines": [
@@ -3328,10 +3368,7 @@
         "sarigazi",
         "sancaktepe_sehir_hastanesi",
         "sancaktepe",
-        "samandira_merkez",
-        "veysel_karani",
-        "hasanpasa",
-        "sultanbeyli"
+        "samandira_merkez"
       ],
       "branches": {}
     },
@@ -3599,6 +3636,50 @@
         "kocamustafapasa",
         "yedikule",
         "kazlicesme"
+      ],
+      "branches": {}
+    },
+    {
+      "id": "F2",
+      "name": "F2 Tünel",
+      "color": "#888888",
+      "type": "Funicular",
+      "stations": [
+        "karakoy_tunel",
+        "beyoglu_tunel"
+      ],
+      "branches": {}
+    },
+    {
+      "id": "F1",
+      "name": "F1 Taksim–Kabataş funicular line",
+      "color": "#888888",
+      "type": "Funicular",
+      "stations": [
+        "taksim",
+        "kabatas"
+      ],
+      "branches": {}
+    },
+    {
+      "id": "F4",
+      "name": "F4 Boğaziçi Ü./Hisarüstü–Aşiyan",
+      "color": "#888888",
+      "type": "Funicular",
+      "stations": [
+        "rumeli_hisarustu",
+        "asiyan"
+      ],
+      "branches": {}
+    },
+    {
+      "id": "F3",
+      "name": "F3 Vadistanbul–Seyrantepe",
+      "color": "#888888",
+      "type": "Funicular",
+      "stations": [
+        "seyrantepe",
+        "vadistanbul"
       ],
       "branches": {}
     }

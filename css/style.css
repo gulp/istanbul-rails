@@ -25,3 +25,13 @@ body {
 .hidden-by-toggle {
   display: none !important; /* Important to override cytoscape's inline styles */
 }
+
+pre {
+width: 340px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    font-size: 10px;
+    line-height: 13px;
+}

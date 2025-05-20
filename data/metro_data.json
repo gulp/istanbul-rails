@@ -937,33 +937,6 @@
       "type": null
     },
     {
-      "id": "veysel_karani",
-      "name": "Veysel Karani",
-      "lines": [],
-      "transfers": [],
-      "notes": "",
-      "district": "",
-      "type": null
-    },
-    {
-      "id": "hasanpasa",
-      "name": "Hasanpaşa",
-      "lines": [],
-      "transfers": [],
-      "notes": "",
-      "district": "",
-      "type": null
-    },
-    {
-      "id": "sultanbeyli",
-      "name": "Sultanbeyli",
-      "lines": [],
-      "transfers": [],
-      "notes": "",
-      "district": "",
-      "type": null
-    },
-    {
       "id": "nispetiye",
       "name": "Nispetiye",
       "lines": [],
@@ -1949,10 +1922,7 @@
         "sarigazi",
         "sancaktepe_sehir_hastanesi",
         "sancaktepe",
-        "samandira_merkez",
-        "veysel_karani",
-        "hasanpasa",
-        "sultanbeyli"
+        "samandira_merkez"
       ],
       "branches": {}
     },
