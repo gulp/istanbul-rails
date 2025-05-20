@@ -9,7 +9,11 @@ body {
   height: 100vh;
   display: block;
   border: 1px solid lightgray;
+  position: relative;
+  z-index: 1;
 }
+
+/* Styles for #map-underlay-img removed as it's no longer an external HTML element */
 
 #info {
   position: absolute;
