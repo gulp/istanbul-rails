@@ -12,20 +12,20 @@
 </head>
 <body>
   <div id="info">
-    <h2>Istanbul Rail Network - Figma Preset</h2>
+    <h2>Istanbul Rail Network / Layout Designer</h2>
     <pre id="station-info"></pre>
     <div id="toggles">
-      <h3>Toggle Layers</h3>
+      <h3>Layers:</h3>
       <label><input type="checkbox" id="toggle-metro" checked> Metro</label><br>
       <label><input type="checkbox" id="toggle-tram" checked> Tram</label><br>
       <label><input type="checkbox" id="toggle-funicular" checked> Funicular</label><br>
       <hr>
-      <label><input type="checkbox" id="toggle-underlay"> Show Underlay Image</label><br>
+      <label><input type="checkbox" id="toggle-underlay"> Underlay</label><br>
     </div>
     <div id="layout-controls">
-      <h3>Layout Management</h3>
+      <h3>Layout:</h3>
       <div id="version-select-container">
-        <label for="version-select">Version:</label>
+        <label for="version-select">current:</label>
         <select id="version-select">
           <option value="original">Original Layout</option>
         </select>
@@ -36,9 +36,9 @@
       <button id="new-version-btn">Make a new copy</button>
       <button id="reset-layout-btn">Reset</button>
       <hr>
-      <button id="export-layout-btn">Export Current</button><br>
+      <button id="export-layout-btn">Export current</button><br>
       <input type="file" id="import-layout-file" accept=".json" style="display: none;">
-      <button id="import-layout-btn">Import as New</button>
+      <button id="import-layout-btn">Import as new</button>
       <hr>
       <button id="destroy-all-btn" style="color: red;">Destroy</button>
     </div>
