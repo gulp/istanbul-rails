@@ -21,3 +21,7 @@ body {
   z-index: 1000;
   max-width: 300px;
 }
+
+.hidden-by-toggle {
+  display: none !important; /* Important to override cytoscape's inline styles */
+}

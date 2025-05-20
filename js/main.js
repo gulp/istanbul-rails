@@ -3,97 +3,155 @@
 // So, if you uncomment fcose usage below, uncomment this too:
 // cytoscape.use(cytoscapeFcose);
 
-// STEP 1: Load Rich Station Data and Figma Coordinates
-let richData = {};
+// STEP 1: Load ALL Data
+let metroData = {};
+let tramData = {};
 let figmaCoordinates = {};
+let globalLineColors = {};
 
 const RECT_WIDTH = 8;
 const RECT_HEIGHT = 8;
 
-Promise.all([
-  fetch('../data/stations_lines.json').then(response => response.json()),
-  fetch('../data/figma_coordinates.json').then(response => response.json())
-])
-.then(([stationsLinesData, figmaCoordsData]) => {
-  richData = stationsLinesData;
-  figmaCoordinates = figmaCoordsData;
+let allElements = [];
+let cy; // Declare cy here to be accessible in createElementsFromDataset if needed for merging
 
-  const nodesWithFigmaCoords = new Set(); // Keep track of nodes that have Figma coords
-
-  // STEP 2: Merge Figma Coordinates into Rich Data
-  richData.stations.forEach(station => {
-    if (figmaCoordinates[station.id]) {
-      station.x = figmaCoordinates[station.id].x + RECT_WIDTH / 2;
-      station.y = figmaCoordinates[station.id].y + RECT_HEIGHT / 2;
-      station.figmaColor = figmaCoordinates[station.id].figmaFill;
-      nodesWithFigmaCoords.add(station.id); // Mark this node as having Figma coordinates
-    } else {
-      console.warn(`Coordinates not found in figmaCoordinates for station ID: ${station.id}.`);
-      // station.x and station.y will remain undefined for these
-    }
-  });
-
-  // STEP 3: Create Cytoscape Elements
+// Function to create Cytoscape elements from a dataset (now assumes dataset has line_colors at its root)
+function createElementsFromDataset(dataset, datasetType, nodesWithFigmaCoords, existingStationIds, lineColors) {
   const elements = [];
-  const stationNodeIds = new Set();
-
-  richData.stations.forEach(station => {
-    if (!stationNodeIds.has(station.id)) {
+  
+  // Add station nodes
+  dataset.stations.forEach(station => {
+    const stationId = station.id; // Use a local const for clarity
+    const isNewStation = !existingStationIds.has(stationId);
+    
+    if (isNewStation) {
+      const hasFigma = figmaCoordinates[stationId] !== undefined;
+      if (hasFigma) {
+        nodesWithFigmaCoords.add(stationId);
+      }
       elements.push({
         group: 'nodes',
         data: {
-          id: station.id,
+          id: stationId,
           name: station.name,
           isInterchange: (station.transfers && station.transfers.length > 0) || (station.lines && station.lines.length > 1),
-          figmaColor: station.figmaColor,
-          hasFigmaCoord: nodesWithFigmaCoords.has(station.id) // Add a flag
+          figmaColor: hasFigma ? figmaCoordinates[stationId].figmaFill : undefined,
+          hasFigmaCoord: hasFigma,
+          datasetType: datasetType, // Added datasetType to node data
+          lines: station.lines || []
         },
-        position: (typeof station.x !== 'undefined' && typeof station.y !== 'undefined') ?
-                  { x: station.x, y: station.y } :
-                  undefined,
-        // Lock nodes that have Figma coordinates if you want them absolutely fixed
-        // during the secondary layout.
-        // locked: nodesWithFigmaCoords.has(station.id) 
+        classes: datasetType,
+        position: hasFigma ? { x: figmaCoordinates[stationId].x + RECT_WIDTH / 2, y: figmaCoordinates[stationId].y + RECT_HEIGHT / 2 } : undefined,
       });
-      stationNodeIds.add(station.id);
+      existingStationIds.add(stationId);
+    } else {
+      // Handle existing station (merge lines, etc.)
+      const existingNode = cy ? cy.getElementById(stationId) : null; // Check if cy is initialized
+      if (existingNode && existingNode.length > 0) {
+          let currentLines = new Set(existingNode.data('lines') || []);
+          (station.lines || []).forEach(lineId => currentLines.add(lineId));
+          existingNode.data('lines', Array.from(currentLines));
+          if (!existingNode.hasClass(datasetType)) {
+            existingNode.addClass(datasetType);
+          }
+          // Re-evaluating isInterchange on merged nodes
+          existingNode.data('isInterchange', (existingNode.data('lines') && existingNode.data('lines').length > 1) || (existingNode.data('transfers') && existingNode.data('transfers').length > 0) );
+      }
     }
   });
 
-  // Add real line edges (same as your existing code)
-  richData.lines.forEach(line => {
+  // Add line edges
+  dataset.lines.forEach(line => {
     function addEdgesForStationList(stations, branchName = null) {
       for (let i = 0; i < stations.length - 1; i++) {
         const source = stations[i];
         const target = stations[i+1];
-        if (stationNodeIds.has(source) && stationNodeIds.has(target)) {
+        // Ensure stations exist before creating an edge
+        if (existingStationIds.has(source) && existingStationIds.has(target)) {
+          const colorForThisLine = (lineColors && lineColors[line.id]) ||
+                                   (lineColors && lineColors.DEFAULT) ||
+                                   '#CCCCCC'; // Fallback chain
           elements.push({
             group: 'edges',
             data: {
-              id: `${line.id}-${branchName ? branchName + '-' : ''}${source}-${target}`,
-              source: source, target: target, lineColor: line.color || '#ccc', lineId: line.id
-            }
+              id: `${datasetType}-${line.id}-${branchName ? branchName + '-' : ''}${source}-${target}`,
+              source: source, target: target,
+              lineColor: colorForThisLine, // USE THE LOOKED-UP COLOR
+              lineId: line.id,
+              datasetType: datasetType
+            },
+            classes: datasetType
           });
         } else {
-            console.warn(`Edge creation skipped for line ${line.id}: ${source} or ${target} not in stationNodeIds`);
+            console.warn(`Edge creation skipped for line ${line.id} (${datasetType}): ${source} or ${target} not in existingStationIds`);
         }
       }
     }
-    if (line.stations && line.stations.length > 0) {
-        addEdgesForStationList(line.stations);
-    }
+    if (line.stations && line.stations.length > 0) addEdgesForStationList(line.stations);
     if (line.branches) {
       for (const branch in line.branches) {
-        if (line.branches[branch] && line.branches[branch].length > 0) {
-            addEdgesForStationList(line.branches[branch], branch);
-        }
+        if (line.branches[branch] && line.branches[branch].length > 0) addEdgesForStationList(line.branches[branch], branch);
       }
     }
   });
+  return elements;
+}
+
+
+// STEP 1 (cont.): Load ALL Data
+Promise.all([
+  fetch('../data/metro_data.json').then(response => response.json()),
+  fetch('../data/tram_data.json').then(response => response.json()),
+  fetch('../data/figma_coordinates.json').then(response => response.json()),
+  fetch('../data/colors.json').then(response => response.json())
+])
+.then(([metroJson, tramJson, figmaCoordsData, colorsJson]) => {
+  metroData = metroJson;
+  tramData = tramJson;
+  figmaCoordinates = figmaCoordsData;
+  globalLineColors = colorsJson.line_colors || {};
+
+  const nodesWithFigmaCoords = new Set();
+  const combinedStationIds = new Set(); // To track all unique station IDs across datasets
+
+  // Clear previous elements if re-loading
+  allElements = [];
+
+  // Process Metro Data
+  if (metroData && metroData.stations && metroData.lines) {
+    const effectiveMetroLineColors = { ...(globalLineColors || {}), ...(metroData.line_colors || {}) };
+    const metroElements = createElementsFromDataset(
+      metroData,
+      "metro",
+      nodesWithFigmaCoords,
+      combinedStationIds,
+      effectiveMetroLineColors
+    );
+    allElements = allElements.concat(metroElements);
+  } else {
+    console.warn("Metro data is missing or malformed. Skipping metro elements.");
+  }
+
+  // Process Tram Data
+  // Note: createElementsFromDataset will handle merging if station IDs already exist from metroData
+  if (tramData && tramData.stations && tramData.lines) {
+    const effectiveTramLineColors = { ...(globalLineColors || {}), ...(tramData.line_colors || {}) };
+    const tramElements = createElementsFromDataset(
+      tramData,
+      "tram",
+      nodesWithFigmaCoords,
+      combinedStationIds,
+      effectiveTramLineColors
+    );
+    allElements = allElements.concat(tramElements);
+  } else {
+    console.warn("Tram data is missing or malformed. Skipping tram elements.");
+  }
 
   // STEP 4: Initialize Cytoscape
-  var cy = cytoscape({
+  cy = cytoscape({ // Assign to the globally declared cy
     container: document.getElementById('cy'),
-    elements: elements,
+    elements: allElements, // Use the populated allElements
     style: [ // Your existing styles
       { selector: 'node', style: {
           'background-color': '#888', 
@@ -213,9 +271,59 @@ Promise.all([
   // Tap event (same as your existing code)
   cy.on('tap', 'node', function(evt){
     var node = evt.target;
-    const stationInfo = `ID: ${node.id()}<br>Name: ${node.data('name') || node.id()}<br>Has Figma Coord: ${node.data('hasFigmaCoord')}`;
+    let types = [];
+    if (node.hasClass('metro')) types.push('Metro');
+    if (node.hasClass('tram')) types.push('Tram');
+    const typeInfo = types.length > 0 ? types.join('/') : 'N/A';
+    const stationInfo = `ID: ${node.id()}<br>Name: ${node.data('name') || node.id()}<br>Type: ${typeInfo}<br>Has Figma Coord: ${node.data('hasFigmaCoord')}`;
     document.getElementById('station-info').innerHTML = stationInfo; // Use innerHTML for <br>
   });
+
+  // STEP 6: Setup UI Toggles
+  const toggleMetro = document.getElementById('toggle-metro');
+  const toggleTram = document.getElementById('toggle-tram');
+
+  function updateNetworkVisibility() {
+    if (!cy) return; // Ensure cy is initialized
+
+    const showMetro = toggleMetro.checked;
+    const showTram = toggleTram.checked;
+
+    cy.batch(function() {
+      cy.elements().forEach(el => {
+        const isMetro = el.hasClass('metro');
+        const isTram = el.hasClass('tram');
+        let hideElement = false;
+
+        if (isMetro && isTram) { // Element is part of both Metro and Tram (e.g., interchange station)
+          if (!showMetro && !showTram) {
+            hideElement = true; // Hide only if both toggles are off
+          }
+        } else if (isMetro) { // Element is Metro-only
+          if (!showMetro) {
+            hideElement = true;
+          }
+        } else if (isTram) { // Element is Tram-only
+          if (!showTram) {
+            hideElement = true;
+          }
+        }
+        // Elements that are neither metro nor tram (if any) will not be hidden by this logic.
+
+        if (hideElement) {
+          el.hide(); // Use Cytoscape's hide method
+        } else {
+          el.show(); // Use Cytoscape's show method
+        }
+      });
+    }); // End batch
+  }
+
+  toggleMetro.addEventListener('change', updateNetworkVisibility);
+  toggleTram.addEventListener('change', updateNetworkVisibility);
+
+  // Initial call to set visibility based on default checkbox states
+  updateNetworkVisibility();
 
 })
 .catch(error => console.error("Error loading data:", error));
