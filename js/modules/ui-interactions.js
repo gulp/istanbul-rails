@@ -76,14 +76,21 @@ export function setupCytoscapeEventListeners(mainState) {
     });
 
     cyInstance.on('tap', 'node', function(evt){
-      const node = evt.target; 
-      if (node.id() === '__underlayNode__') { 
+      const node = evt.target;
+      if (node.id() === '__underlayNode__') {
         selectedNodeForLabeling = null;
         cyInstance.nodes().removeClass('label-editing');
         document.getElementById('station-info').textContent = 'Map Underlay selected (non-editable).';
         return;
       }
-      selectedNodeForLabeling = node; 
+      // Also ignore taps on the coordinate space debug rectangle
+      if (node.id() === '__coordinateSpaceDebugRect__') {
+        selectedNodeForLabeling = null;
+        cyInstance.nodes().removeClass('label-editing');
+        document.getElementById('station-info').textContent = 'Coordinate Space Debug Rectangle selected (non-editable).';
+        return;
+      }
+      selectedNodeForLabeling = node;
       cyInstance.nodes().removeClass('label-editing'); selectedNodeForLabeling.addClass('label-editing');
       let types = [];
       if (node.hasClass('metro')) types.push('Metro');

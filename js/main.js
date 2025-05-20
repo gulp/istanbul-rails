@@ -1,7 +1,7 @@
 import * as config from './modules/config.js';
 import { generateTimestampId } from './modules/utils.js';
 import { cytoscapeStylesheet } from './modules/cytoscape-styles.js';
-import { createElementsFromDataset, createUnderlayNodeElement } from './modules/element-creators.js';
+import { createElementsFromDataset, createUnderlayNodeElement, createCoordinateSpaceDebugRectangle } from './modules/element-creators.js';
 import * as versioning from './modules/versioning.js';
 import * as ui from './modules/ui-interactions.js';
 
@@ -24,7 +24,6 @@ const mainState = {
         saveBtn: null, newVersionBtn: null, resetLayoutBtn: null,
         exportLayoutBtn: null, importLayoutFile: null, importLayoutBtn: null, destroyAllBtn: null
     },
-    // Pass the actual applyLabelPosition function from ui-interactions
     applyLabelPositionFunc: ui.applyLabelPosition 
 };
 mainState.originalLayoutDataRef.current = mainState.originalLayoutData; 
@@ -46,45 +45,70 @@ Promise.all([
   figmaCoordinates = figmaCoordsData; 
   globalLineColors = colorsJson.line_colors || {};
   
-  const nodesWithFigmaCoords = new Set(); 
-  const combinedStationIds = new Set(); 
   allElements = []; 
 
-  const underlayNodeElement = createUnderlayNodeElement();
-  allElements.push(underlayNodeElement);
+  try {
+    console.log("Attempting to create underlay node...");
+    const underlayNodeElement = createUnderlayNodeElement();
+    if (underlayNodeElement) allElements.push(underlayNodeElement);
+    console.log("Underlay node created and added.");
 
-  if (metroData && metroData.stations && metroData.lines) {
-    allElements = allElements.concat(createElementsFromDataset(metroData, "metro", figmaCoordinates, nodesWithFigmaCoords, combinedStationIds, { ...globalLineColors, ...(metroData.line_colors || {}) }, null));
-  }
-  if (tramData && tramData.stations && tramData.lines) {
-    allElements = allElements.concat(createElementsFromDataset(tramData, "tram", figmaCoordinates, nodesWithFigmaCoords, combinedStationIds, { ...globalLineColors, ...(tramData.line_colors || {}) }, null));
-  }
-  if (funicularData && funicularData.stations && funicularData.lines) {
-    allElements = allElements.concat(createElementsFromDataset(funicularData, "funicular", figmaCoordinates, nodesWithFigmaCoords, combinedStationIds, { ...globalLineColors, ...(funicularData.line_colors || {}) }, null));
-  }
+    console.log("Attempting to create coordinate space debug rectangle...");
+    // Corrected variable name from previous diff attempt
+    const coordDebugRectElement = createCoordinateSpaceDebugRectangle(); 
+    if (coordDebugRectElement) {
+      allElements.push(coordDebugRectElement);
+      console.log("Coordinate space debug rectangle created and added.");
+    } else {
+      console.log("Coordinate space debug rectangle not created (flag likely false).");
+    }
 
-  mainState.cy = cytoscape({ 
-    container: document.getElementById('cy'),
-    elements: allElements,
-    style: cytoscapeStylesheet, 
-    layout: { name: 'preset', fit: false, padding: 50 },
-    boxSelectionEnabled: false, userZoomingEnabled: true, userPanningEnabled: true,
-  });
+    console.log("Attempting to process datasets for elements...");
+    if (metroData && metroData.stations && metroData.lines) {
+      allElements = allElements.concat(createElementsFromDataset(metroData, "metro", figmaCoordinates, new Set(), new Set(), { ...globalLineColors, ...(metroData.line_colors || {}) }, null));
+    }
+    if (tramData && tramData.stations && tramData.lines) {
+      allElements = allElements.concat(createElementsFromDataset(tramData, "tram", figmaCoordinates, new Set(), new Set(), { ...globalLineColors, ...(tramData.line_colors || {}) }, null));
+    }
+    if (funicularData && funicularData.stations && funicularData.lines) {
+      allElements = allElements.concat(createElementsFromDataset(funicularData, "funicular", figmaCoordinates, new Set(), new Set(), { ...globalLineColors, ...(funicularData.line_colors || {}) }, null));
+    }
+    console.log("Datasets processed. Total elements:", allElements.length);
+
+    console.log("Attempting to initialize Cytoscape...");
+    mainState.cy = cytoscape({ 
+      container: document.getElementById('cy'),
+      elements: allElements,
+      style: cytoscapeStylesheet, 
+      layout: { name: 'preset', fit: false, padding: 50 },
+      boxSelectionEnabled: false, userZoomingEnabled: true, userPanningEnabled: true,
+    });
+    console.log("Cytoscape initialized successfully.");
  
-  mainState.cy.nodes().forEach(node => { 
-    ui.applyLabelPosition(node, node.data('labelPosition')); 
-  });
+    console.log("Attempting to apply initial label positions...");
+    mainState.cy.nodes().forEach(node => { 
+      ui.applyLabelPosition(node, node.data('labelPosition')); 
+    });
+    console.log("Initial label positions applied.");
 
-  ui.initializeVersioningControlsDOM(mainState); // This will set up listeners that call versioning functions
-  setupInitialLayoutAndListeners();
+    console.log("Attempting to initialize versioning controls DOM...");
+    ui.initializeVersioningControlsDOM(mainState);
+    console.log("Versioning controls DOM initialized.");
+
+    console.log("Attempting to setup initial layout and listeners...");
+    setupInitialLayoutAndListeners();
+    console.log("Initial layout and listeners setup complete.");
+
+  } catch (initError) {
+    console.error("Error during Cytoscape initialization sequence:", initError);
+  }
 })
-.catch(error => console.error("Error loading initial data:", error));
+.catch(error => console.error("Main .catch() - Error loading initial data or during setup:", error));
 
 
 // --- MAIN SETUP FUNCTION ---
 function setupInitialLayoutAndListeners() {
     console.log("TRACE: setupInitialLayoutAndListeners called from main.js");
-    // Call loadOriginalLayout with destructured mainState properties
     versioning.loadOriginalLayout(
         mainState.cy,
         mainState.originalLayoutDataRef,
@@ -94,12 +118,10 @@ function setupInitialLayoutAndListeners() {
         mainState.uiElements
     );
 
-    // Setup UI event listeners from the ui-interactions module
     ui.setupCytoscapeEventListeners(mainState);
-    ui.setupGlobalEventListeners(mainState); // For keydown etc.
-    ui.setupLayerToggles(mainState.cy); // For layer visibility checkboxes
+    ui.setupGlobalEventListeners(mainState); 
+    ui.setupLayerToggles(mainState.cy); 
 
-    // Initial Layout and Fit for unpositioned nodes
     const unpositionedNodes = mainState.cy.nodes('[!hasFigmaCoord]');
     const positionedNodes = mainState.cy.nodes('[hasFigmaCoord]');
     
@@ -120,7 +142,7 @@ function setupInitialLayoutAndListeners() {
                 console.log("Explode layout stopped. Fitting graph and then calling final setup.");
                 mainState.cy.animate({ fit: { padding: 50 } }, { duration: 300 }); 
                 console.log("Calling applyLayerVisibility and updateVersionUI after explode layout stop.");
-                ui.applyLayerVisibility(mainState.cy); // Call from ui module
+                ui.applyLayerVisibility(mainState.cy); 
                 versioning.updateVersionUI(mainState.uiElements, mainState.activeVersionIdRef.current, mainState.hasUnsavedChangesRef.current);
             }
         };
@@ -129,9 +151,9 @@ function setupInitialLayoutAndListeners() {
         console.log("No unpositioned nodes to explode (or only underlay node). Fitting graph.");
         mainState.cy.animate(
             { fit: { padding: 50 } },
-            {
+            { 
                 duration: 300,
-                complete: function() { // Use complete event
+                complete: function() { 
                     console.log("Initial fit animation complete. Calling applyLayerVisibility and updateVersionUI.");
                     ui.applyLayerVisibility(mainState.cy);
                     versioning.updateVersionUI(mainState.uiElements, mainState.activeVersionIdRef.current, mainState.hasUnsavedChangesRef.current);
