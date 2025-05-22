@@ -38,11 +38,13 @@ Promise.all([
   fetch('./data/funicular_data.json').then(response => response.json()),
   fetch('./data/metrobus_data.json').then(response => response.json()),
   fetch('./data/figma_coordinates.json').then(response => response.json()),
-  fetch('./data/colors.json').then(response => response.json())
+  fetch('./data/colors.json').then(response => response.json()),
+  ui.loadSystemData() // Added call to load consolidated system data for pathfinding
 ])
+// No change needed in the .then parameters for loadSystemData as it handles its data internally
 .then(([metroJson, tramJson, funicularJsonData, metrobusJsonData, figmaCoordsData, colorsJson]) => {
-  metroData = metroJson; 
-  tramData = tramJson; 
+  metroData = metroJson;
+  tramData = tramJson;
   funicularData = funicularJsonData; 
   metrobusData = metrobusJsonData; 
   figmaCoordinates = figmaCoordsData; 
@@ -90,6 +92,7 @@ Promise.all([
       boxSelectionEnabled: false, userZoomingEnabled: true, userPanningEnabled: true,
     });
     console.log("Cytoscape initialized successfully.");
+    window.cyInstance = mainState.cy; // Expose for debugging
  
     console.log("Attempting to apply initial label positions...");
     mainState.cy.nodes().forEach(node => { 

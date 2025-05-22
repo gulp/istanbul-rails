@@ -15,28 +15,42 @@ export const cytoscapeStylesheet = [
       // Text alignment properties are set by applyLabelPosition
     }
   },
-  { 
-    selector: 'node.label-editing', 
-    style: { 
-      'border-color': '#f90', 
-      'border-width': '3px' 
+  {
+    selector: 'node.label-editing',
+    style: {
+      'border-color': '#f90',
+      'border-width': '3px'
+      // This can be kept if a more specific style for "label editing" is desired
+      // or could be removed if node:selected is sufficient. For now, keeping it.
     }
   },
-  { 
-    selector: 'node[isInterchange="true"]', 
-    style: { 
-      'background-color': '#fff', 
-      'border-color': '#000', 
-      'border-width': 1.5, 
-      'width': '12px', 
-      'height': '12px', 
-      'shape': 'ellipse' 
+  {
+    selector: 'node[isInterchange="true"]',
+    style: {
+      'background-color': '#fff',
+      'border-color': '#000',
+      'border-width': 1.5,
+      'width': '12px',
+      'height': '12px',
+      'shape': 'ellipse'
     }
   },
-  { 
-    selector: 'node[?figmaColor]', 
-    style: { 
-      'background-color': 'data(figmaColor)' 
+  {
+    selector: 'node[?figmaColor]',
+    style: {
+      'background-color': 'data(figmaColor)'
+    }
+  },
+  // Moved node:selected to be after other specific node styles
+  // so its selection highlighting (e.g., border) takes precedence.
+  {
+    selector: 'node:selected',
+    style: {
+      'border-color': '#f90',
+      'border-width': '3px',
+      'overlay-color': '#f90',
+      'overlay-padding': '2px',
+      'overlay-opacity': 0.25
     }
   },
   {
@@ -49,7 +63,7 @@ export const cytoscapeStylesheet = [
         'background-height': 'data(imgHeight)',
         'width': 'data(imgWidth)',
         'height': 'data(imgHeight)',
-        'opacity': 0.4,
+        'opacity': 1,
         // Default border for underlay node
         'border-width': (typeof config.DEBUG_SHOW_UNDERLAY_NODE_BORDER !== 'undefined' && config.DEBUG_SHOW_UNDERLAY_NODE_BORDER) ? 5 : 0,
         'border-color': (typeof config.DEBUG_SHOW_UNDERLAY_NODE_BORDER !== 'undefined' && config.DEBUG_SHOW_UNDERLAY_NODE_BORDER) ? 'green' : 'transparent',
